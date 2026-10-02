@@ -1,0 +1,2533 @@
+% =====================================================================
+%  مخزن محتوای «هوشینو» — درس نوآوری و هوش
+%  پایه‌ی پنجم ابتدایی — جلسات ۱ تا ۴
+%  نسخه‌ی کامل: برنامه‌ی اجرای هر جلسه + مخزن اقلام
+%  کامپایل با XeLaTeX (فونت: Vazirmatn)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,top=1.9cm,bottom=1.9cm,left=2cm,right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xepersian}
+
+\graphicspath{{assets/png/}}
+
+\settextfont[Scale=1.0]{Vazirmatn}
+\setlatintextfont[Scale=0.92]{DejaVu Sans}
+\setdigitfont[Scale=1.0]{Vazirmatn}
+
+\definecolor{maincol}{HTML}{1F4E79}
+\definecolor{morcol}{HTML}{00695C}
+\definecolor{mescol}{HTML}{1F4E79}
+\definecolor{tamcol}{HTML}{AD1457}
+\definecolor{anscol}{HTML}{2E7D32}
+\definecolor{stepcol}{HTML}{4527A0}
+\definecolor{aicol}{HTML}{6A1B9A}
+\definecolor{hintcol}{HTML}{B26A00}
+\definecolor{tchcol}{HTML}{546E7A}
+\definecolor{lightbg}{HTML}{F4F7FA}
+\definecolor{stepbg}{HTML}{F3F1FB}
+
+\newcommand{\software}{هوشینو}
+\newcommand{\payeh}{پایه‌ی پنجم ابتدایی}
+\newcommand{\en}[1]{\lr{#1}}
+\newcommand{\sq}[1]{«#1»}
+\newcommand{\rtlbullet}{\textcolor{maincol}{\rule[0.25ex]{0.42em}{0.42em}}}
+\setlist[itemize]{label=\rtlbullet,leftmargin=1.4em,itemsep=1pt,topsep=2pt}
+
+\newtcolorbox{jalasebox}[2]{%
+  breakable, enhanced, colback=white, colframe=maincol!75,
+  coltitle=white, colbacktitle=maincol,
+  fonttitle=\bfseries, title={جلسه‌ی #1 \quad\textbar\quad #2},
+  boxrule=0.6pt, arc=3pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=8pt, after skip=8pt}
+
+\newtcolorbox{fasl}[1]{%
+  breakable, enhanced, colback=lightbg, colframe=maincol!35,
+  boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  title={#1}, coltitle=maincol, fonttitle=\bfseries, colbacktitle=lightbg}
+
+\newtcolorbox{stepbox}[1]{%
+  breakable, enhanced, colback=stepbg, colframe=stepcol!45,
+  boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  title={#1}, coltitle=white, fonttitle=\bfseries\small, colbacktitle=stepcol}
+
+\newcommand{\dastehead}[3]{%
+  \smallskip\noindent
+  \colorbox{#3!12}{\textcolor{#3}{\textbf{\,#1\,}}}\hspace{0.5em}%
+  \textcolor{#3}{\small #2}\par\nopagebreak\vspace{3pt}}
+
+\newcommand{\lbl}[2]{\noindent{\small\textbf{\textcolor{#1}{#2}}}\ }
+\newcommand{\tasvir}[1]{%
+  \par\nopagebreak\vspace{2pt}%
+  \begin{center}\includegraphics[width=0.62\textwidth]{#1}\end{center}%
+  \nopagebreak\vspace{1pt}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small مخزن محتوای \software{} \textbar\ \payeh}
+\fancyhead[L]{\small جلسات ۱ تا ۴}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\Large\bfseries\color{maincol}}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries\textcolor{maincol}{مخزن محتوای \software}}\\[0.8cm]
+{\Huge\bfseries درس «نوآوری و هوش»}\\[1.2cm]
+\rule{0.75\textwidth}{1pt}\\[0.8cm]
+{\LARGE \payeh}\\[0.5cm]
+{\Large جلسات ۱ تا ۴ — نسخه‌ی کامل، ویرایش ۱.۱}\\[1cm]
+{\large برنامه‌ی اجرای هر جلسه، گام‌به‌گام \textbar\ مخزن ۳۰ قلمی هر جلسه}\\[1.5cm]
+\rule{0.75\textwidth}{1pt}\\[1.5cm]
+{\large ساختار سه‌بخشی: آموزش \textbar\ فعالیت تعاملی \textbar\ ارزیابی}\\
+\vfill
+{\large تاریخ: \makebox[3cm]{\dotfill}}\\[0.4cm]
+{\large نام آموزشگاه: \makebox[5cm]{\dotfill}}\\[1cm]
+\end{titlepage}
+
+\section{این فایل چه چیزی دارد؟}
+
+این نسخه، دو چیز را کنار هم می‌آورد:
+
+\begin{fasl}{۱ — برنامه‌ی اجرای جلسه}
+برای هر جلسه، \textbf{گام‌به‌گام} نوشته شده که روی صفحه‌ی \software{} چه چیزی
+نمایش داده می‌شود، از دانش‌آموز چه خواسته می‌شود، پاسخ چطور داوری می‌شود، چه
+راهنمایی‌هایی در چه ترتیبی داده می‌شود و معلم کجا باید دخالت کند.
+همین گام‌ها عیناً همان چیزی است که به \software{} داده می‌شود.
+\end{fasl}
+
+\begin{fasl}{۲ — مخزن اقلام}
+سه دسته‌ی همیشگی: \textbf{مرور} جلسه‌ی پیش، \textbf{مثال} آموزشی و
+\textbf{تمرین} ارزیابی — هر کدام ۱۰ قلم. این‌ها بیش از نیاز یک جلسه‌اند تا
+\software{} بتواند برای هر دانش‌آموز زیرمجموعه‌ای متناسب با عملکرد خودش بردارد.
+\end{fasl}
+
+\begin{fasl}{ویرایش ۱.۱ — چه چیزی تغییر کرد؟}
+\begin{itemize}
+\item \textbf{بخش آموزش فقط نمایشی است.} هیچ ورودی‌ای از دانش‌آموز نمی‌گیرد و به‌جای ۲ تا ۳ گام،
+۶ تا ۷ صفحه‌ی آموزشی دارد: تعریف، مثال حل‌شده، کارت ابزار و معرفی شغل — هر صفحه با یک تصویر.
+پس در آموزش مجازی یا کلاس دونفره، نیاز به توضیح معلم کم است.
+\item \textbf{پیش‌سنجه.} گویه‌ی \en{K1} جلسه‌های پنجره‌ی مشاغل از بخش آموزش بیرون آمد و پیش از
+شروع آموزش، جدا از هر دانش‌آموز پرسیده می‌شود (بیرون از ۶۰ دقیقه).
+\item \textbf{مرور و مثال، کارت آموزشی‌اند.} اقلام مرور با پاسخشان و اقلام مثال به‌صورت مثال حل‌شده نمایش داده می‌شوند.
+\item \textbf{پرسش‌های چندجای‌خالی شکسته شد.} هر پرسشی که چند پاسخ جدا می‌خواست (چند گویه، چند مورد برای دسته‌بندی،
+چند جمله) در ارزیابی و مخزن تمرین به چند پرسش جداگانه تبدیل شد؛ پاره‌های یک پرسش شناسه‌ی گروه مشترک دارند.
+\end{itemize}
+\end{fasl}
+
+\begin{fasl}{دو حالت پاسخ}
+هر پرسش یکی از این دو حالت را دارد و \software{} باید بداند با کدام روبه‌روست:
+
+\smallskip\noindent
+\textbf{\textcolor{anscol}{پاسخ معین}} — یک پاسخ درست دارد. فهرست
+\sq{پذیرفتنی} همه‌ی صورت‌های قابل قبول را می‌آورد و \software{} فقط تطبیق می‌دهد.
+
+\smallskip\noindent
+\textbf{\textcolor{aicol}{پاسخ باز}} — پاسخ ثابت ندارد. به‌جای پاسخ،
+\sq{معیارها} نوشته شده؛ \software{} بررسی می‌کند کدام معیارها در پاسخ آمده است:
+همه‌ی معیارها آمد یعنی \textbf{درست}؛ بخشی آمد یعنی \textbf{نیمه}؛ هیچ‌کدام نیامد یعنی \textbf{نادرست}.
+\end{fasl}
+
+\begin{fasl}{راهنمایی سه‌سطحی}
+هر پرسش سه راهنمایی دارد و فقط وقتی داده می‌شود که دانش‌آموز گیر کند:
+\textbf{۱)} تلنگر، بدون لو دادن چیزی. \textbf{۲)} نشان‌دادن مسیر فکر.
+\textbf{۳)} تقریباً پاسخ، تا خودش خط آخر را بردارد.
+\software{} هرگز پیش از این سه، پاسخ را نمی‌گوید.
+\end{fasl}
+
+\begin{fasl}{یادداشت معلم}
+هرجا \textbf{\textcolor{tchcol}{یادداشت معلم}} آمده، متنی است که فقط شما
+می‌بینید — به دانش‌آموز نمایش داده نمی‌شود.
+\end{fasl}
+
+\section{جلسه‌ی ۱ — قرارداد سال و پرسش بزرگ}
+\begin{jalasebox}{۱}{قرارداد سال و پرسش بزرگ}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}آشنا شدن با قرارهای کلاس و طرح پرسش بزرگ سال: ماشین چطور از روی الگو حدس می‌زند؟\par
+\lbl{maincol}{مفاهیم:}قرار کلاس، پرسش بزرگ، الگو، پیش‌بینی\par
+\lbl{maincol}{مأموریت:}کاوشگر الگو \textbar\ \textbf{نشان:} نشان قرارداد\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ ریاضی — الگوسازی:}پیش‌بینی عضو بعدی یک الگوی عددی پیش از دیدن پاسخ. هر دانش‌آموز برای یک الگوی عددی ساده، عدد بعدی را حدس می‌زند و بعد بررسی می‌کند.\par
+\lbl{tamcol}{ابزار امروز:}ابزار تازه‌ای باز نمی‌شود.\par
+\noindent{\small امروز ابزار تازه‌ای باز نمی‌شود؛ فقط گفت‌وگوی ساده و حدس زدن الگوها.}\par
+\lbl{maincol}{مواد:}کاغذ و مداد و مدادرنگی، تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}سه حدس الگوی ثبت‌شده + سه قرار کلاس + نشان قرارداد.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ نگذارید حدس اشتباه دلسرد کند؛ بگویید هر حدس، قدم اول کشف الگوست، نه امتحان.}}\par
+\vspace{4pt}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۱۵ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A1}}\textbf{سه قرار ما}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امسال سه قرار داریم. این‌ها قانونی نیستند که کسی به ما تحمیل کند؛ خودمان می‌گذاریمشان تا کار همه راحت پیش برود. هر قرار یک دلیل دارد:\par
+\begin{itemize}
+\item هدفون روی گوش — صدای تبلتت فقط مال خودت
+\item صدای آرام — همه بتوانند فکر کنند
+\item نوبت را نگه می‌داریم — حرف هرکس شنیده شود
+\end{itemize}
+\tasvir{G5-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری، سه قرار را روی نمایشگر کلاسی بیاورید و با هم بلند تکرار کنید. در آموزش مجازی یا دونفره، همین صفحه کافی است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A2}}\textbf{هر جلسه چطور پیش می‌رود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر جلسه سه بخش دارد. در «آموزش» یاد می‌گیری، در «فعالیت تعاملی» بازی می‌کنی و می‌سازی، و در «ارزیابی» نشان می‌دهی چه یاد گرفتی. هر جلسه یک مأموریت دارد؛ با تمام‌کردنش یک نشان می‌گیری. نشان مال کسی است که مأموریت را تمام کند، نه کسی که بهترین باشد.\par
+\tasvir{G5-S01-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این صفحه برای آموزش مجازی نوشته شده تا دانش‌آموز بدون توضیح شما بداند جلسه چه ساختاری دارد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A3}}\textbf{الگو یعنی قاعده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ به این رنگ‌ها نگاه کن: قرمز، آبی، قرمز، آبی، … . بعدی چه رنگی است؟ قرمز! از کجا فهمیدی؟ چون یک قاعده پیدا کردی: «یکی در میان». الگو یعنی همین: قاعده‌ای که با آن می‌شود گفت بعدی چه می‌آید.\par
+\tasvir{G5-S01-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A4}}\textbf{مثال حل‌شده: عدد بعدی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دنباله: ۲ ، ۴ ، ۶ ، …\par\noindent \par\noindent قدم ۱: فاصله‌ها را ببین: از ۲ به ۴ دو تا، از ۴ به ۶ هم دو تا.\par\noindent قدم ۲: قاعده را بگو: «هر بار دو تا اضافه می‌شود».\par\noindent قدم ۳: قاعده را به کار ببر: ۶ + ۲ = ۸.\par\noindent \par\noindent مهم‌تر از خودِ عدد، قاعده است.\par
+\tasvir{G5-S01-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری می‌توانید پیش از نمایش قدم ۳، از کلاس بپرسید عدد بعدی چیست؛ این پرسش جمعی است و پاسخ فردی ثبت نمی‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A5}}\textbf{الگو یا شانس؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آزمون ساده: آیا می‌توانی قاعده‌اش را در یک جمله بنویسی؟\par\noindent \par\noindent «۵ ، ۵ ، ۵ ، ۵» الگوست، چون قاعده دارد: «همیشه ۵».\par\noindent «۷ ، ۲ ، ۹ ، ۱» شانس است، چون هیچ قاعده‌ای نمی‌گوید بعدی چیست.\par
+\begin{itemize}
+\item تکرار یک عدد هم الگوست
+\item اگر قاعده‌ای پیدا نشد، شاید واقعاً شانس باشد
+\end{itemize}
+\tasvir{G5-S01-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A6}}\textbf{ذهن ما الگوباز است}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مغز ما عاشق پیدا کردن الگوست؛ آن‌قدر که گاهی در ابرها صورت می‌بیند! این توانایی کمک می‌کند زود یاد بگیریم، ولی گاهی گولمان می‌زند و الگویی می‌بینیم که وجود ندارد. برای همین، حدس را همیشه با قاعده‌ی واقعی مقایسه می‌کنیم. حدس اشتباه یعنی داشتی واقعاً فکر می‌کردی.\par
+\tasvir{G5-S01-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-A7}}\textbf{پرسش بزرگ امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ماشین‌های هوشمند هم کاری شبیه ما می‌کنند: نمونه‌های زیادی می‌بینند، الگو پیدا می‌کنند و بعدی را حدس می‌زنند. پرسش بزرگ امسال همین است: «ماشین چطور حدس می‌زند؟» امروز هیچ‌کس پاسخ کاملش را نمی‌داند؛ در طول سال با هم می‌سازیمش.\par
+\tasvir{G5-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ صریح بگویید حتی خودتان هم امروز پاسخ کامل را نمی‌دانید؛ این لحظه‌ی کلیدی جلسه است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۵ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۲ دقیقه \textbar\ فردی \textbar\ بارگذاری عکس}
+\lbl{stepcol}{\en{G5-S01-T1}}\textbf{پاسخ امروزِ تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال این است: «ماشین چطور حدس می‌زند؟»\par\noindent \par\noindent پاسخ امروزت را با دست روی کاغذ بنویس — دو جمله کافی است: جمله‌ی اول پاسخت، جمله‌ی دوم دلیلت. بعد از برگه عکس بگیر و بفرست.\par
+\tasvir{G5-S01-E04}
+\lbl{maincol}{پرسش:}عکس دست‌نوشته‌ات را بفرست.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item تصویر یک دست‌نوشته باشد و خوانا
+\item دست‌کم دو جمله نوشته شده باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ «فکر می‌کنم ماشین از روی چیزهایی که قبلاً دیده حدس می‌زند. چون آدم‌ها هم وقتی چیزی را زیاد دیده باشند بهتر حدس می‌زنند.»}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item لازم نیست پاسخ درست باشد — فقط نظر امروزت را بنویس.
+\item جمله‌ی اول: به نظرت ماشین چطور حدس می‌زند؟ جمله‌ی دوم: چرا این‌طور فکر می‌کنی؟
+\item مثلاً: «به نظرم ماشین از روی چیزهایی که قبلاً دیده حدس می‌زند، چون…» و خودت ادامه بده.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد و قفل شد. این برگه تا آخرین جلسه‌ی سال باز نمی‌شود — آن‌وقت خودت می‌بینی نظرت چقدر عوض شده.\ \textbar\ \textbf{نیمه:} خوانا بود، ولی یک جمله کم داری: دلیلت را هم بنویس و دوباره عکس بفرست.\ \textbar\ \textbf{نادرست:} تصویر خوانا نبود. دوباره از بالا و با نور کافی عکس بگیر.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ تایپ می‌کند به‌جای نوشتن با دست \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این یکی را باید با دست بنویسی و عکس بفرستی — دست‌خط امروزت هم بخشی از این برگه است.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌پرسد پاسخ درست چیست \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ امروز هیچ‌کس پاسخ درست را نمی‌داند، حتی معلمت. خودت تا آخر سال می‌سازی‌اش.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ برگه‌ها را واقعاً در یک پاکت بگذارید و ببندید. این آیین بیشتر از توضیح یادشان می‌ماند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۳ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S01-T2}}\textbf{بازی: الگو یا شانس؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا ده دنباله به تو نشان می‌دهم. بعد از هر کدام فقط یک واژه بنویس:\par\noindent \par\noindent «الگو» اگر قاعده‌ای پیدا کردی، «شانس» اگر به نظرت بی‌قاعده است.\par\noindent \par\noindent هر دور کمی سخت‌تر می‌شود.\par
+\tasvir{G5-S01-E06}
+\lbl{maincol}{پرسش:}این دنباله الگو دارد یا شانس است؟\par
+\lbl{anscol}{پاسخ معین:}بستگی به دنباله دارد\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ الگو؛ شانس؛ قاعده دارد؛ تصادفی}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به فاصله‌ی بین هر دو عدد پشت‌سرهم نگاه کن.
+\item اگر فاصله‌ها همیشه یکسان است، قاعده داری. اگر هر بار فرق می‌کند، دوباره نگاه کن — شاید قاعده‌ی دیگری باشد.
+\item بعضی دنباله‌ها فقط شبیه بی‌قاعده‌اند. اگر هیچ قاعده‌ای پیدا نکردی، «شانس» بنویس — این هم یک پاسخ است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست بود. حالا بگو از کجا فهمیدی؟\ \textbar\ \textbf{نیمه:} نزدیک بودی. یک بار دیگر به فاصله‌ها نگاه کن.\ \textbar\ \textbf{نادرست:} این‌بار نشد، و اشکالی ندارد — همین که دنبال قاعده گشتی مهم است. قاعده‌اش این بود:}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «۵،۵،۵،۵» را شانس می‌گوید \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ تکرار هم خودش یک قاعده است: هر بار همان عدد. پس این الگوست.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ هر دنباله‌ای را الگو می‌گوید \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ قاعده‌اش را برایم بنویس. اگر نتوانستی بنویسی، شاید واقعاً قاعده‌ای نباشد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ دنباله‌ی «۲،۳،۵،۷» معمولاً کلاس را دو دسته می‌کند. همان‌جا نگه دارید و بحث را باز بگذارید — این بهترین بخش بازی است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S01-T3}}\textbf{حدس تو و قاعده‌ی واقعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا قاعده‌ی واقعی هر دنباله را نشانت می‌دهم.\par\noindent \par\noindent حدس خودت را کنار قاعده‌ی واقعی بگذار و بگو: درست حدس زدی یا نه؟ و اگر نه، کجا فرق داشت؟\par
+\tasvir{G5-S01-E05}
+\lbl{maincol}{پرسش:}حدست با قاعده‌ی واقعی چقدر جور درآمد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید حدسش درست بود یا نبود
+\item اگر نبود، بگوید تفاوت کجا بود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ دو تا را درست گفتم. در «۲،۳،۵،۷» فکر کردم شانس است، ولی قاعده داشت — عددهای اول بودند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به آن دنباله‌ای فکر کن که برایت سخت‌تر بود.
+\item در کدام دنباله حدست با قاعده‌ی واقعی فرق داشت؟
+\item بنویس: «در دنباله‌ی … فکر کردم … ولی قاعده‌اش … بود.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همین کار — مقایسه‌ی حدس با قاعده‌ی واقعی — کاری است که امسال بارها تکرار می‌کنیم.\ \textbar\ \textbf{نیمه:} خوب شروع کردی. حالا بگو کدام دنباله و کجا فرق داشت.\ \textbar\ \textbf{نادرست:} بیا ساده‌تر کنیم: یک دنباله را انتخاب کن و فقط درباره‌ی همان بنویس.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ از اشتباهش ناراحت می‌شود \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ حدسِ اشتباه یعنی داشتی واقعاً فکر می‌کردی. کسی که حدس نمی‌زند، چیزی هم یاد نمی‌گیرد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر وقت ماند، دو سه نفر حدس‌های متفاوتشان را بلند بگویند. شنیدن اینکه دیگران هم اشتباه کرده‌اند، ترس را کم می‌کند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۷ دقیقه \textbar\ فردی \textbar\ ضبط صدا}
+\lbl{stepcol}{\en{G5-S01-E1}}\textbf{امروز کجا حدس زدی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ میکروفون را روشن کن و در چند جمله بگو:\par\noindent \par\noindent امروز کجا حدست را با یک الگوی واقعی مقایسه کردی؟ و آن لحظه چه حسی داشتی؟\par
+\tasvir{G5-S01-E09}
+\lbl{maincol}{پرسش:}صدایت را ضبط کن و بفرست.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به یک لحظه‌ی مشخص از امروز اشاره کند
+\item بگوید حدسش با قاعده‌ی واقعی چه نسبتی داشت
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ توی بازی الگو یا شانس، دنباله‌ی ۲،۳،۵،۷ را شانس گفتم ولی الگو بود. اولش تعجب کردم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی الگو یا شانس فکر کن.
+\item کدام دنباله برایت غافلگیرکننده بود؟
+\item بگو: «در دنباله‌ی … حدس زدم … و بعد دیدم …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ضبط شد و در پروفایلت ذخیره شد. ضبط صدا یکی از چهار کاری است که امسال بارها با هم انجام می‌دهیم.\ \textbar\ \textbf{نیمه:} شنیدم. یک چیز دیگر هم بگو: حدست با قاعده‌ی واقعی جور درآمد یا نه؟\ \textbar\ \textbf{نادرست:} صدایت واضح نبود. هدفون و میکروفون را چک کن و دوباره بگو.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ خجالت می‌کشد و ضبط نمی‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ فقط من می‌شنوم و در پروفایل خودت ذخیره می‌شود. یک جمله هم کافی است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ برای بچه‌های خجالتی، اجازه بدهید این یکی را تایپ کنند. در جلسه‌های بعد کم‌کم به ضبط صدا بیایند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۳ دقیقه \textbar\ فردی \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S01-E2}}\textbf{مأموریت امروز تمام شد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت امروز «کاوشگر الگو» بود و تو تمامش کردی. «نشان قرارداد» در پروفایلت ثبت شد.\par\noindent \par\noindent نشان‌ها را با تمام‌کردن مأموریت می‌گیری، نه با بهترین بودن. هیچ رتبه‌بندی‌ای در کار نیست.\par
+\begin{itemize}
+\item سه قرار کلاس \ensuremath{\checkmark}
+\item سه حدس الگو \ensuremath{\checkmark}
+\item نشان قرارداد \ensuremath{\checkmark}
+\end{itemize}
+\tasvir{G5-S01-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تا جلسه‌ی بعد!}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ جمله‌ی «نشان با تمام‌کردن گرفته می‌شود» را بلند بگویید. اگر این را جا بیندازید، دانش‌آموز ضعیف‌تر هم تا آخر سال می‌ماند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز حدس‌هایش را برای سه الگوی عددی تایپ می‌کند، با پاسخ واقعی مقایسه می‌کند و نتیجه را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک الگوی دوتایی ساده را ادامه بده.
+\item \textbf{سطح ۲:} سه الگوی عددی را حدس بزن.
+\item \textbf{سطح ۳:} خودت یک الگوی تازه بساز که دوستت نتواند به‌سادگی حدس بزند.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}سه قرار کلاس، سه حدس الگو و نشان قرارداد.\par
+\lbl{mescol}{تمرین خانه:}در خانه یک الگوی تکراری پیدا کن — مثل کاشی‌های کف یا ترتیب رنگ لباس‌ها — و بگو قانونش چیست.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{ندارد — نخستین جلسه‌ی سال است}{morcol}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G5-S01-E01}}\textbf{سه قرار ما}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه قراری که امسال با هم می‌گذاریم: هدفون روی گوش، صدای آرام، نوبت را نگه می‌داریم. هر قرار یک دلیل دارد: هدفون صدای تبلت را برای خودت نگه می‌دارد، صدای آرام به همه فرصت فکر کردن می‌دهد و نوبت باعث می‌شود حرف هرکس شنیده شود.\par
+\tasvir{G5-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E02}}\textbf{مثال حل‌شده: عدد بعدی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ۲ ، ۴ ، ۶ ، …\par\noindent \par\noindent فاصله‌ی هر دو عدد پشت‌سرهم ۲ است، پس قاعده «هر بار دو تا اضافه کن» است و عدد بعدی ۸ می‌شود. پاسخ خوب هم عدد را می‌گوید و هم قاعده را: «۸، چون هر بار دو تا اضافه می‌شود.»\par
+\tasvir{G5-S01-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E03}}\textbf{پرسش بزرگ امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ همین بازی ساده‌ی حدس‌زدن، ما را به پرسش بزرگ امسال می‌رساند:\par\noindent \par\noindent «ماشین چطور حدس می‌زند؟»\par\noindent \par\noindent امروز هیچ‌کس پاسخ کاملش را نمی‌داند — حتی معلمت. قرار است در طول سال با هم بسازیمش.\par
+\tasvir{G5-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E04}}\textbf{چرا پاسخ اولیه قفل می‌شود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در فعالیت امروز، پاسخ اولیه‌ات به پرسش بزرگ را با دست روی کاغذ می‌نویسی و عکسش را می‌فرستی. این برگه تا جلسه‌ی ۳۲ قفل می‌ماند. چرا؟ تا آخر سال ببینی فکرت چقدر تغییر کرده است. نمونه: «ماشین از روی چیزهایی که قبلاً دیده حدس می‌زند، چون خودش فکر ندارد.»\par
+\tasvir{G5-S01-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E05}}\textbf{مثال: حدس من و قاعده‌ی واقعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک نمونه مقایسه: دنباله «۱ ، ۳ ، ۵ ، …» بود. حدس زدم ۶، ولی قاعده‌ی واقعی «هر بار دو تا اضافه کن» بود و جواب ۷ شد. فرق کجا بود؟ من فقط به یک فاصله نگاه کردم. درس: همه‌ی فاصله‌ها را بررسی کن.\par
+\tasvir{G5-S01-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E06}}\textbf{مثال: الگو یا شانس؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ بازی «الگو یا شانس» این‌طور حل می‌شود: برای هر دنباله بپرس «می‌توانم قاعده‌اش را بنویسم؟»\par
+\begin{itemize}
+\item ۳ ، ۶ ، ۹ ، ۱۲ \ensuremath{\leftarrow} الگو: هر بار سه تا
+\item دایره، مربع، دایره، مربع \ensuremath{\leftarrow} الگو: یکی در میان
+\item ۸ ، ۱ ، ۶ ، ۴ \ensuremath{\leftarrow} شانس: قاعده‌ای پیدا نمی‌شود
+\end{itemize}
+\tasvir{G5-S01-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E07}}\textbf{هر جلسه یک مأموریت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر جلسه‌ی امسال یک مأموریت دارد. مأموریت امروز «کاوشگر الگو» است و با تمام‌کردنش «نشان قرارداد» را می‌گیری.\par\noindent \par\noindent نشان با تمام‌کردن گرفته می‌شود، نه با بهترین بودن.\par
+\tasvir{G5-S01-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E08}}\textbf{امروز ابزار تازه‌ای نداریم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز هیچ ابزار هوش مصنوعی تازه‌ای باز نمی‌شود. فقط گفت‌وگو می‌کنیم و الگو حدس می‌زنیم — با خودمان و با تبلت.\par\noindent \par\noindent باز کردن ابزارها از جلسه‌ی بعد شروع می‌شود.\par
+\tasvir{G5-S01-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E09}}\textbf{نمونه‌ی یک بازتاب خوب}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در پایان جلسه با صدا می‌گویی امروز کجا حدست را با یک الگوی واقعی مقایسه کردی. نمونه‌ی خوب: «در بازی الگو یا شانس، ۲ ، ۳ ، ۵ ، ۷ را شانس گفتم، ولی الگو بود. اول تعجب کردم، بعد خوشحال شدم.» این پاسخ هم لحظه را می‌گوید هم نتیجه را.\par
+\tasvir{G5-S01-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S01-E10}}\textbf{مثال: یک الگو در خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ الگو فقط در درس نیست. مثال: کاشی‌های کف آشپزخانه سفید، سیاه، سفید، سیاه چیده شده‌اند؛ قانونش «یکی در میان» است. برنامه‌ی هفته هم الگوست: هر شنبه کلاس ورزش. تو هم در خانه دنبال چیزی بگرد که تکرار می‌شود و قانونش را بگو.\par
+\tasvir{G5-S01-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۹ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G5-S01-P01}}\textbf{قرارهای امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کدام‌یک از سه قرار کلاس امروز است؟\par
+\begin{itemize}
+\item الف) دست بلند کن
+\item ب) هدفون روی گوش
+\item پ) کتاب را ببند
+\item ت) بلند بخند
+\end{itemize}
+\tasvir{G5-S01-P01}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ هدفون روی گوش؛ هدفون}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به چیزی فکر کن که با تبلت کار داری.
+\item کدام‌یک به صدا مربوط است؟
+\item سه قرار: هدفون، صدای آرام، نوبت.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — هدفون روی گوش، یکی از سه قرار امروز.\ \textbar\ \textbf{نادرست:} نه؛ سه قرار امروز درباره‌ی هدفون، صدا و نوبت بودند. دوباره نگاه کن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ دست بلند کردن خوب است، ولی جزو سه قرار امروز نبود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G5-S01-P02}}}\par
+\lbl{stepcol}{\en{G5-S01-P02-1}}\textbf{قرار اول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه قرار کلاس امروز را به یاد بیاور. قرار اول درباره‌ی گوش است. کامل کن:\par\noindent \par\noindent «… روی گوش»\par
+\lbl{maincol}{پرسش:}جای خالی را کامل کن.\par
+\lbl{anscol}{پاسخ معین:}هدفون\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ هدفون روی گوش؛ هدفون}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به وسیله‌ای فکر کن که با تبلت روی گوش می‌گذاری.
+\item صدای تبلت فقط برای خودت است.
+\item هد… روی گوش
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — هدفون روی گوش.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: با تبلت چه چیزی روی گوش می‌گذاریم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G5-S01-P02}}}\par
+\lbl{stepcol}{\en{G5-S01-P02-2}}\textbf{قرار دوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قرار دوم درباره‌ی صداست. کامل کن:\par\noindent \par\noindent «صدای …»\par
+\lbl{maincol}{پرسش:}جای خالی را کامل کن.\par
+\lbl{anscol}{پاسخ معین:}آرام\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ صدای آرام؛ آرام؛ آهسته}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item در کلاس صدای ما باید چطور باشد؟
+\item برعکسِ «بلند».
+\item صدای آر…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — صدای آرام.\ \textbar\ \textbf{نادرست:} به برعکسِ صدای بلند فکر کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G5-S01-P02}}}\par
+\lbl{stepcol}{\en{G5-S01-P02-3}}\textbf{قرار سوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قرار سوم درباره‌ی حرف‌زدن به‌ترتیب است. کامل کن:\par\noindent \par\noindent «… را نگه می‌داریم»\par
+\lbl{maincol}{پرسش:}جای خالی را کامل کن.\par
+\lbl{anscol}{پاسخ معین:}نوبت\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نوبت را نگه می‌داریم؛ نوبت}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item وقتی چند نفر می‌خواهند حرف بزنند چه می‌کنیم؟
+\item یکی‌یکی و پشت‌سرهم.
+\item نو… را نگه می‌داریم
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — نوبت را نگه می‌داریم.\ \textbar\ \textbf{نادرست:} وقتی یکی‌یکی حرف می‌زنیم، چه چیزی را رعایت می‌کنیم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G5-S01-P03}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «امروز هوشینو یک ابزار هوش مصنوعی تازه به ما نشان داد.»\par
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به اول جلسه فکر کن.
+\item امروز با چه چیزی کار کردیم؟
+\item امروز فقط قرار گذاشتیم و الگو حدس زدیم.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — امروز هیچ ابزار تازه‌ای باز نشد.\ \textbar\ \textbf{نادرست:} نه؛ امروز ابزار تازه‌ای نداشتیم. فقط قرار کلاس و پرسش بزرگ.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G5-S01-P04}}\textbf{پرسش بزرگ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال را بنویس.\par
+\lbl{maincol}{پرسش:}پرسش بزرگ امسال چیست؟\par
+\lbl{anscol}{پاسخ معین:}ماشین چطور حدس می‌زند؟\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ماشین چطور حدس می‌زند؟؛ ماشین چطور حدس می‌زند؛ ماشین چگونه حدس می‌زند}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item درباره‌ی ماشین بود.
+\item درباره‌ی کاری بود که ما هم در بازی کردیم.
+\item ماشین چطور … می‌زند؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همین است — و تا جلسه‌ی ۳۲ با ماست.\ \textbar\ \textbf{نیمه:} نزدیک شدی؛ کلمه‌ی «حدس» را هم بیاور.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: بعد از بازی دنباله، چه پرسشی مطرح شد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ محاسبه \textbar\ پاره‌ی ۱ از ۴ پرسش \en{G5-S01-P05}}}\par
+\lbl{stepcol}{\en{G5-S01-P05-1}}\textbf{عدد بعدی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ۵ ، ۱۰ ، ۱۵ ، …\par\noindent \par\noindent عدد بعدی چیست؟\par
+\tasvir{G5-S01-P05}
+\lbl{maincol}{پرسش:}عدد بعدی را بنویس.\par
+\lbl{anscol}{پاسخ معین:}۲۰\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ۲۰؛ 20؛ بیست}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item از ۵ به ۱۰ چقدر اضافه شد؟
+\item همان اندازه را به ۱۵ اضافه کن.
+\item ۱۵ + ۵ = …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ۲۰.\ \textbar\ \textbf{نادرست:} فاصله‌ی دو عدد پشت‌سرهم را حساب کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ محاسبه \textbar\ پاره‌ی ۲ از ۴ پرسش \en{G5-S01-P05}}}\par
+\lbl{stepcol}{\en{G5-S01-P05-2}}\textbf{دو قدم جلوتر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ۵ ، ۱۰ ، ۱۵ ، ۲۰ ، …\par\noindent \par\noindent عدد بعد از ۲۰ چیست؟\par
+\tasvir{G5-S01-P05}
+\lbl{maincol}{پرسش:}عدد بعدی را بنویس.\par
+\lbl{anscol}{پاسخ معین:}۲۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ۲۵؛ 25؛ بیست و پنج}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item قاعده همان قبلی است.
+\item به ۲۰ همان مقدار را اضافه کن.
+\item ۲۰ + ۵ = …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ۲۵.\ \textbar\ \textbf{نادرست:} همان فاصله‌ی ۵ تایی را به ۲۰ اضافه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ محاسبه \textbar\ پاره‌ی ۳ از ۴ پرسش \en{G5-S01-P05}}}\par
+\lbl{stepcol}{\en{G5-S01-P05-3}}\textbf{سه قدم جلوتر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ۵ ، ۱۰ ، ۱۵ ، ۲۰ ، ۲۵ ، …\par\noindent \par\noindent عدد بعد از ۲۵ چیست؟\par
+\tasvir{G5-S01-P05}
+\lbl{maincol}{پرسش:}عدد بعدی را بنویس.\par
+\lbl{anscol}{پاسخ معین:}۳۰\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ۳۰؛ 30؛ سی}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item باز هم همان قاعده.
+\item به ۲۵ پنج تا اضافه کن.
+\item ۲۵ + ۵ = …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ۳۰.\ \textbar\ \textbf{نادرست:} به ۲۵ پنج تا اضافه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۴ از ۴ پرسش \en{G5-S01-P05}}}\par
+\lbl{stepcol}{\en{G5-S01-P05-4}}\textbf{قاعده‌ی دنباله}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ۵ ، ۱۰ ، ۱۵ ، ۲۰ ، ۲۵ ، ۳۰\par\noindent \par\noindent قاعده‌ی این دنباله را در یک جمله بنویس.\par
+\tasvir{G5-S01-P05}
+\lbl{maincol}{پرسش:}قاعده چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید هر بار عددی اضافه می‌شود
+\item مقدار اضافه‌شدن را ۵ بگوید (یا: مضرب‌های ۵)
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ هر بار پنج تا اضافه می‌شود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به فاصله‌ی عددها نگاه کن.
+\item هر بار چقدر اضافه می‌شود؟
+\item هر بار … تا اضافه می‌شود.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — هر بار ۵ تا اضافه می‌شود.\ \textbar\ \textbf{نیمه:} به اضافه‌شدن اشاره کردی؛ حالا بگو هر بار چند تا.\ \textbar\ \textbf{نادرست:} از ۵ به ۱۰ چه اتفاقی افتاد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G5-S01-P06}}}\par
+\lbl{stepcol}{\en{G5-S01-P06-1}}\textbf{دنباله‌ی اول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این دنباله الگوست یا شانس؟\par\noindent \par\noindent ۱ ، ۲ ، ۳ ، ۴\par
+\tasvir{G5-S01-P06}
+\lbl{maincol}{پرسش:}الگو یا شانس؟\par
+\lbl{anscol}{پاسخ معین:}الگو\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ الگو؛ الگوست؛ قاعده دارد}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item با شمردن امتحان کن.
+\item هر بار چقدر اضافه می‌شود؟
+\item هر بار یکی اضافه می‌شود؛ پس قاعده دارد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — الگوست: هر بار یکی اضافه می‌شود.\ \textbar\ \textbf{نادرست:} بپرس: می‌توانم قاعده‌اش را بنویسم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G5-S01-P06}}}\par
+\lbl{stepcol}{\en{G5-S01-P06-2}}\textbf{دنباله‌ی دوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این دنباله الگوست یا شانس؟\par\noindent \par\noindent ۷ ، ۲ ، ۹ ، ۱\par
+\tasvir{G5-S01-P06}
+\lbl{maincol}{پرسش:}الگو یا شانس؟\par
+\lbl{anscol}{پاسخ معین:}شانس\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ شانس؛ شانسی؛ تصادفی؛ قاعده ندارد}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فاصله‌ها را حساب کن.
+\item فاصله‌ها یکسان‌اند یا هر بار فرق می‌کنند؟
+\item اگر قاعده‌ای پیدا نمی‌شود، شانس است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — شانس است: هیچ قاعده‌ای عدد بعدی را نمی‌گوید.\ \textbar\ \textbf{نادرست:} سعی کن قاعده‌اش را بنویسی؛ می‌توانی؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G5-S01-P06}}}\par
+\lbl{stepcol}{\en{G5-S01-P06-3}}\textbf{دنباله‌ی سوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این دنباله الگوست یا شانس؟\par\noindent \par\noindent دوشنبه ، سه‌شنبه ، چهارشنبه\par
+\tasvir{G5-S01-P06}
+\lbl{maincol}{پرسش:}الگو یا شانس؟\par
+\lbl{anscol}{پاسخ معین:}الگو\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ الگو؛ الگوست؛ قاعده دارد}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item این‌ها روزهای هفته‌اند.
+\item روزهای هفته ترتیب ثابت دارند؟
+\item بعد از چهارشنبه همیشه پنج‌شنبه می‌آید.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — الگوست: ترتیب روزهای هفته ثابت است.\ \textbar\ \textbf{نادرست:} بعد از چهارشنبه چه روزی می‌آید؟ همیشه همان؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ روزهای هفته را شانس می‌گوید \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ روزهای هفته ترتیب ثابت دارند، پس قاعده دارند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G5-S01-P07}}\textbf{چرا با دست نوشتیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا پاسخ اولیه‌مان به پرسش بزرگ را با دست روی کاغذ نوشتیم و عکسش را فرستادیم، نه اینکه تایپش کنیم؟\par
+\tasvir{G5-S01-P07}
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند که دست‌نوشته مال همان لحظه می‌ماند
+\item اشاره کند که بعداً عوض نمی‌شود یا قفل است
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون دست‌نوشته را نمی‌شود بعداً عوض کرد، پس آخر سال می‌فهمیم نظرمان چقدر فرق کرده.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن متن تایپی را چقدر راحت می‌شود عوض کرد.
+\item این برگه قرار است تا کِی بسته بماند؟
+\item چون بعداً می‌خواهیم نظر امروزت را دست‌نخورده ببینیم.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — برگه‌ی دست‌نویس، نظر همین امروزت را نگه می‌دارد.\ \textbar\ \textbf{نیمه:} درست شروع کردی. حالا بگو چرا مهم است که عوض نشود.\ \textbar\ \textbf{نادرست:} بیا ساده‌تر: اگر تایپ کرده بودیم، چه اتفاقی می‌توانست بیفتد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S01-P08}}}\par
+\lbl{stepcol}{\en{G5-S01-P08-1}}\textbf{الگوی خودت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک الگوی عددی یا شکلی تازه بساز که دوستت نتواند به‌سادگی حدسش بزند. دست‌کم چهار عضو اولش را بنویس.\par
+\tasvir{G5-S01-P08}
+\lbl{maincol}{پرسش:}چهار عضو الگویت را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دست‌کم چهار عضو بنویسد
+\item عضوها از یک قاعده‌ی پنهان پیروی کنند، نه تصادفی
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ ۱ ، ۳ ، ۲ ، ۴ ، ۳ ، ۵}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item از یک قاعده‌ی ساده شروع کن.
+\item دو قاعده را با هم ترکیب کن.
+\item مثلاً یکی در میان «دو تا اضافه» و «یکی کم».
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} عالی — یک الگوی تازه ساختی.\ \textbar\ \textbf{نیمه:} کمتر از چهار عضو نوشتی؛ یکی دو عضو دیگر اضافه کن.\ \textbar\ \textbf{نادرست:} چهار عدد یا شکل بنویس که از یک قاعده پیروی کنند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S01-P08}}}\par
+\lbl{stepcol}{\en{G5-S01-P08-2}}\textbf{قاعده‌ی الگویت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا قاعده‌ی همان الگویی را که ساختی، در یک جمله بنویس.\par
+\tasvir{G5-S01-P08}
+\lbl{maincol}{پرسش:}قاعده‌ی الگویت چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item قاعده‌ای مشخص در یک جمله بیان کند
+\item قاعده با عضوهای الگوی قبلی‌اش بخواند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ یکی در میان دو تا اضافه می‌کنم و یکی کم می‌کنم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item از عضو اول به دوم چه شد؟
+\item از دوم به سوم چطور؟
+\item قاعده را با «هر بار…» یا «یکی در میان…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} قاعده‌ات روشن است و با عضوها می‌خواند.\ \textbar\ \textbf{نیمه:} قاعده را گفتی ولی با همه‌ی عضوها نمی‌خواند؛ دوباره بررسی کن.\ \textbar\ \textbf{نادرست:} بگو هر عضو چطور از عضو قبلی ساخته می‌شود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S01-P09}}}\par
+\lbl{stepcol}{\en{G5-S01-P09-1}}\textbf{پاسخ تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «ماشین چطور حدس می‌زند؟»\par\noindent \par\noindent پاسخ امروزت را در یک جمله بنویس.\par
+\lbl{maincol}{پرسش:}پاسخت در یک جمله چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پاسخ روشن به پرسش «ماشین چطور حدس می‌زند» بدهد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ ماشین از روی نمونه‌هایی که قبلاً دیده حدس می‌زند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی امروز فکر کن.
+\item ما چطور عدد بعدی را حدس زدیم؟
+\item شاید ماشین هم از روی … حدس می‌زند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پاسخت ثبت شد. پاسخ درست و غلط امروز مهم نیست؛ فکر کردنت مهم است.\ \textbar\ \textbf{نیمه:} به پرسش نزدیک شدی؛ روشن‌تر بگو ماشین چطور حدس می‌زند.\ \textbar\ \textbf{نادرست:} یک جمله بنویس که با «ماشین…» شروع شود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S01-P09}}}\par
+\lbl{stepcol}{\en{G5-S01-P09-2}}\textbf{دلیل تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا در یک جمله بنویس چرا چنین فکر می‌کنی.\par
+\lbl{maincol}{پرسش:}دلیلت چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دلیلی برای پاسخ قبلی‌اش بیاورد
+\item دلیل به تجربه یا مثالی مشخص اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون ما هم امروز از روی الگو حدس زدیم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به چیزی که امروز دیدی اشاره کن.
+\item از بازی الگو یا شانس کمک بگیر.
+\item جمله را با «چون…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دلیلت روشن است.\ \textbar\ \textbf{نیمه:} جمله‌ات دلیل نیست؛ بگو «چون…».\ \textbar\ \textbf{نادرست:} بگو چه چیزی تو را به این فکر رساند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G5-S01-P10}}\textbf{چرا امروز شروع کردیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ معلم گفت حتی خودش هم امروز پاسخ درستِ پرسش بزرگ را نمی‌داند. پس چرا همین امروز پرسیدنش را شروع کردیم؟\par
+\tasvir{G5-S01-P10}
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند پاسخ در طول سال ساخته می‌شود، نه در یک جلسه
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون قرار است کم‌کم و در طول سال خودمان جوابش را پیدا کنیم، نه اینکه کسی به ما بگوید.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به برگه‌ای فکر کن که در پاکت گذاشتیم.
+\item قرار است کِی دوباره سراغ آن برگه برویم؟
+\item پاسخ این پرسش قرار است در طول سال ساخته شود، نه امروز.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — پرسش بزرگ در طول سال ساخته می‌شود، نه در یک جلسه.\ \textbar\ \textbf{نیمه:} نزدیکی. حالا بگو این ساختن قرار است چه‌وقت اتفاق بیفتد.\ \textbar\ \textbf{نادرست:} فکر کن: اگر امروز جواب را می‌دانستیم، دیگر چه چیزی برای کشف کردن می‌ماند؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۲ — الگو، همان چیزی است که ماشین می‌بیند}
+\begin{jalasebox}{۲}{الگو، همان چیزی است که ماشین می‌بیند}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}دیدن اینکه تصویرخوان هم مثل ما، با پیدا کردن الگو در تصویر حدس می‌زند.\par
+\lbl{maincol}{مفاهیم:}الگو، تصویر، حدس، دقت\par
+\lbl{maincol}{مأموریت:}شکارچی الگو \textbar\ \textbf{نشان:} نشان چشم الگویاب\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ علوم — دسته‌بندی:}دسته‌بندی تصویرها بر پایه‌ی یک ویژگی مشترک. هر دانش‌آموز سه تصویر را بر پایه‌ی یک الگوی مشترک دسته‌بندی می‌کند.\par
+\lbl{tamcol}{ابزار امروز — تصویرخوان:}سه تصویر را می‌بیند و شباهتشان را می‌گوید؛ گاهی چیزی را شبیه می‌بیند که برای ما هیچ شباهتی ندارد.\par
+\lbl{maincol}{مواد:}تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}دسته‌بندی سه‌تصویری + حدس مزرعه + کارت شغل شماره‌ی ۱ + نشان چشم الگویاب.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ وقتی تصویرخوان دسته‌بندی را اشتباه کرد، بپرسید «او دنبال چه الگویی بود که ما ندیدیم؟»}}\par
+\vspace{4pt}
+\dastehead{پیش‌سنجه}{پیش از بخش آموزش، جدا برای هر دانش‌آموز — بیرون از ۶۰ دقیقه}{tamcol}
+\begin{stepbox}{پیش‌سنجه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-K1}}\textbf{پیش از شروع: شغل امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز با شغل «کارشناس کشاورزی دقیق» آشنا می‌شوی. پیش از هر توضیحی، صادقانه بگو این جمله چقدر درباره‌ی تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E02}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. حالا برویم سراغ درس امروز.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گویه باید پیش از هر توضیحی درباره‌ی شغل ثبت شود، وگرنه سنجش رشد آشنایی بی‌معنا می‌شود. هوشینو آن را هنگام ورود هر دانش‌آموز، پیش از بخش آموزش، روی دستگاه خودش می‌پرسد؛ پس بخش آموزش بدون ورودی می‌ماند و در کلاس دونفره یا مجازی هر نفر جدا پاسخ می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۲۰ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A1}}\textbf{مرور: الگو و پیش‌بینی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش کشف کردیم الگو یعنی قاعده‌ای که با آن می‌شود بعدی را حدس زد. این چهار نکته را به یاد بیاور؛ بعد چند کارت مرور می‌بینی که پاسخشان هم رویشان نوشته شده.\par
+\begin{itemize}
+\item سه قرار: هدفون، صدای آرام، نوبت
+\item ۲ ، ۴ ، ۶ ، … \ensuremath{\leftarrow} ۸ (هر بار دو تا)
+\item ۷ ، ۲ ، ۹ ، ۱ شانس است؛ قاعده ندارد
+\item پرسش بزرگ: ماشین چطور حدس می‌زند؟
+\end{itemize}
+\tasvir{G5-S02-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه، کارت‌های مرور (pool.review) را یکی‌یکی و با پاسخ نشان می‌دهد. در کلاس حضوری می‌توانید از دو داوطلب بخواهید یک الگو را بلند بگویند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A2}}\textbf{ابزار امروز: تصویرخوان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز نخستین ابزار هوشینو باز می‌شود: تصویرخوان. هر ابزار را با چهار پرسش می‌شناسیم: چه می‌کند؟ از کجا بلد است؟ کجا اشتباه می‌کند؟ و کجا نباید به‌جای من تصمیم بگیرد؟ پاسخ‌های تصویرخوان را در تصویر ببین.\par
+\tasvir{G5-S02-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A3}}\textbf{تصویرخوان چطور نگاه می‌کند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان مثل ما نمی‌فهمد در عکس چیست. او رنگ‌ها، لبه‌ها و شکل‌ها را می‌بیند و با هزاران تصویری که قبلاً دیده مقایسه می‌کند. اگر الگوی رنگ و شکل به «گربه» نزدیک بود، می‌گوید گربه. پس او هم دنبال الگو می‌گردد؛ درست مثل بازی جلسه‌ی پیش.\par
+\begin{itemize}
+\item رنگ: نارنجی، خاکستری، …
+\item لبه‌ها: خط‌های تیز یا نرم
+\item شکل: گرد، مثلثی، دراز
+\end{itemize}
+\tasvir{G5-S02-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A4}}\textbf{شبیه از نگاه ماشین}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک پرتقال و یک توپ بسکتبال برای ما کاملاً فرق دارند: یکی خوردنی است، یکی بازی. ولی هر دو نارنجی و گردند؛ پس تصویرخوان ممکن است بگوید «شبیه‌اند». او اشتباهش را از روی الگو می‌کند، نه بی‌دلیل. وقتی اشتباه کرد بپرس: «او چه الگویی دید که من ندیدم؟»\par
+\tasvir{G5-S02-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A5}}\textbf{شغل امروز: کارشناس کشاورزی دقیق}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ او تصمیم می‌گیرد کجای مزرعه آب بدهد و کجا ندهد. ولی نه با حدس چشمی؛ با داده. از سه جا داده می‌گیرد و در آن‌ها دنبال الگو می‌گردد: کدام قطعه با بقیه فرق دارد؟ این‌طور آب هدر نمی‌رود و هیچ گیاهی تشنه نمی‌ماند.\par
+\begin{itemize}
+\item حسگر خاک: رطوبت هر قطعه
+\item تصویر هوایی: رنگ مزرعه از بالا
+\item پیش‌بینی هوا: باران می‌آید یا نه
+\end{itemize}
+\tasvir{G5-S02-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A6}}\textbf{مثال حل‌شده: نقشه‌ی رطوبت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در این نقشه، رنگ هر قطعه رطوبت خاکش را نشان می‌دهد.\par\noindent \par\noindent قدم ۱: راهنمای رنگ را بخوان: آبی مرطوب، قهوه‌ای خشک.\par\noindent قدم ۲: الگوی بیشتر قطعه‌ها را پیدا کن: پنج قطعه آبی‌اند.\par\noindent قدم ۳: قطعه‌ای را پیدا کن که الگو را می‌شکند: «ث» با ۱۸٪.\par\noindent \par\noindent نتیجه: «ث» آب لازم دارد.\par
+\tasvir{G5-S02-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ خطای رایج: زمینِ سبزتر را انتخاب می‌کنند و نمودار را نگاه نمی‌کنند. از آن‌ها بپرسید نمودار خشکی را با چه رنگی نشان داد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-A7}}\textbf{هر دو دنبال الگو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان در رنگ و شکل تصویر دنبال الگو می‌گردد؛ کارشناس کشاورزی در نقشه‌ی رطوبت. هر دو از روی الگو تصمیم می‌گیرند، پس هر دو ممکن است اشتباه کنند. اگر تصمیم اشتباه باشد، آب هدر می‌رود یا زمینی که واقعاً تشنه بود خشک می‌ماند. برای همین نتیجه را همیشه بررسی می‌کنیم.\par
+\tasvir{G5-S02-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۰ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-T1}}\textbf{کدام‌یک فرق دارد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان سه تصویر به تو نشان می‌دهد. به هر سه نگاه کن و پیدا کن کدام‌یک با بقیه فرق دارد. بعد بنویس کدام‌یک بود و چرا فکر می‌کنی فرق دارد.\par
+\tasvir{G5-S02-E01}
+\lbl{maincol}{پرسش:}کدام تصویر فرق دارد و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یکی از سه تصویر را به‌عنوان متفاوت مشخص کند
+\item برای انتخابش یک دلیل مبتنی بر ویژگی مشترک دو تصویر دیگر بیاورد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ تصویر دوم فرق دارد، چون دوتای دیگر گربه‌اند و این یکی سگ است.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به هر سه تصویر با دقت نگاه کن، نه فقط سریع.
+\item دو تای آن‌ها چه ویژگی مشترکی دارند که سومی ندارد؟
+\item همان ویژگی مشترک را پیدا کن؛ تصویری که آن ویژگی را ندارد، فرق‌دار است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — همان ویژگی مشترک را پیدا کردی که تصویرخوان هم دنبالش بود.\ \textbar\ \textbf{نیمه:} تصویر را درست گفتی؛ حالا بگو چرا فکر می‌کنی فرق دارد.\ \textbar\ \textbf{نادرست:} دوباره نگاه کن: دو تصویر چه چیزی مشترک دارند؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ دلیلی نمی‌آورد، فقط شماره‌ی تصویر را می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ شماره درست است؛ حالا یک جمله هم بگو چرا آن یکی فرق دارد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر جواب‌ها متفاوت بود، از دو سه نفر بخواهید دلیلشان را بلند بگویند — تفاوت دلیل‌ها نشان می‌دهد افراد مختلف الگوهای مختلفی می‌بینند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-T2}}\textbf{چی می‌بینی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هوشینو یک تصویر از یک مزرعه و یک نمودار رطوبت خاک نشانت می‌دهد. با دقت نگاه کن و در دو جمله بنویس چه می‌بینی — یک جمله برای تصویر، یک جمله برای نمودار.\par
+\tasvir{G5-S02-E03}
+\lbl{maincol}{پرسش:}در تصویر و نمودار چه می‌بینی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دست‌کم یک ویژگی مشخص از تصویر مزرعه را توصیف کند
+\item دست‌کم یک ویژگی مشخص از نمودار رطوبت را توصیف کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ در تصویر، یک مزرعه‌ی بزرگ با ردیف‌های سبز می‌بینم. در نمودار، یک قسمت رطوبتش خیلی پایین‌تر از بقیه است.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اول فقط به خودِ تصویر مزرعه نگاه کن، بعد به نمودار.
+\item در نمودار، کدام قسمت با بقیه فرق دارد؟
+\item بنویس: «در تصویر … می‌بینم. در نمودار …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} توصیف دقیقی بود — دقیقاً همین کار را کارشناس واقعی هم پیش از تصمیم‌گیری انجام می‌دهد.\ \textbar\ \textbf{نیمه:} یکی از دو توصیف را نوشتی؛ حالا آن یکی دیگر را هم بنویس.\ \textbar\ \textbf{نادرست:} دوباره نگاه کن و بگو دقیقاً چه چیزی در تصویر و در نمودار می‌بینی.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط می‌نویسد «قشنگ است» یا «معمولی است» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ یک چیز مشخص بگو: مثلاً رنگ، شکل زمین یا جایی که رطوبت کم است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گام پایه‌ی گام بعدی است؛ اگر توصیف ضعیف بود، پیش از رفتن به گام حدس، یک مثال از توصیف خوب روی نمایشگر کلاسی نشان دهید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-T3}}\textbf{کدام قطعه تشنه است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا با همان نگاهت، حدس بزن کدام قطعه‌ی زمین بیشتر به آب نیاز دارد. شماره‌ی قطعه را بنویس. بعد هوشینو پاسخ درست را نشانت می‌دهد و خودت می‌سنجی حدست درست بود یا نه.\par
+\tasvir{G5-S02-E04}
+\lbl{maincol}{پرسش:}کدام قطعه بیشتر به آب نیاز دارد؟\par
+\lbl{anscol}{پاسخ معین:}قطعه‌ی ۳\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ قطعه‌ی ۳؛ قطعه ۳؛ ۳؛ 3؛ سوم؛ قطعه‌ی سوم}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به قسمتی از نمودار فکر کن که رطوبتش از همه کمتر بود.
+\item قطعه‌ای که رطوبت کمتر دارد، بیشتر تشنه است.
+\item در نموداری که دیدی، قطعه‌ی ۳ کمترین رطوبت را داشت.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست حدس زدی — رطوبت قطعه‌ی ۳ از همه کمتر بود.\ \textbar\ \textbf{نادرست:} این‌بار نه — قطعه‌ی ۳ بود، چون رطوبتش در نمودار از همه کمتر بود. حالا ببین کجای نمودار را نگاه نکرده بودی.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ قطعه‌ی الف یا پ را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ دوباره به نمودار نگاه کن: کدام قسمت پایین‌ترین رطوبت را داشت؟}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گام اولین جایی در سال است که دانش‌آموز حدسش را با پاسخ ابزار می‌سنجد، نه با پاسخ معلم — تأکید کنید تصویرخوان هم می‌تواند اشتباه کند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S02-E1}}\textbf{اگر اشتباه تصمیم بگیرد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارشناس کشاورزی دقیق و تصویرخوان، هر دو از روی الگو تصمیم می‌گیرند. اگر یکی از آن‌ها تصمیم را اشتباه بگیرد، چه اتفاقی می‌افتد؟ یک لحظه فکر کن؛ اگر با هم‌کلاسی کار می‌کنی، با او درباره‌اش حرف بزن.\par
+\tasvir{G5-S02-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} هر تصمیمی که از روی الگو گرفته شود، می‌تواند اشتباه هم باشد — به همین دلیل باید نتیجه را بررسی کرد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ نمونه‌های واقعی بیاورید: هدررفت آب یا خشک‌ماندن زمینی که واقعاً نیاز داشت. اگر وقت ماند، بپرسید تصویرخوان کِی ممکن است اشتباه کند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E2}}\textbf{گویه‌ی ۱ از ۶ — رغبت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم کارهایی را که در این شغل انجام می‌شود، انجام دهم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی I1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E3}}\textbf{گویه‌ی ۲ از ۶ — آگاهی از فرصت‌ها}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی K1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E4}}\textbf{گویه‌ی ۳ از ۶ — خودآگاهی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «فکر می‌کنم می‌توانم در این کار خوب باشم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی S1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E5}}\textbf{گویه‌ی ۴ از ۶ — ارزش اجتماعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «این شغل برای زندگی مردم مفید است.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی V1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E6}}\textbf{گویه‌ی ۵ از ۶ — تمایل به کاوش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم درباره‌ی این شغل بیشتر بدانم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی E1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E7}}\textbf{گویه‌ی ۶ از ۶ — پیوند با هوش مصنوعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «کارشناس کشاورزی دقیق» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «هوش مصنوعی به این شغل کمک می‌کند.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی A1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۸ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S02-E8}}\textbf{پرسشی که هنوز داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آخرین قسمت کارت شغل شماره‌ی ۱: یک پرسش بنویس که هنوز درباره‌ی شغل «کارشناس کشاورزی دقیق» داری. این بخش امتیاز ندارد؛ فقط کنجکاوی‌ات ثبت می‌شود.\par
+\tasvir{G5-S02-E08}
+\lbl{maincol}{پرسش:}یک پرسش که هنوز درباره‌ی این شغل داری چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پرسش واقعی (با علامت سؤال یا واژه‌ی پرسشی) بنویسد
+\item پرسش درباره‌ی همین شغل یا کار روزانه‌ی آن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ کارشناس‌ها از کجا می‌فهمند داده‌ی حسگر درست است؟}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کار روزانه‌ی این شغل فکر کن.
+\item چه چیزی از آن هنوز برایت عجیب یا ناشناخته است؟
+\item جمله‌ات را با «چطور…» یا «چرا…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پرسشت ثبت شد. کارت شغل شماره‌ی ۱ ذخیره شد و «نشان چشم الگویاب» را گرفتی.\ \textbar\ \textbf{نیمه:} این یک جمله است، نه پرسش؛ آن را به شکل پرسش بنویس.\ \textbar\ \textbf{نادرست:} یک پرسش درباره‌ی همین شغل بنویس — هر پرسشی که واقعاً داری.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ پرسش باز کارت شغل (Q)؛ امتیاز نمی‌گیرد. با ثبت آن، کارت و نشان ذخیره می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز دسته‌بندی سه‌تصویری‌اش و حدس مزرعه‌اش را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} دو تصویر شبیه به هم را پیدا کن.
+\item \textbf{سطح ۲:} سه تصویر را دسته‌بندی کن و دلیلش را بگو.
+\item \textbf{سطح ۳:} تصویری پیدا کن که تصویرخوان در دسته‌بندی‌اش اشتباه کند و بگو چرا.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}دسته‌بندی سه‌تصویری، حدس مزرعه، شش گویه‌ی کارنما و کارت شغل شماره‌ی ۱.\par
+\lbl{mescol}{تمرین خانه:}در خانه سه چیز پیدا کن که یک الگوی رنگی یا شکلی مشترک دارند و بگو الگویشان چیست.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G5-S02-R01}}\textbf{دیروز چه الگویی دیدی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یادت هست؟ جلسه‌ی پیش دنباله‌ی «۲ ، ۴ ، ۶ ، …» را دیدیم.\par\noindent \par\noindent پاسخ: عدد بعدی ۸ بود، چون هر بار دو تا اضافه می‌شد. الگوی رنگی «قرمز، آبی، قرمز، آبی» را هم دیدیم که قاعده‌اش «یکی در میان» بود.\par
+\tasvir{G5-S01-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R02}}\textbf{پرسش بزرگ چه بود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال چیست؟\par\noindent \par\noindent پاسخ: «ماشین چطور حدس می‌زند؟» — پرسشی که تا جلسه‌ی ۳۲ با ماست و کم‌کم پاسخش را می‌سازیم.\par
+\tasvir{G5-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R03}}\textbf{پاسخت کجا نگهداری می‌شود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پاسخ اولیه‌ی تو به پرسش بزرگ کجا نگهداری می‌شود و تا کِی؟\par\noindent \par\noindent پاسخ: در دست‌نوشته‌ای که عکسش را فرستادی. تا جلسه‌ی ۳۲ قفل می‌ماند و کسی، حتی خودت، عوضش نمی‌کند.\par
+\tasvir{G5-S01-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R04}}\textbf{نام مأموریت و نشان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت و نشان جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: مأموریت «کاوشگر الگو» و نشان «نشان قرارداد». یادت باشد: نشان را با تمام‌کردن مأموریت می‌گیری، نه با بهترین بودن.\par
+\tasvir{G5-S01-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R05}}\textbf{سه قرار کلاس}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه قرار کلاس چه بودند؟\par\noindent \par\noindent پاسخ: هدفون روی گوش، صدای آرام، نوبت را نگه می‌داریم.\par
+\tasvir{G5-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R06}}\textbf{چرا ابزار تازه نبود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا جلسه‌ی پیش ابزار تازه‌ای باز نشد؟\par\noindent \par\noindent پاسخ: چون جلسه‌ی اول فقط برای آشنایی با قرارهای کلاس و پرسش بزرگ بود. ابزارها از امروز یکی‌یکی باز می‌شوند.\par
+\tasvir{G5-S01-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R07}}\textbf{در آن بازی چه کار کردیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی «الگو یا شانس» چه کار می‌کردیم؟\par\noindent \par\noindent پاسخ: دنباله‌های عددی و شکلی می‌دیدیم و با یک واژه می‌گفتیم «الگو» (قاعده دارد) یا «شانس» (قاعده ندارد). هر دور کمی سخت‌تر می‌شد.\par
+\tasvir{G5-S01-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R08}}\textbf{چرا با دست نوشتیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا پاسخ اولیه را با دست نوشتیم و عکس گرفتیم، نه تایپ؟\par\noindent \par\noindent پاسخ: تا فکرِ همان لحظه ثبت بماند و بعداً بدون تغییر با پاسخ آخر سال مقایسه شود.\par
+\tasvir{G5-S01-P07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R09}}\textbf{حدست چقدر جور درآمد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک دنباله‌ی جالب از جلسه‌ی پیش: «۲ ، ۳ ، ۵ ، ۷».\par\noindent \par\noindent خیلی‌ها آن را شانس می‌گویند، ولی الگوست: این‌ها عددهایی‌اند که فقط بر ۱ و خودشان بخش می‌شوند. پس گاهی قاعده هست، فقط سخت‌تر پیدا می‌شود.\par
+\tasvir{G5-S01-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-R10}}\textbf{چرا با حدس‌زدن شروع کردیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا سال را با «حدس‌زدن عدد بعدی» شروع کردیم، نه با تعریف سخت هوش مصنوعی؟\par\noindent \par\noindent پاسخ: چون حدس‌زدن الگو ساده‌ترین راه بود که خودمان کاری را بکنیم که ماشین هم می‌کند.\par
+\tasvir{G5-S01-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G5-S02-E01}}\textbf{مثال حل‌شده: کدام فرق دارد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه تصویر: گربه، گربه، سگ.\par\noindent \par\noindent پاسخ: سگ فرق دارد، چون دو تای دیگر گربه‌اند.\par\noindent دلیل بهتر، با رنگ و شکل: «دو تای اول گوش مثلثی و صورت گرد دارند؛ سومی گوش آویزان دارد.» تصویرخوان هم همین‌طور دنبال ویژگی مشترک می‌گردد.\par
+\tasvir{G5-S02-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E02}}\textbf{چرا پیش از توضیح عدد می‌دهی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش از آشنایی با هر شغل، یک عدد از ۱ تا ۵ می‌دهی: چقدر می‌دانی این شغل چه می‌کند. آخر سال دوباره می‌پرسیم. اگر بعد از توضیح عدد می‌دادی، معلوم نمی‌شد چقدر یاد گرفته‌ای. پس صادقانه جواب بده؛ عدد کم هیچ اشکالی ندارد.\par
+\tasvir{G5-S02-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E03}}\textbf{مثال: اول توصیف، بعد حدس}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش از حدس، دقیق بگو چه می‌بینی. نمونه‌ی خوب:\par\noindent \par\noindent «در تصویر، مزرعه‌ای بزرگ با یک گوشه‌ی زرد می‌بینم.»\par\noindent «در نمودار، رطوبت یک قطعه خیلی کمتر از بقیه است.»\par\noindent \par\noindent هر جمله یک چیز دیدنی را می‌گوید، نه حدس را. کارشناس واقعی هم همین کار را می‌کند.\par
+\tasvir{G5-S02-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E04}}\textbf{مثال حل‌شده: قطعه‌ی تشنه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در این نقشه پنج قطعه آبی‌اند و رطوبتشان بین ۶۲ تا ۷۲ درصد است. قطعه‌ی «ث» قهوه‌ای است و فقط ۱۸٪ رطوبت دارد. قطعه‌ای که الگو را می‌شکند، همان است که آب لازم دارد. داده را بخوان، نه اینکه کدام زمین سبزتر به نظر می‌رسد.\par
+\tasvir{G5-S02-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E05}}\textbf{اگر تصمیم اشتباه باشد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارشناس کشاورزی دقیق و تصویرخوان هر دو از روی الگو تصمیم می‌گیرند. اگر تصمیمشان اشتباه باشد، ممکن است آب هدر برود یا زمینی که نیاز دارد خشک بماند.\par
+\tasvir{G5-S02-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E06}}\textbf{مثال: دسته‌بندی با دلیل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه تصویر گیاه داریم: دو تا برگ سبز پررنگ دارند، یکی برگ زرد.\par\noindent \par\noindent دسته‌بندی: دو گیاه سبز با هم، گیاه زرد جدا.\par\noindent دلیل: «چون برگ هر دو سبز پررنگ است.»\par\noindent \par\noindent دسته‌بندی بدون دلیل فقط حدس است؛ با دلیل، تحلیل می‌شود.\par
+\tasvir{G5-S02-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E07}}\textbf{وقتی تصویرخوان اشتباه می‌کند}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ فرض کن تصویرخوان عکس یک گربه‌ی نارنجی و یک پرتقال را شبیه دانست. دنبال چه الگویی بود؟ رنگ نارنجی و شکل گرد. پس خراب نیست؛ الگوی دیگری دیده است. همیشه بپرس: «او چه الگویی دید که من ندیدم؟»\par
+\tasvir{G5-S02-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E08}}\textbf{کارت شغل چطور پر می‌شود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پایان امروز، کارت شغل شماره‌ی ۱ را پر می‌کنی. شش جمله می‌بینی و هر کدام را جدا با یک عدد از ۱ تا ۵ جواب می‌دهی. مثال: «این شغل برای زندگی مردم مفید است.» \ensuremath{\leftarrow} ۵. آخر هم یک پرسش می‌نویسی که هنوز درباره‌ی این شغل داری. هیچ عددی غلط نیست.\par
+\tasvir{G5-S02-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E09}}\textbf{نشان امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تمام‌کردن مأموریت «شکارچی الگو»، نشان «چشم الگویاب» در پروفایلت ثبت می‌شود. نشان با تمام‌کردن مأموریت گرفته می‌شود، نه با بهترین دسته‌بندی.\par
+\tasvir{G5-S02-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S02-E10}}\textbf{مثال: یک الگو در خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه بالش روی مبل: آبی، آبی، قرمز. الگو: دو تای هم‌رنگ کنار هم‌اند و سومی فرق دارد. یا سه کاشی که هر کدام یک گل وسطش دارد: الگوی مشترکشان شکل گل است. تو هم سه چیز با یک رنگ یا شکل مشترک پیدا کن و الگویشان را بگو.\par
+\tasvir{G5-S02-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۴ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G5-S02-P01}}\textbf{دنبال چه بود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان امروز سه تصویر می‌دید. دنبال چه چیزی در آن‌ها می‌گشت؟\par
+\begin{itemize}
+\item الف) رنگ مورد علاقه‌اش
+\item ب) شباهت و الگوی مشترک
+\item پ) اسم تصویر
+\item ت) اندازه‌ی فایل
+\end{itemize}
+\tasvir{G5-S02-P01}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ شباهت و الگوی مشترک؛ شباهت}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری که تصویرخوان انجام می‌دهد فکر کن.
+\item او دنبال یک ویژگی است که بین تصویرها مشترک باشد.
+\item همان کلمه‌ای که چند بار امروز شنیدی: شباهت و الگوی مشترک.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — تصویرخوان دنبال شباهت و الگوی مشترک می‌گردد.\ \textbar\ \textbf{نادرست:} نه؛ تصویرخوان دنبال شباهت و الگوی مشترک بین تصویرها می‌گردد.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ رنگ مورد علاقه ربطی به کار تصویرخوان ندارد؛ او دنبال الگوی مشترک است.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S02-P02}}}\par
+\lbl{stepcol}{\en{G5-S02-P02-1}}\textbf{پیش یا بعد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش‌سنجه‌ی «می‌دانم در این شغل چه کاری انجام می‌شود» را پیش از توضیح درباره‌ی شغل کشاورزی دقیق ثبت کردیم یا بعد از آن؟\par
+\lbl{maincol}{پرسش:}پیش یا بعد؟\par
+\lbl{anscol}{پاسخ معین:}پیش از توضیح\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ پیش از توضیح؛ پیش؛ قبل؛ قبل از توضیح؛ پیش از درس}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به اول جلسه فکر کن.
+\item عدد را قبل از شنیدن توضیح دادی یا بعدش؟
+\item پیش‌سنجه، پیش از درس پرسیده شد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — پیش از توضیح.\ \textbar\ \textbf{نادرست:} به لحظه‌ی ورودت به جلسه فکر کن؛ آن عدد کِی پرسیده شد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S02-P02}}}\par
+\lbl{stepcol}{\en{G5-S02-P02-2}}\textbf{چرا پیش از توضیح؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا آن پیش‌سنجه را پیش از توضیح ثبت کردیم؟\par
+\lbl{maincol}{پرسش:}دلیلش چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند تا بعداً بشود رشد آشنایی را اندازه گرفت یا با پاسخ بعدی مقایسه کرد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ تا بعداً بفهمیم چقدر با این شغل آشناتر شده‌ایم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آخر سال دوباره همین را می‌پرسیم.
+\item اگر بعد از توضیح می‌پرسیدیم، چه چیزی را نمی‌فهمیدیم؟
+\item برای اندازه گرفتن رشد آشنایی…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — تا بشود رشد آشنایی را اندازه گرفت.\ \textbar\ \textbf{نیمه:} به مقایسه اشاره کردی؛ بگو چه چیزی مقایسه می‌شود.\ \textbar\ \textbf{نادرست:} فکر کن چرا عدد قبل و بعد با هم مقایسه می‌شوند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G5-S02-P03}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «کارشناس کشاورزی دقیق فقط با چشم و بدون داده تصمیم می‌گیرد که کجا آب بدهد.»\par
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به داده‌هایی که کارشناس استفاده می‌کند فکر کن.
+\item آیا فقط با چشم کار می‌کند؟
+\item او از حسگر خاک، تصویر هوایی و پیش‌بینی هوا هم استفاده می‌کند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — او از داده‌ی حسگر خاک، تصویر هوایی و پیش‌بینی هوا استفاده می‌کند.\ \textbar\ \textbf{نادرست:} نه؛ او فقط با چشم کار نمی‌کند — از داده‌ی حسگر خاک، تصویر هوایی و پیش‌بینی هوا هم استفاده می‌کند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G5-S02-P04}}\textbf{چه شباهتی دارند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارشناس کشاورزی دقیق چه شباهتی به تصویرخوان دارد؟\par
+\lbl{maincol}{پرسش:}به نظرت چه شباهتی دارند؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند هر دو دنبال الگو در داده یا تصویر می‌گردند
+\item اشاره کند این الگو برای گرفتن یک تصمیم استفاده می‌شود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ هر دو دنبال الگو در داده یا تصویر می‌گردند تا تصمیم بگیرند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری که هر دو امروز انجام دادند فکر کن.
+\item هر دو دنبال چه چیزی در داده یا تصویر می‌گشتند؟
+\item هر دو الگو پیدا می‌کنند تا یک تصمیم بگیرند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — هر دو دنبال الگو می‌گردند تا تصمیم بگیرند.\ \textbar\ \textbf{نیمه:} خوب شروع کردی؛ حالا بگو این شباهت به چه دردی می‌خورد.\ \textbar\ \textbf{نادرست:} به کاری که تصویرخوان با سه تصویر و کارشناس با داده‌ی مزرعه انجام داد فکر کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S02-P05}}}\par
+\lbl{stepcol}{\en{G5-S02-P05-1}}\textbf{کدام فرق دارد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه تصویر داری: گربه، گربه، سگ.\par\noindent \par\noindent کدام‌یک با بقیه فرق دارد؟\par
+\lbl{maincol}{پرسش:}نام همان تصویر را بنویس.\par
+\lbl{anscol}{پاسخ معین:}سگ\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ سگ؛ تصویر سوم؛ سومی؛ سوم}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item دو تا از یک جنس‌اند.
+\item کدام دو تا شبیه هم‌اند؟
+\item آن یکی که شبیه بقیه نیست…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — سگ.\ \textbar\ \textbf{نادرست:} دو تصویر شبیه هم را پیدا کن؛ سومی فرق دارد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S02-P05}}}\par
+\lbl{stepcol}{\en{G5-S02-P05-2}}\textbf{چرا فرق دارد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ گربه، گربه، سگ — چرا سگ با بقیه فرق دارد؟ دلیلت را با یک ویژگی مشترکِ دو تای دیگر بگو.\par
+\lbl{maincol}{پرسش:}دلیلت چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک ویژگی مشترک دو تصویر دیگر را نام ببرد
+\item بگوید سگ آن ویژگی را ندارد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون دو تای دیگر گربه‌اند و گوش مثلثی دارند، ولی سگ گوش آویزان دارد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item دو تای دیگر چه چیزی مشترک دارند؟
+\item به شکل گوش یا صورت فکر کن.
+\item «دو تای دیگر … دارند، ولی سگ ندارد.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دلیلت بر پایه‌ی یک ویژگی مشترک است — درست مثل تصویرخوان.\ \textbar\ \textbf{نیمه:} دلیل آوردی؛ حالا بگو آن ویژگی مشترک دقیقاً چیست.\ \textbar\ \textbf{نادرست:} بگو دو تصویر دیگر در چه چیزی شبیه‌اند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S02-P06}}}\par
+\lbl{stepcol}{\en{G5-S02-P06-1}}\textbf{دسته‌بندی با رنگ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چهار مورد داری: مربع قرمز، دایره‌ی قرمز، مربع آبی، دایره‌ی آبی.\par\noindent \par\noindent اگر بر پایه‌ی رنگ دو دسته کنی، «مربع قرمز» با کدام مورد هم‌دسته است؟\par
+\tasvir{G5-S02-P06}
+\lbl{maincol}{پرسش:}هم‌دسته‌ی مربع قرمز کدام است؟\par
+\lbl{anscol}{پاسخ معین:}دایره‌ی قرمز\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ دایره قرمز؛ دایره‌ی قرمز}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فقط به رنگ نگاه کن، نه شکل.
+\item کدام مورد دیگر هم قرمز است؟
+\item دایره‌ی …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — دایره‌ی قرمز؛ چون هر دو قرمزند.\ \textbar\ \textbf{نادرست:} فقط رنگ را در نظر بگیر.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S02-P06}}}\par
+\lbl{stepcol}{\en{G5-S02-P06-2}}\textbf{دسته‌بندی با شکل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ همان چهار مورد: مربع قرمز، دایره‌ی قرمز، مربع آبی، دایره‌ی آبی.\par\noindent \par\noindent حالا اگر بر پایه‌ی شکل دو دسته کنی، «مربع قرمز» با کدام مورد هم‌دسته است؟\par
+\tasvir{G5-S02-P06}
+\lbl{maincol}{پرسش:}هم‌دسته‌ی مربع قرمز کدام است؟\par
+\lbl{anscol}{پاسخ معین:}مربع آبی\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ مربع آبی}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item این بار رنگ را فراموش کن.
+\item کدام مورد دیگر هم مربع است؟
+\item مربع …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — مربع آبی. یک گروه چیز را می‌شود با ویژگی‌های مختلف دسته کرد.\ \textbar\ \textbf{نادرست:} فقط شکل را در نظر بگیر.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G5-S02-P07}}\textbf{اگر تصمیم اشتباه باشد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ اگر کارشناس کشاورزی دقیق تصمیم را اشتباه بگیرد و به قطعه‌ی اشتباه آب بدهد، چه اتفاقی می‌افتد؟\par
+\lbl{maincol}{پرسش:}چه اتفاقی می‌افتد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به هدررفت آب یا خشک‌ماندن قطعه‌ی نیازمند اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ به قطعه‌ای که نیاز نداشت آب می‌دهد و آب هدر می‌رود، و قطعه‌ای که تشنه بود خشک می‌ماند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن آب محدود است.
+\item اگر به جای اشتباه آب برود، جای درست چه می‌شود؟
+\item یک قطعه آب اضافی می‌گیرد و یک قطعه خشک می‌ماند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — هدررفت آب و خشک‌ماندن زمین نیازمند، هر دو پیامدهای یک تصمیم اشتباه‌اند.\ \textbar\ \textbf{نیمه:} نزدیکی؛ بگو دقیقاً چه چیزی هدر می‌رود یا خشک می‌ماند.\ \textbar\ \textbf{نادرست:} فکر کن: اگر آب به قطعه‌ی اشتباه برود، قطعه‌ی درست چه سرنوشتی پیدا می‌کند؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G5-S02-P08}}\textbf{تو موافق نیستی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان دو تصویر را شبیه هم دید، اما تو فکر می‌کنی شبیه نیستند. چه کار می‌کنی؟\par
+\tasvir{G5-S02-P08}
+\lbl{maincol}{پرسش:}چه کار می‌کنی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند به‌دنبال الگویی می‌گردد که تصویرخوان دیده و او ندیده
+\item تصویرخوان را صرفاً به‌خاطر تفاوت نظر «خراب» نداند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ به دنبال الگویی می‌گردم که او دیده و من ندیده‌ام؛ فقط چون حس من فرق دارد، تصویرخوان را خراب نمی‌دانم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن شاید او چیزی دیده که تو ندیدی.
+\item به‌جای گفتن «اشتباه کرد»، بپرس «دنبال چه بود؟».
+\item بنویس: «به‌دنبال الگویی می‌گردم که او دیده و من ندیده‌ام.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً همین نگاه — کنجکاوی به‌جای قضاوت — کاری است که امروز تمرین کردیم.\ \textbar\ \textbf{نیمه:} شروع خوبی بود؛ حالا بگو دنبال چه الگویی می‌گردی.\ \textbar\ \textbf{نادرست:} به‌جای گفتن «اشتباه کرد»، فکر کن او دنبال چه الگویی بوده.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌نویسد «تصویرخوان خراب است» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ شاید فقط الگوی دیگری دیده؛ دنبال آن الگو بگرد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S02-P09}}}\par
+\lbl{stepcol}{\en{G5-S02-P09-1}}\textbf{تصویر گمراه‌کننده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویری را توصیف کن که فکر می‌کنی تصویرخوان در دسته‌بندی‌اش اشتباه می‌کند.\par
+\lbl{maincol}{پرسش:}آن تصویر را توصیف کن.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item تصویری قابل‌تصور با دست‌کم یک جزئیات مشخص (رنگ، شکل، نور یا زاویه) توصیف کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ عکس یک پرتقال کنار یک توپ نارنجی.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به دو چیز فکر کن که رنگ یا شکلشان شبیه است.
+\item ولی معنایشان کاملاً فرق دارد.
+\item مثل یک چیز خوردنی و یک اسباب‌بازی هم‌رنگ.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تصویرت روشن و قابل‌تصور است.\ \textbar\ \textbf{نیمه:} تصویر را گفتی؛ با یکی دو جزئیات دیگر دقیق‌ترش کن.\ \textbar\ \textbf{نادرست:} یک تصویر مشخص با رنگ و شکلش بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S02-P09}}}\par
+\lbl{stepcol}{\en{G5-S02-P09-2}}\textbf{چرا اشتباه می‌کند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا فکر می‌کنی تصویرخوان در دسته‌بندی همان تصویر اشتباه می‌کند؟\par
+\lbl{maincol}{پرسش:}دلیلت چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دلیلی مبتنی بر یک ویژگی گمراه‌کننده مثل رنگ، شکل، زاویه یا نور بیاورد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون هر دو نارنجی و گردند و تصویرخوان معنا را نمی‌فهمد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item تصویرخوان به چه چیزهایی نگاه می‌کند؟
+\item رنگ، لبه و شکل.
+\item کدام‌یک از این‌ها در تصویرت گمراه‌کننده است؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دلیلت به همان چیزی اشاره دارد که تصویرخوان می‌بیند.\ \textbar\ \textbf{نیمه:} دلیلت درست است؛ بگو دقیقاً کدام ویژگی (رنگ، شکل، نور) گولش می‌زند.\ \textbar\ \textbf{نادرست:} بگو کدام ویژگی تصویر، تصویرخوان را به اشتباه می‌اندازد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ پیش‌بینی}}\par
+\lbl{stepcol}{\en{G5-S02-P10}}\textbf{اگر داده کم باشد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ به نظرت اگر کارشناس کشاورزی دقیق داده‌ی کافی نداشته باشد (مثلاً نقشه‌ی رطوبت ناقص باشد)، چه اتفاقی برای تصمیمش می‌افتد؟\par
+\tasvir{G5-S02-P10}
+\lbl{maincol}{پرسش:}چه اتفاقی برای تصمیمش می‌افتد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند تصمیم می‌تواند نادرست یا حدسی شود
+\item این را به کمبود داده مرتبط کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ اگر داده کم باشد، تصمیمش بیشتر شبیه حدس می‌شود و ممکن است اشتباه کند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن با داده‌ی کمتر چقدر مطمئن می‌شود بود.
+\item با نقشه‌ی ناقص، تصمیم بیشتر شبیه چه چیزی می‌شود؟
+\item با داده‌ی کم، تصمیم بیشتر شبیه حدس می‌شود، نه دانستن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — با داده‌ی کم، تصمیم بیشتر شبیه حدس می‌شود.\ \textbar\ \textbf{نیمه:} نزدیکی؛ بگو این به کمبود داده چه ربطی دارد.\ \textbar\ \textbf{نادرست:} فکر کن: با داده‌ی کمتر، چقدر می‌شود به یک تصمیم مطمئن بود؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۳ — وقتی با اطمینان اشتباه می‌گوید}
+\begin{jalasebox}{۳}{وقتی با اطمینان اشتباه می‌گوید}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}کشف اینکه لحن مطمئن، نشانه‌ی درست بودن نیست.\par
+\lbl{maincol}{مفاهیم:}اطمینان، لحن، خطا، راستی‌آزمایی\par
+\lbl{maincol}{مأموریت:}کارآگاه اطمینان \textbar\ \textbf{نشان:} نشان کارآگاه لحن\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ زبان فارسی — لحن جمله:}تشخیص لحن مطمئن در یک جمله، جدا از درستی محتوای آن. هر دانش‌آموز پنج جمله را از نظر لحن و درستی جدا می‌کند.\par
+\lbl{tamcol}{ابزار امروز — دستیار گفت‌وگو:}با لحنی کاملاً مطمئن پاسخ می‌دهد، چه پاسخش درست باشد چه نادرست. کشف امروز: لحن مطمئن نشانه‌ی درست بودن نیست؛ محتوا را باید جداگانه سنجید.\par
+\lbl{maincol}{مواد:}تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}جدول پنج‌جمله‌ای لحن و درستی ثبت‌شده، به‌همراه نشان کارآگاه لحن.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ این کشف پایه‌ی کل فصل است: تأکید کنید ماشین هم مثل انسان می‌تواند با اطمینان کامل اشتباه بگوید.}}\par
+\vspace{4pt}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۱۵ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A1}}\textbf{مرور: الگو در تصویر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش دیدیم تصویرخوان معنا را نمی‌فهمد؛ رنگ و لبه و شکل را مقایسه می‌کند. کارشناس کشاورزی دقیق هم در داده دنبال الگو می‌گشت. این نکته‌ها را مرور کن؛ بعد کارت‌های مرور را می‌بینی.\par
+\begin{itemize}
+\item تصویرخوان: دنبال الگو و شباهت مشترک
+\item کشاورزی دقیق: حسگر خاک، تصویر هوایی، پیش‌بینی هوا
+\item تصمیم اشتباه: آب هدر می‌رود یا زمین تشنه می‌ماند
+\item کارت شغل ۱ تا جلسه‌ی ۳۱ قابل تغییر است
+\end{itemize}
+\tasvir{G5-S03-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه کارت‌های مرور را با پاسخ نشان می‌دهد. در کلاس حضوری یک دانش‌آموز می‌تواند پاسخ کارت اول را پیش از دیدنش بلند بگوید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A2}}\textbf{ابزار امروز: دستیار گفت‌وگو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دستیار گفت‌وگو با تو حرف می‌زند و به پرسش‌هایت پاسخ می‌دهد. او مقدار خیلی زیادی نوشته دیده و از روی آن‌ها حدس می‌زند واژه‌ی بعدی چه باشد. مهم‌ترین نکته‌ی امروز در پرسش سوم است: کجا اشتباه می‌کند؟\par
+\tasvir{G5-S03-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A3}}\textbf{مثال: مطمئن ولی غلط}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ فرض کن کسی با صدایی محکم و بدون هیچ تردیدی بگوید: «ماه از زمین بزرگ‌تر است!»\par\noindent \par\noindent درست است؟ نه. ماه خیلی کوچک‌تر است؛ پهنایش حدود یک‌چهارمِ زمین. لحن محکمش، جمله‌ی غلط را درست نکرد.\par
+\begin{itemize}
+\item لحن: کاملاً مطمئن
+\item محتوا: نادرست
+\end{itemize}
+\tasvir{G5-S03-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری این جمله را خودتان با لحنی کاملاً مطمئن بگویید و بعد این صفحه را نشان دهید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A4}}\textbf{لحن و درستی، دو چیز جدا}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر جمله را از دو سو بسنج. لحن یعنی «چطور گفته شد»: مطمئن یا نامطمئن. درستی یعنی «با واقعیت جور است یا نه». این دو به هم ربطی ندارند. خطرناک‌ترین خانه، جمله‌ی مطمئنِ نادرست است؛ چون راحت باورش می‌کنیم.\par
+\tasvir{G5-S03-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A5}}\textbf{چرا همیشه مطمئن حرف می‌زند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دستیار گفت‌وگو جمله را از روی واژه‌هایی می‌سازد که معمولاً پشت هم می‌آیند. برای همین همیشه روان و مطمئن حرف می‌زند؛ چه پاسخ درست باشد چه نادرست. خراب نیست و دروغ هم نمی‌گوید؛ قصد گول زدن ندارد. فقط بخشی جدا برای گفتن «مطمئن نیستم» ندارد، مگر خودت از او بخواهی.\par
+\tasvir{G5-S03-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-A6}}\textbf{محتوا را چطور بسنجیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارآگاه لحن این‌طور کار می‌کند: لحن را کنار می‌گذارد، از خودش می‌پرسد «من درباره‌اش چه می‌دانم؟» و بعد با یک منبع معتبر مثل کتاب درسی یا یک بزرگ‌تر آگاه بررسی می‌کند. هدف بی‌اعتمادی به همه‌چیز نیست؛ هر جمله را جدا می‌سنجیم، حتی جمله‌های درست را.\par
+\tasvir{G5-S03-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۵ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۲ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S03-T1}}\textbf{پنج پرسش از دستیار گفت‌وگو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با دستیار گفت‌وگو صحبت کن و پنج پرسش بپرس — بعضی جدی، بعضی عجیب و خنده‌دار. هر پرسش و پاسخی که گرفتی را همین‌جا برای هوشینو بنویس.\par
+\tasvir{G5-S03-E02}
+\lbl{maincol}{پرسش:}پنج پرسشت و پاسخ‌های دستیار گفت‌وگو را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دقیقاً پنج پرسش و پنج پاسخ آورده باشد
+\item دست‌کم یک پرسش، غیرمعمول یا عجیب باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ ۱) پایتخت ایران کجاست؟ تهران. ۲) اگر ماهی روی درخت زندگی کند چه می‌شود؟ (پاسخ عجیب و قاطع دستیار) …}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item یک پرسش جدی و یک پرسش خیلی عجیب را کنار هم امتحان کن.
+\item پرسش‌هایت می‌توانند درباره‌ی هر چیزی باشند؛ مهم این است که پاسخش را دقیق بنویسی.
+\item مثلاً: «اگر همه‌ی ابرها قرمز شوند چه می‌شود؟» و پاسخ دستیار را کامل کپی کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پنج پرسش و پاسخ ثبت شد. حالا برای هرکدام لحن و درستی را بررسی می‌کنیم.\ \textbar\ \textbf{نیمه:} خوب شروع کردی. یکی دو پرسش دیگر هم بپرس تا به پنج تا برسیم.\ \textbar\ \textbf{نادرست:} دوباره با دستیار گفت‌وگو کن و این بار هر پرسش و پاسخش را کامل بنویس.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط پرسش‌ها را می‌نویسد، پاسخ‌ها را نه \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ پاسخ دستیار را هم زیر هر پرسش بنویس؛ همین پاسخ‌ها امروز موضوع کارمان است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر کلاس دستیار گفت‌وگوی مشترک دارد، به دانش‌آموزان یادآوری کنید پرسش‌های عجیب هم مجازند و حتی بهتر است — رفتار ابزار در پاسخ‌های عجیب بهتر دیده می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۳ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S03-T2}}\textbf{لحن و درستی، دو ستون جدا}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای هر پاسخی که از دستیار گفت‌وگو گرفتی، دو چیز جدا بنویس: لحنش مطمئن بود یا نامطمئن؟ و به نظرت محتوایش درست است یا نه؟ بعد با کمک راهنما درستی واقعی را بررسی کن.\par
+\tasvir{G5-S03-E03}
+\lbl{maincol}{پرسش:}برای پاسخ‌هایت، لحن و حدس درستی را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item برای هر پاسخ، لحن را جدا از حدس درستی بنویسد
+\item دست‌کم برای پنج پاسخ این کار را انجام دهد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ ۱) لحن: مطمئن — حدس من: درست. ۲) لحن: مطمئن — حدس من: نادرست. …}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item لحن یعنی چطور گفته شده؛ درستی یعنی آیا واقعاً راست است.
+\item یک پاسخ می‌تواند لحن مطمئن داشته باشد ولی محتوایش نادرست باشد.
+\item برای هر پاسخ بنویس: «لحن: … — حدس من: …» به‌طور جدا.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — لحن و درستی را جدا از هم دیدی. این همان مهارت امروز است.\ \textbar\ \textbf{نیمه:} شروع خوبی بود؛ مطمئن شو لحن و حدس درستی را در دو خط جدا نوشته‌ای.\ \textbar\ \textbf{نادرست:} دوباره امتحان کن: اول فقط لحن را بنویس، بعد در خط بعدی فقط حدس درستی را.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ لحن مطمئن را با درست‌بودن یکی می‌گیرد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ لحن مطمئن فقط یعنی گوینده مطمئن به نظر می‌رسد؛ درستی را باید جدا بررسی کنیم.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ دور کلاس بگردید و کمک کنید درستی واقعی هر پاسخ را با هم راستی‌آزمایی کنند — با یک منبع ساده مثل کتاب یا نمایشگر کلاسی.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S03-T3}}\textbf{بازی: مطمئن ولی غلط}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دستیار گفت‌وگو ده جمله می‌گوید، همه با لحنی مطمئن. بعضی‌هایشان نادرستند. فقط با نگاه‌کردن به محتوا — نه به لحن — حدس بزن کدام‌ها نادرستند.\par
+\tasvir{G5-S03-E04}
+\lbl{maincol}{پرسش:}کدام جمله‌ها نادرستند، و چطور از روی محتوا تشخیص دادی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دست‌کم یک جمله‌ی نادرست را نام ببرد یا نقل کند
+\item دلیلش را بر پایه‌ی محتوا بیاورد، نه بر پایه‌ی لحن
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ جمله‌ی سوم غلط بود؛ گفت که همه‌ی پرندگان می‌توانند پرواز کنند، ولی شترمرغ پرواز نمی‌کند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item همه‌ی جمله‌ها یک لحن دارند؛ پس لحن اینجا کمکت نمی‌کند.
+\item هر جمله را جدا با چیزی که می‌دانی مقایسه کن.
+\item دنبال جمله‌ای بگرد که با دانسته‌ی خودت درباره‌ی دنیا جور در نمی‌آید.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست تشخیص دادی — و مهم‌تر، دلیلت از محتوا آمد نه از لحن.\ \textbar\ \textbf{نیمه:} خوب فکر کردی؛ فقط مطمئن شو دلیلت به محتوای جمله برمی‌گردد، نه به لحنش.\ \textbar\ \textbf{نادرست:} یک‌بار دیگر هر جمله را جدا بخوان و از خودت بپرس: این را از جای دیگری می‌دانم که درست نیست؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌گوید هیچ‌کدام نادرست نیستند چون همه مطمئن گفته شدند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ دقیقاً همین اشتباه رایج است! لحن مطمئن هیچ ضمانتی برای درستی نمی‌دهد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر دستیار گفت‌وگوی زنده در دسترس نیست، از فهرست آماده‌ی ده جمله در پروفایل معلم استفاده کنید؛ جمله‌های نادرست را از پیش علامت بزنید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۷ دقیقه \textbar\ فردی \textbar\ ضبط صدا}
+\lbl{stepcol}{\en{G5-S03-E1}}\textbf{چرا فقط به لحن اعتماد نکنیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ میکروفون را روشن کن و با جمله‌ی کامل بگو: چرا نباید فقط به لحن مطمئن یک پاسخ اعتماد کنیم؟\par
+\tasvir{G5-S03-E06}
+\lbl{maincol}{پرسش:}صدایت را ضبط کن و بفرست.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید لحن مطمئن ضمانتی برای درستی نیست
+\item به یک نمونه یا لحظه‌ی امروز اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون توی بازی مطمئن ولی غلط دیدم دستیار با لحن مطمئن هم چیز غلط می‌گفت. باید محتوا را جدا بررسی کنیم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی مطمئن ولی غلط فکر کن.
+\item کدام جمله‌ی امروز با لحن مطمئن گفته شد ولی غلط بود؟
+\item بگو: «چون … با لحن مطمئن گفت ولی … غلط بود، پس باید محتوا را جدا بررسی کنیم.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ضبط شد. همین جمله، خلاصه‌ی کشف امروز ماست.\ \textbar\ \textbf{نیمه:} خوب گفتی. یک نمونه‌ی امروز هم اضافه کن تا کامل شود.\ \textbar\ \textbf{نادرست:} صدایت واضح نبود یا نمونه نداشت. هدفون و میکروفون را چک کن و دوباره بگو.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط می‌گوید «چون ممکن است اشتباه کند» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ درست است، ولی یک مثال از امروز هم بیاور تا کامل شود.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ برای بچه‌های خجالتی اجازه بدهید این یکی را تایپ کنند؛ اصل کار، بیان یک جمله‌ی کامل است، نه لزوماً صدا.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۳ دقیقه \textbar\ فردی \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S03-E2}}\textbf{مأموریت امروز تمام شد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت امروز «کارآگاه اطمینان» بود و تو تمامش کردی. «نشان کارآگاه لحن» در پروفایلت ثبت شد. یادت بماند: ماشین هم مثل آدم می‌تواند با اطمینان کامل اشتباه بگوید.\par
+\begin{itemize}
+\item جدول پنج‌جمله‌ای لحن و درستی \ensuremath{\checkmark}
+\item نشان کارآگاه لحن \ensuremath{\checkmark}
+\end{itemize}
+\tasvir{G5-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تا جلسه‌ی بعد!}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ جمله‌ی «ماشین هم می‌تواند با اطمینان کامل اشتباه بگوید» را بلند بخوانید؛ این کشف، پایه‌ی فصل است و باید در ذهن بماند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز پنج پرسش و پاسخ‌های دستیار گفت‌وگو را ذخیره می‌کند، همراه با نشانه‌ی لحن و نشانه‌ی درستی برای هرکدام.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک جمله‌ی مطمئنِ نادرست پیدا کن.
+\item \textbf{سطح ۲:} سه جمله را از نظر لحن و درستی جدا کن.
+\item \textbf{سطح ۳:} خودت یک جمله‌ی نادرست با لحن کاملاً مطمئن بساز که دوستت را گول بزند.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}جدول پنج‌جمله‌ای لحن و درستی، و نشان کارآگاه لحن.\par
+\lbl{mescol}{تمرین خانه:}از یکی از اعضای خانواده بخواه با لحن کاملاً مطمئن یک جمله‌ی نادرست بگوید و بگو چرا نباید فقط با لحن قضاوت کرد.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G5-S03-R01}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوانی که جلسه‌ی پیش با آن کار کردی، در تصویرها دنبال چه می‌گشت؟\par\noindent \par\noindent پاسخ: دنبال الگو و شباهت مشترک؛ یعنی رنگ، لبه و شکل‌هایی که در چند تصویر تکرار می‌شوند.\par
+\tasvir{G5-S02-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R02}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نخستین کارت شغل سال درباره‌ی چه شغلی بود؟\par\noindent \par\noindent پاسخ: کارشناس کشاورزی دقیق؛ کسی که با داده تصمیم می‌گیرد کجای مزرعه آب بدهد.\par
+\tasvir{G5-S02-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R03}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ عددِ «می‌دانم در این شغل چه کاری انجام می‌شود» را کِی ثبت کردی؟\par\noindent \par\noindent پاسخ: پیش از هر توضیحی درباره‌ی شغل؛ تا بعداً بشود فهمید چقدر با آن آشنا شده‌ای.\par
+\tasvir{G5-S02-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R04}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تمام‌کردن مأموریت جلسه‌ی پیش، چه نشانی گرفتی؟\par\noindent \par\noindent پاسخ: «نشان چشم الگویاب» — برای تمام‌کردن مأموریت «شکارچی الگو».\par
+\tasvir{G5-S02-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R05}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارشناس کشاورزی دقیق از چه داده‌هایی برای تصمیم استفاده می‌کند؟\par\noindent \par\noindent پاسخ: داده‌ی حسگر خاک، تصویر هوایی مزرعه و پیش‌بینی هوا.\par
+\tasvir{G5-S02-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R06}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گاهی تصویرخوان دو چیز را شبیه می‌بیند که برای ما اصلاً شبیه نیستند؟\par\noindent \par\noindent پاسخ: چون او هم دنبال الگوست، ولی الگوی رنگ و شکل؛ مثل پرتقال و توپ نارنجی که هر دو گرد و نارنجی‌اند.\par
+\tasvir{G5-S02-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R07}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارت شغل شماره‌ی ۱ تا کِی قابل تغییر است؟\par\noindent \par\noindent پاسخ: تا جلسه‌ی ۳۱؛ تاریخ هر تغییر هم ثبت می‌شود.\par
+\tasvir{G5-S02-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R08}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ اگر کارشناس کشاورزی دقیق تصمیم اشتباه بگیرد، چه می‌شود؟\par\noindent \par\noindent پاسخ: آب هدر می‌رود، یا زمینی که واقعاً تشنه بود خشک می‌ماند.\par
+\tasvir{G5-S02-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R09}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا شش گویه‌ی کارت شغل برای هر ده شغل امسال یکسان است؟\par\noindent \par\noindent پاسخ: تا بشود شغل‌ها را با هم مقایسه کرد و دید به کدام بیشتر علاقه داری.\par
+\tasvir{G5-S02-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-R10}}\textbf{یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دسته‌بندی خوب چه دارد؟\par\noindent \par\noindent پاسخ: یک دلیل بر پایه‌ی ویژگی مشترک. مثلاً: «این دو گیاه را کنار هم گذاشتم، چون برگ هر دو سبز پررنگ است.» دسته‌بندی بدون دلیل فقط حدس است.\par
+\tasvir{G5-S02-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G5-S03-E01}}\textbf{مثال حل‌شده: ماه و زمین}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله: «ماه از زمین بزرگ‌تر است.» با لحنی خیلی قاطع.\par\noindent \par\noindent پاسخ خوب: «نادرست است؛ ماه از زمین کوچک‌تر است. لحن قاطع، جمله را درست نمی‌کند.» این پاسخ هر دو چیز را جدا گفته: درستی و لحن.\par
+\tasvir{G5-S03-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E02}}\textbf{مثال: پرسش جدی، پرسش عجیب}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در فعالیت امروز از دستیار گفت‌وگو پنج پرسش می‌پرسی. نمونه:\par\noindent \par\noindent جدی: «پایتخت ایران کجاست؟» \ensuremath{\leftarrow} «تهران.»\par\noindent عجیب: «اگر ماهی روی درخت زندگی کند چه می‌شود؟» \ensuremath{\leftarrow} پاسخی روان و مطمئن، با اینکه چنین چیزی وجود ندارد.\par\noindent \par\noindent پرسش عجیب هم چیز یاد می‌دهد: ببین باز هم مطمئن حرف می‌زند؟\par
+\tasvir{G5-S03-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E03}}\textbf{مثال: دو ستون جدا}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای هر پاسخ دو چیز جدا می‌نویسیم:\par
+\begin{itemize}
+\item پاسخ: «زرافه بلندترین حیوان خشکی است.»
+\item ستون لحن: مطمئن
+\item ستون درستی: درست (با کتاب علوم بررسی شد)
+\item هیچ‌وقت این دو ستون را یکی نکن
+\end{itemize}
+\tasvir{G5-S03-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E04}}\textbf{مثال حل‌شده: مطمئن ولی غلط}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ همه‌ی جمله‌ها لحن مطمئن دارند، پس لحن کمکی نمی‌کند. فقط محتوا را بسنج.\par\noindent \par\noindent جمله: «همه‌ی پرندگان پرواز می‌کنند.»\par\noindent بررسی: شترمرغ و پنگوئن پرنده‌اند ولی پرواز نمی‌کنند.\par\noindent نتیجه: نادرست است؛ و دلیلم از محتوا آمد، نه از لحن.\par
+\tasvir{G5-S03-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E05}}\textbf{چرا همیشه مطمئن است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دستیار گفت‌وگو خراب نیست؛ همین‌طور ساخته شده. او جمله را از روی واژه‌هایی می‌سازد که معمولاً پشت هم می‌آیند، پس همیشه روان است. لحن مطمئنش نشانه‌ی بررسی‌شدن نیست. پاسخ خوب به این پرسش: «چون همین‌طور ساخته شده که همیشه روان جواب بدهد، نه چون مطمئن است.»\par
+\tasvir{G5-S03-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E06}}\textbf{نمونه‌ی یک پاسخ صوتی خوب}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش: «چرا نباید فقط به لحن مطمئن اعتماد کنیم؟»\par\noindent \par\noindent نمونه‌ی پاسخ خوب: «چون امروز دیدم دستیار گفت‌وگو با لحن مطمئن هم چیز غلط گفت. لحن، درستی را ثابت نمی‌کند؛ باید محتوا را جدا بررسی کنیم.» این پاسخ هم دلیل دارد، هم یک نمونه از امروز.\par
+\tasvir{G5-S03-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E07}}\textbf{جدولت ثبت شد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جدول پنج‌جمله‌ایِ لحن و درستی‌ات، همین الان در پروفایلت ثبت شد. بعدها می‌توانی برگردی و ببینی چند بار لحن گولت زده بود.\par
+\tasvir{G5-S03-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E08}}\textbf{مثال: لحن در جمله‌های فارسی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لحن را از واژه‌ها می‌شود فهمید. واژه‌هایی مثل «قطعاً» و «بدون شک» لحن را مطمئن می‌کنند؛ «شاید» و «فکر کنم» نامطمئن.\par
+\begin{itemize}
+\item «قطعاً فردا تعطیل است.» \ensuremath{\leftarrow} مطمئن؛ درستی؟ باید بررسی شود
+\item «شاید باران بیاید.» \ensuremath{\leftarrow} نامطمئن
+\item «بدون شک آب در صد درجه می‌جوشد.» \ensuremath{\leftarrow} مطمئن و درست
+\end{itemize}
+\tasvir{G5-S03-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E09}}\textbf{نشانت را گرفتی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت «کارآگاه اطمینان» را تمام کردی و نشان «کارآگاه لحن» را گرفتی. یادت بماند: ماشین هم مثل آدم می‌تواند با اطمینان کامل اشتباه بگوید.\par
+\tasvir{G5-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S03-E10}}\textbf{مثال: امتحان در خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه‌ی تمرین خانه: «بابا با لحنی کاملاً قاطع گفت موش‌ها پرنده‌اند. همه خندیدیم، چون موش بال ندارد و پستاندار است.» نتیجه: حتی آدمی که دوستش داریم و به او اعتماد داریم، با لحن مطمئن هم ممکن است اشتباه بگوید؛ پس محتوا را جدا می‌سنجیم.\par
+\tasvir{G5-S03-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۴ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G5-S03-P01}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «لحن مطمئن یعنی محتوا هم درست است.» این جمله درست است یا نادرست؟\par
+\tasvir{G5-S03-P01}
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی مطمئن ولی غلط فکر کن.
+\item آیا هر جمله‌ی مطمئن، حتماً درست بود؟
+\item لحن و درستی دو چیز جدا هستند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — لحن مطمئن به‌تنهایی نشانه‌ی درستی نیست.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: در بازی امروز، جمله‌های مطمئن همیشه درست بودند؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ چون لحن قاطع را با درستی یکی می‌گیرد، «درست» می‌زند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ دقیقاً همین اشتباه رایج است؛ لحن مطمئن ضمانتی برای درستی نمی‌دهد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G5-S03-P02}}\textbf{کشف امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کشف امروز را در یک جمله بنویس.\par
+\lbl{maincol}{پرسش:}کشف امروز را در یک جمله بنویس.\par
+\lbl{anscol}{پاسخ معین:}لحن مطمئن نشانه‌ی درست بودن نیست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ لحن مطمئن نشانه درست بودن نیست؛ لحن نشانه درستی نیست؛ لحن مطمئن دلیل درستی نیست}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به جمله‌ی «ماه از زمین بزرگ‌تر است» فکر کن.
+\item لحن آن جمله چطور بود؟ محتوایش چطور؟
+\item لحن مطمئن نشانه‌ی درست بودن نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً همین بود کشف امروز.\ \textbar\ \textbf{نیمه:} نزدیکی؛ به رابطه‌ی لحن و درستی اشاره کن.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: امروز درباره‌ی چه رابطه‌ای صحبت کردیم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G5-S03-P03}}\textbf{کدام‌یک مطمئن ولی غلط است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کدام جمله را می‌توان «مطمئن ولی غلط» نامید؟\par
+\begin{itemize}
+\item الف) شاید فردا باران بیاید
+\item ب) ماه از زمین بزرگ‌تر است (با لحن قاطع)
+\item پ) به نظرم این جالب است
+\item ت) نمی‌دانم
+\end{itemize}
+\tasvir{G5-S03-P03}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ ماه از زمین بزرگ‌تر است}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به دنبال جمله‌ای بگرد که هم لحن قاطع دارد هم محتوایش غلط است.
+\item بقیه‌ی گزینه‌ها یا تردید دارند یا نظرند، نه ادعای قاطع.
+\item همان جمله‌ای که روی نمایشگر کلاسی دیدیم.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — گزینه‌ی ب، مطمئن ولی غلط بود.\ \textbar\ \textbf{نادرست:} نه؛ به دنبال جمله‌ای بگرد که هم قاطع است هم غلط.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S03-P04}}}\par
+\lbl{stepcol}{\en{G5-S03-P04-1}}\textbf{ستون اول جدول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در جدول امروز، برای هر پاسخ دستیار گفت‌وگو دو ستون پر می‌کردیم. ستون اول درباره‌ی «چطور گفته شد» بود. نام این ستون چه بود؟\par
+\tasvir{G5-S03-P04}
+\lbl{maincol}{پرسش:}نام ستون اول؟\par
+\lbl{anscol}{پاسخ معین:}لحن\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ لحن پاسخ؛ لحن}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به صدای گفتن فکر کن، نه به محتوا.
+\item مطمئن یا نامطمئن…
+\item ل…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — لحن.\ \textbar\ \textbf{نادرست:} ستونی که می‌گفت پاسخ مطمئن بود یا نامطمئن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S03-P04}}}\par
+\lbl{stepcol}{\en{G5-S03-P04-2}}\textbf{ستون دوم جدول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ستون دوم درباره‌ی این بود که پاسخ با واقعیت جور است یا نه. نام این ستون چه بود؟\par
+\tasvir{G5-S03-P04}
+\lbl{maincol}{پرسش:}نام ستون دوم؟\par
+\lbl{anscol}{پاسخ معین:}درستی\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ درستی پاسخ؛ درستی؛ درست یا نادرست؛ درستی محتوا}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به محتوای پاسخ فکر کن.
+\item درست یا نادرست…
+\item د…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — درستی.\ \textbar\ \textbf{نادرست:} ستونی که می‌گفت محتوای پاسخ درست است یا نه.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G5-S03-P05}}}\par
+\lbl{stepcol}{\en{G5-S03-P05-1}}\textbf{جمله‌ی ۱}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لحن این جمله مطمئن است یا نامطمئن؟\par\noindent \par\noindent «قطعاً همین‌طور است.»\par
+\tasvir{G5-S03-P05}
+\lbl{maincol}{پرسش:}مطمئن یا نامطمئن؟\par
+\lbl{anscol}{پاسخ معین:}مطمئن\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ مطمئن؛ لحن مطمئن}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به واژه‌ی اول جمله نگاه کن.
+\item «قطعاً» یعنی چه؟
+\item «قطعاً» یعنی بدون هیچ تردیدی.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — مطمئن؛ واژه‌ی «قطعاً» این را نشان می‌دهد.\ \textbar\ \textbf{نادرست:} دوباره به واژه‌ی «قطعاً» نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G5-S03-P05}}}\par
+\lbl{stepcol}{\en{G5-S03-P05-2}}\textbf{جمله‌ی ۲}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لحن این جمله مطمئن است یا نامطمئن؟\par\noindent \par\noindent «شاید همین‌طور باشد.»\par
+\tasvir{G5-S03-P05}
+\lbl{maincol}{پرسش:}مطمئن یا نامطمئن؟\par
+\lbl{anscol}{پاسخ معین:}نامطمئن\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نامطمئن؛ لحن نامطمئن؛ مطمئن نیست}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به واژه‌ی اول جمله نگاه کن.
+\item «شاید» یعنی چه؟
+\item «شاید» یعنی گوینده تردید دارد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — نامطمئن؛ «شاید» تردید را نشان می‌دهد.\ \textbar\ \textbf{نادرست:} دوباره به واژه‌ی «شاید» نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G5-S03-P05}}}\par
+\lbl{stepcol}{\en{G5-S03-P05-3}}\textbf{جمله‌ی ۳}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لحن این جمله مطمئن است یا نامطمئن؟\par\noindent \par\noindent «بدون شک درست است.»\par
+\tasvir{G5-S03-P05}
+\lbl{maincol}{پرسش:}مطمئن یا نامطمئن؟\par
+\lbl{anscol}{پاسخ معین:}مطمئن\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ مطمئن؛ لحن مطمئن}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به دو واژه‌ی اول نگاه کن.
+\item «بدون شک» یعنی چه؟
+\item یعنی هیچ تردیدی نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — مطمئن. یادت باشد: مطمئن بودن لحن، درستی را ثابت نمی‌کند.\ \textbar\ \textbf{نادرست:} دوباره به «بدون شک» نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S03-P06}}}\par
+\lbl{stepcol}{\en{G5-S03-P06-1}}\textbf{پرسش عجیب تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک پرسش عجیب از دستیار گفت‌وگو بپرس. پرسشت و پاسخی که گرفتی را بنویس.\par
+\tasvir{G5-S03-P06}
+\lbl{maincol}{پرسش:}پرسش و پاسخ را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پرسش غیرمعمول یا عجیب بیاورد
+\item پاسخ دستیار گفت‌وگو را هم بیاورد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ پرسیدم: اگر فیل‌ها پرواز کنند چه می‌شود؟ گفت: آسمان شلوغ می‌شود و…}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item پرسشی بساز که در واقعیت اتفاق نمی‌افتد.
+\item مثلاً درباره‌ی حیوانی که کار عجیبی می‌کند.
+\item بنویس: «پرسیدم … ؛ گفت …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پرسش و پاسخ را آوردی.\ \textbar\ \textbf{نیمه:} پرسش را نوشتی؛ پاسخ دستیار را هم بنویس.\ \textbar\ \textbf{نادرست:} هم پرسشت و هم پاسخی که گرفتی را بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S03-P06}}}\par
+\lbl{stepcol}{\en{G5-S03-P06-2}}\textbf{لحن آن پاسخ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لحن پاسخی که دستیار گفت‌وگو به پرسش عجیبت داد چطور بود؟ مطمئن یا نامطمئن؟\par
+\tasvir{G5-S03-P06}
+\lbl{maincol}{پرسش:}لحن پاسخ؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item لحن پاسخ را مطمئن یا نامطمئن بنامد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ مطمئن؛ اصلاً نگفت «شاید».}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item دوباره پاسخ را بخوان.
+\item واژه‌هایی مثل «شاید» داشت یا محکم حرف زد؟
+\item بیشتر وقت‌ها پاسخ‌هایش…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} لحن را تشخیص دادی.\ \textbar\ \textbf{نیمه:} لحن را گفتی؛ با یک واژه از خود پاسخ نشانش بده.\ \textbar\ \textbf{نادرست:} فقط بگو مطمئن بود یا نامطمئن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G5-S03-P07}}\textbf{چرا همیشه مطمئن؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا دستیار گفت‌وگو حتی وقتی پاسخش نادرست است، باز هم با لحن مطمئن حرف می‌زند؟\par
+\lbl{maincol}{پرسش:}چرا دستیار گفت‌وگو حتی وقتی پاسخش نادرست است، با لحن مطمئن حرف می‌زند؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید این خرابی نیست
+\item بگوید همین‌طور ساخته شده که پاسخ بدهد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون رفتار همیشگی‌اش همین است؛ خرابی نیست، همان‌طوری ساخته شده که پاسخ بدهد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به این فکر کن که آیا این رفتار همیشگی است یا گاهی.
+\item اگر همیشه همین‌طور است، شاید خرابی نباشد.
+\item همین‌طور طراحی شده که با لحنی روان جواب بدهد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — این رفتار خرابی نیست؛ همین‌طور ساخته شده.\ \textbar\ \textbf{نیمه:} نزدیکی؛ بگو چرا فکر می‌کنی خرابی نیست.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: این رفتار فقط یک‌بار دیدی یا همیشه؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی}}\par
+\lbl{stepcol}{\en{G5-S03-P08}}\textbf{خودت یک جمله بساز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ خودت یک جمله‌ی نادرست با لحنی کاملاً مطمئن بساز که دوستت را گول بزند.\par
+\tasvir{G5-S03-P08}
+\lbl{maincol}{پرسش:}جمله‌ات را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item جمله از نظر محتوا نادرست باشد
+\item با ساختاری قاطع و مطمئن نوشته شده باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ بدون شک، همه‌ی ماهی‌ها می‌توانند روی خشکی نفس بکشند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item از کلماتی مثل «قطعاً» یا «بدون شک» استفاده کن.
+\item جمله باید از نظر محتوا غلط باشد، نه فقط عجیب.
+\item مثلاً: «بدون شک، همه‌ی … می‌توانند …» و یک ادعای غلط بگذار.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} عالی — هم لحنش قاطع است هم محتوایش نادرست.\ \textbar\ \textbf{نیمه:} لحن یا محتوا کامل نیست؛ دوباره نگاه کن.\ \textbar\ \textbf{نادرست:} جمله‌ات باید هم قاطع باشد هم از نظر محتوا غلط.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ جمله‌ای درست ولی با لحن مطمئن می‌سازد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ لحنش خوب است؛ حالا محتوایش را غلط کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G5-S03-P09}}\textbf{با او موافقی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «چون با اطمینان گفت، پس حتماً راست می‌گوید.» با او موافقی؟ توضیح بده.\par
+\tasvir{G5-S03-P09}
+\lbl{maincol}{پرسش:}با دوستت موافقی؟ چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید موافق نیست
+\item بگوید لحن و درستی دو چیز جدا هستند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ موافق نیستم — لحن و درستی دو چیز جدا هستند؛ باید محتوا را جداگانه بررسی کرد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی مطمئن ولی غلط فکر کن؛ آیا همیشه لحن با درستی یکی بود؟
+\item لحن و محتوا دو چیز جدا هستند.
+\item موافق نیستم، چون لحن و درستی دو چیز جدا هستند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — لحن و درستی دو چیز جدا هستند؛ همین بود کشف امروز.\ \textbar\ \textbf{نیمه:} نزدیکی؛ دلیلت را کامل‌تر بنویس.\ \textbar\ \textbf{نادرست:} به بازی امروز فکر کن: آیا هر جمله‌ی مطمئن، درست هم بود؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G5-S03-P10}}\textbf{پایه‌ی کل فصل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گفتیم این کشف امروز، پایه‌ی کل فصل است؟\par
+\lbl{maincol}{پرسش:}چرا این کشف، پایه‌ی کل فصل است؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند که از این‌جا به بعد باید در هر ابزاری محتوا را جدا از لحن سنجید
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون از این‌جا به بعد در هر ابزاری باید محتوا را جدا از لحن بسنجیم، نه فقط این یکی.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به این فکر کن که این قاعده فقط برای همین یک ابزار است یا برای همه.
+\item از این جلسه به بعد، با هر ابزار دیگری هم روبه‌رو می‌شویم.
+\item چون از این‌جا به بعد در هر ابزاری باید محتوا را جدا از لحن بسنجیم.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — این قاعده از این‌جا به بعد در هر ابزاری به کارمان می‌آید.\ \textbar\ \textbf{نیمه:} نزدیکی؛ بگو این قاعده کجاهای دیگر هم به کار می‌آید.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: آیا این قاعده فقط درباره‌ی همین یک ابزار بود؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۴ — درخواست‌نویسی حرفه‌ای}
+\begin{jalasebox}{۴}{درخواست‌نویسی حرفه‌ای}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}نوشتن یک درخواست چندبخشی دقیق برای گرفتن پاسخ درست از تصویرخوان.\par
+\lbl{maincol}{مفاهیم:}درخواست، نشانه، دقت، بازبینی\par
+\lbl{maincol}{مأموریت:}کارآگاه درخواست حرفه‌ای \textbar\ \textbf{نشان:} نشان درخواست‌نویس\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ زبان فارسی — نگارش دقیق:}نوشتن جمله‌ای با نشانه‌های کافی برای انتقال منظور کامل. هر دانش‌آموز یک درخواست سه‌بخشی برای تصویرخوان می‌نویسد.\par
+\lbl{tamcol}{ابزار امروز — تصویرخوان:}هرچه درخواست نشانه‌ی بیشتری داشته باشد، پاسخش دقیق‌تر می‌شود. کشف امروز: درخواست کم‌نشانه، پاسخ کلی و غیرقابل‌اعتماد می‌دهد.\par
+\lbl{maincol}{مواد:}تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}درخواست سه‌بخشی دقیق ثبت‌شده + کارت شغل شماره‌ی ۲ + نشان درخواست‌نویس.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ وقتی پاسخ تصویرخوان کلی بود، نگویید اشتباه کرد؛ بپرسید «چه نشانه‌ای به او ندادیم؟»}}\par
+\vspace{4pt}
+\dastehead{پیش‌سنجه}{پیش از بخش آموزش، جدا برای هر دانش‌آموز — بیرون از ۶۰ دقیقه}{tamcol}
+\begin{stepbox}{پیش‌سنجه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-K1}}\textbf{پیش از شروع: شغل امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز با شغل «پزشک و کارشناس تصویربرداری پزشکی» آشنا می‌شوی. پیش از هر توضیحی، صادقانه بگو این جمله چقدر درباره‌ی تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E02}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. حالا برویم سراغ درس امروز.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گویه باید پیش از هر توضیحی درباره‌ی شغل ثبت شود، وگرنه سنجش رشد آشنایی بی‌معنا می‌شود. هوشینو آن را هنگام ورود هر دانش‌آموز، پیش از بخش آموزش، روی دستگاه خودش می‌پرسد؛ پس بخش آموزش بدون ورودی می‌ماند و در کلاس دونفره یا مجازی هر نفر جدا پاسخ می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۲۰ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A1}}\textbf{مرور: لحن و درستی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش کشف بزرگی داشتیم: لحن مطمئن، نشانه‌ی درست بودن نیست. این نکته‌ها را مرور کن؛ بعد کارت‌های مرور را می‌بینی.\par
+\begin{itemize}
+\item لحن = چطور گفته شد؛ درستی = با واقعیت جور است؟
+\item «ماه از زمین بزرگ‌تر است» \ensuremath{\leftarrow} مطمئن ولی غلط
+\item دستیار گفت‌وگو خراب نیست؛ همیشه روان حرف می‌زند
+\item هر جمله را جدا با یک منبع معتبر بسنج
+\end{itemize}
+\tasvir{G5-S04-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه کارت‌های مرور را با پاسخ نشان می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A2}}\textbf{درخواست چیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درخواست، جمله‌ای است که به ابزار می‌دهی تا کاری برایت بکند. ولی یادت باشد: ابزار فقط واژه‌های تو را می‌گیرد، نه فکرت را. اگر در ذهنت «دوچرخه‌ی قرمز کنار درخت» است ولی فقط بنویسی «این تصویر چیست؟»، آنچه در ذهنت بود هرگز به ابزار نمی‌رسد.\par
+\tasvir{G5-S04-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A3}}\textbf{نشانه، حدس را باریک می‌کند}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی درخواستت مبهم است، خیلی پاسخ‌ها ممکن است درست باشند؛ پس ابزار جواب کلی می‌دهد. هر نشانه‌ی دقیق مثل یک صافی است و پاسخ‌های ممکن را کمتر می‌کند. با چند نشانه، فقط یک پاسخ دقیق باقی می‌ماند. ابزار باهوش‌تر نشده؛ درخواست تو دقیق‌تر شده است.\par
+\tasvir{G5-S04-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A4}}\textbf{مثال حل‌شده: از مبهم به دقیق}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویری داریم از یک دوچرخه و یک گربه کنار درخت.\par\noindent \par\noindent درخواست مبهم: «این تصویر چیست؟» \ensuremath{\leftarrow} پاسخ: «یک عکس از بیرون.»\par\noindent \par\noindent درخواست دقیق: «رنگ دوچرخه، حیوان روی زین و درخت کنارش را بگو.» \ensuremath{\leftarrow} پاسخ: «دوچرخه‌ی قرمز، گربه‌ی خاکستری روی زین، کنار درخت سیب.»\par
+\tasvir{G5-S04-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A5}}\textbf{دقیق یعنی طولانی نیست}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «لطفاً خیلی خیلی دقیق نگاه کن و بگو چیه» بلند و مؤدبانه است، ولی هیچ نشانه‌ای ندارد. ادب خوب است، اما نشانه اضافه نمی‌کند. نشانه‌های واقعی این چهارتا هستند:\par
+\begin{itemize}
+\item رنگ: قرمز، تیره، روشن
+\item شکل: گرد، دراز، مثلثی
+\item اندازه: کوچک، بزرگ
+\item مکان: گوشه‌ی بالا، وسط، کنار درخت
+\end{itemize}
+\tasvir{G5-S04-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A6}}\textbf{شغل امروز: پزشک تصویربرداری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پزشک و کارشناس تصویربرداری پزشکی، تصویرهایی از داخل بدن را می‌خواند؛ مثل عکس رادیولوژی از استخوان. پیش از نگاه‌کردن می‌داند دنبال چه نشانه‌ای بگردد، وگرنه تصویر را اشتباه می‌خواند. بعد هم نتیجه را به زبان ساده برای بیمار توضیح می‌دهد.\par
+\begin{itemize}
+\item خواندن تصویر پزشکی
+\item پیدا کردن نشانه‌ی دقیق
+\item توضیح ساده به بیمار
+\end{itemize}
+\tasvir{G5-S04-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G5-S04-A7}}\textbf{مثال: نشانه‌ها را بشمار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درخواست: «دنبال یک لکه‌ی تیره و گرد در گوشه‌ی بالای تصویر بگرد.»\par\noindent \par\noindent نشانه‌ها: «تیره» (رنگ)، «گرد» (شکل)، «گوشه‌ی بالا» (مکان). پس سه نشانه دارد. پزشک تصویربرداری هم دقیقاً همین‌طور می‌داند کجا و دنبال چه بگردد.\par
+\tasvir{G5-S04-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۰ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-T1}}\textbf{درخواست مبهم را امتحان کن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک عکس روی صفحه‌ات هست. بدون اضافه‌کردن هیچ نشانه‌ای، همین جمله را برای تصویرخوان بفرست: «این تصویر چیست؟» ببین پاسخش چقدر کلی می‌شود.\par
+\tasvir{G5-S04-E01}
+\lbl{maincol}{پرسش:}همان جمله را تایپ کن و بفرست.\par
+\lbl{anscol}{پاسخ معین:}این تصویر چیست؟\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ این تصویر چیست؟؛ این تصویر چیست؛ این عکس چیست؟؛ این عکس چیست}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فقط همان جمله را که روی صفحه نوشته شده تایپ کن.
+\item نیازی به اضافه‌کردن هیچ توضیح یا نشانه‌ای نیست.
+\item بنویس: «این تصویر چیست؟»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} فرستادی. تصویرخوان فقط نوشت «یک تصویر است». چون هیچ نشانه‌ای ندادی، پاسخ خیلی کلی ماند.\ \textbar\ \textbf{نادرست:} برای این قدم فقط همان جمله‌ی کوتاه لازم است؛ چیز دیگری اضافه نکن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ جمله‌ای طولانی‌تر با نشانه می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ برای این قدم فقط همان جمله‌ی کوتاه لازم است؛ نشانه‌ها را در قدم بعد اضافه می‌کنیم.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ بگذارید بچه‌ها خودشان کلی‌بودن پاسخ را ببینند؛ چیزی از قبل توضیح ندهید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۰ دقیقه \textbar\ کل کلاس \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-T2}}\textbf{کارهای روزانه‌ی این پزشک}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این پزشک هر روز چه کارهایی انجام می‌دهد؟ با کمک کلاس فکر کن و سه کار اصلی‌اش را بنویس: یکی با تصویر، یکی با نشانه‌ها، یکی با بیمار.\par
+\tasvir{G5-S04-E03}
+\lbl{maincol}{پرسش:}سه کار روزانه‌ی این شغل را بنویس.\par
+\lbl{anscol}{پاسخ معین:}خواندن تصویر، تشخیص نشانه، گفت‌وگو با بیمار\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ خواندن تصویر، تشخیص نشانه، گفت‌وگو با بیمار؛ خواندن عکس، تشخیص نشانه، صحبت با بیمار؛ خواندن تصویر، پیدا کردن نشانه، حرف زدن با بیمار}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری که این پزشک با تصویر انجام می‌دهد فکر کن.
+\item یکی از کارها با تصویر است، یکی درباره‌ی نشانه‌هاست، یکی هم با آدم‌هاست.
+\item خواندن تصویر، تشخیص نشانه، و … با بیمار.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} هر سه را گفتی — این پزشک هم فنی کار می‌کند هم با آدم‌ها حرف می‌زند.\ \textbar\ \textbf{نیمه:} بعضی‌شان را گفتی؛ هنوز یکی دو تا مانده.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: این پزشک هم با تصویر کار دارد هم با بیمار حرف می‌زند.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط «خواندن تصویر» را می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این یکی از سه کار است. کار دیگری هم هست که با خودِ بیمار دارد.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ فهرست را روی نمایشگر کلاسی بنویسید تا همه با هم به سه مورد برسند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-T3}}\textbf{دو درخواست، دو پاسخ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا خودت امتحان کن: اول درخواست مبهم «به این تصویر نگاه کن» را بفرست. بعد همان تصویر را با سه نشانه‌ی دقیق دوباره بخواه: «دنبال این سه نشانه بگرد: …». پاسخ‌ها چه فرقی کردند؟\par
+\tasvir{G5-S04-E04}
+\lbl{maincol}{پرسش:}هر دو درخواست و تفاوت پاسخ‌ها را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item هر دو درخواست، یعنی مبهم و دقیق، را نوشته باشد
+\item دست‌کم یک تفاوت مشخص بین دو پاسخ را بگوید
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ اول نوشتم «به این تصویر نگاه کن» و پاسخ فقط گفت «یک تصویر است». بعد نوشتم «دنبال این سه نشانه بگرد: رنگ، شکل، تعداد» و پاسخ دقیقاً همان سه چیز را توضیح داد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item یادت باشد باید دو درخواست بنویسی، نه یکی.
+\item درخواست دوم باید دقیقاً سه نشانه‌ی روشن داشته باشد، نه یک کلمه‌ی کلی.
+\item بنویس: «به این تصویر نگاه کن» و «دنبال این سه نشانه بگرد: …، …، …» — و بگو پاسخ‌ها چطور فرق کرد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً همین است — نشانه‌های دقیق‌تر در درخواست، پاسخ دقیق‌تر می‌گیرند.\ \textbar\ \textbf{نیمه:} درخواست‌ها را نوشتی؛ حالا بگو پاسخ‌ها چه فرقی با هم داشتند.\ \textbar\ \textbf{نادرست:} هر دو درخواست را کنار هم بنویس — یکی مبهم، یکی با سه نشانه — و پاسخشان را مقایسه کن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط درخواست دقیق را می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ درخواست مبهم را هم بنویس تا بتوانی دو پاسخ را کنار هم مقایسه کنی.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر تصویرخوان در دسترس نیست، دو پاسخ نمونه (یک‌جمله‌ای در برابر سه‌نکته‌ای) را از قبل آماده کنید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E1}}\textbf{چرا هم دانش هم گفت‌وگو؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این پزشک باید هم نشانه‌های تصویر را درست بخواند هم بتواند نتیجه را ساده برای بیمار توضیح دهد. به نظرت چرا هر دوی این‌ها لازم است؟\par
+\tasvir{G5-S04-E05}
+\lbl{maincol}{پرسش:}چرا این شغل هم به دانش فنی و هم به گفت‌وگو با بیمار نیاز دارد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند خواندن درست نشانه‌ها به‌تنهایی کافی نیست
+\item اشاره کند نتیجه باید به زبان ساده به بیمار گفته شود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون اگر فقط نشانه را درست بخواند ولی نتواند برای بیمار توضیح دهد، بیمار نمی‌فهمد چه شده.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به دو کار متفاوتی که این پزشک باید انجام دهد فکر کن.
+\item یکی از این دو کار با تصویر است، یکی با حرف‌زدن.
+\item اگر فقط تصویر را بلد باشد ولی نتواند توضیح دهد، بیمار چه می‌شود؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — دانستن به‌تنهایی کافی نیست؛ باید بتوان آن را هم ساده گفت.\ \textbar\ \textbf{نیمه:} خوب شروع کردی. حالا آن نیمه‌ی دیگر را هم بگو.\ \textbar\ \textbf{نادرست:} به دو کار جدا فکر کن: یکی خواندن تصویر، یکی حرف‌زدن با بیمار.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر وقت کم بود، همین‌جا بحث را جمع کنید و مستقیم به ثبت بازخورد بروید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E2}}\textbf{گویه‌ی ۱ از ۶ — رغبت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم کارهایی را که در این شغل انجام می‌شود، انجام دهم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی I1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E3}}\textbf{گویه‌ی ۲ از ۶ — آگاهی از فرصت‌ها}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی K1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E4}}\textbf{گویه‌ی ۳ از ۶ — خودآگاهی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «فکر می‌کنم می‌توانم در این کار خوب باشم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی S1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E5}}\textbf{گویه‌ی ۴ از ۶ — ارزش اجتماعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «این شغل برای زندگی مردم مفید است.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی V1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E6}}\textbf{گویه‌ی ۵ از ۶ — تمایل به کاوش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم درباره‌ی این شغل بیشتر بدانم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی E1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E7}}\textbf{گویه‌ی ۶ از ۶ — پیوند با هوش مصنوعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «هوش مصنوعی به این شغل کمک می‌کند.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی A1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۸ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G5-S04-E8}}\textbf{پرسشی که هنوز داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آخرین قسمت کارت شغل شماره‌ی ۲: یک پرسش بنویس که هنوز درباره‌ی شغل «پزشک و کارشناس تصویربرداری پزشکی» داری. این بخش امتیاز ندارد؛ فقط کنجکاوی‌ات ثبت می‌شود.\par
+\tasvir{G5-S04-E07}
+\lbl{maincol}{پرسش:}یک پرسش که هنوز درباره‌ی این شغل داری چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پرسش واقعی (با علامت سؤال یا واژه‌ی پرسشی) بنویسد
+\item پرسش درباره‌ی همین شغل یا کار روزانه‌ی آن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ کارشناس‌ها از کجا می‌فهمند داده‌ی حسگر درست است؟}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کار روزانه‌ی این شغل فکر کن.
+\item چه چیزی از آن هنوز برایت عجیب یا ناشناخته است؟
+\item جمله‌ات را با «چطور…» یا «چرا…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پرسشت ثبت شد. کارت شغل شماره‌ی ۲ ذخیره شد و «نشان درخواست‌نویس» را گرفتی.\ \textbar\ \textbf{نیمه:} این یک جمله است، نه پرسش؛ آن را به شکل پرسش بنویس.\ \textbar\ \textbf{نادرست:} یک پرسش درباره‌ی همین شغل بنویس — هر پرسشی که واقعاً داری.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ پرسش باز کارت شغل (Q)؛ امتیاز نمی‌گیرد. با ثبت آن، کارت و نشان ذخیره می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز درخواست مبهم و درخواست سه‌نشانه‌ای‌اش را با پاسخ‌های تصویرخوان ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک نشانه برای یک تصویر بگو.
+\item \textbf{سطح ۲:} درخواست سه‌نشانه‌ای بنویس تا پاسخ دقیق شود.
+\item \textbf{سطح ۳:} با کمترین نشانه‌ی ممکن پاسخ درست بگیر و بگو چند نشانه شد.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}درخواست مبهم، درخواست سه‌نشانه‌ای، شش گویه‌ی کارنما و کارت شغل شماره‌ی ۲.\par
+\lbl{mescol}{تمرین خانه:}از یکی از اعضای خانواده با یک درخواست مبهم چیزی بخواه، بعد با سه نشانه‌ی دقیق دوباره بخواه و تفاوت را ببین.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G5-S04-R01}}\textbf{کشف کلیدی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کشف کلیدی جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: لحن مطمئن نشانه‌ی درست بودن نیست؛ محتوا را باید جداگانه سنجید.\par
+\tasvir{G5-S03-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R02}}\textbf{آن بازی چه بود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی «مطمئن ولی غلط» چه کار می‌کردیم؟\par\noindent \par\noindent پاسخ: دستیار گفت‌وگو ده جمله با لحن مطمئن می‌گفت و ما فقط از روی محتوا، نه لحن، حدس می‌زدیم کدام‌ها نادرست‌اند.\par
+\tasvir{G5-S03-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R03}}\textbf{نام ابزار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نام ابزار جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: دستیار گفت‌وگو؛ ابزاری که با ما حرف می‌زند و پاسخ می‌دهد، حتی پاسخ نادرست را با لحن مطمئن.\par
+\tasvir{G5-S03-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R04}}\textbf{نام نشان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نشان جلسه‌ی پیش چه نام داشت؟\par\noindent \par\noindent پاسخ: «نشان کارآگاه لحن» — برای مأموریت «کارآگاه اطمینان».\par
+\tasvir{G5-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R05}}\textbf{ماه و زمین}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله‌ی «ماه از زمین بزرگ‌تر است» را با لحنی کاملاً مطمئن شنیدیم. چرا درست نشد؟\par\noindent \par\noindent پاسخ: چون لحن، محتوا را عوض نمی‌کند. ماه در واقعیت خیلی کوچک‌تر از زمین است.\par
+\tasvir{G5-S03-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R06}}\textbf{دو ستون جدول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در جدول پنج‌جمله‌ای جلسه‌ی پیش، برای هر جمله چه دو چیزی ثبت می‌کردیم؟\par\noindent \par\noindent پاسخ: لحن پاسخ (مطمئن یا نامطمئن) و درستی پاسخ (درست یا نادرست) — در دو ستون جدا.\par
+\tasvir{G5-S03-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R07}}\textbf{رفتار دستیار گفت‌وگو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گفتیم وقتی دستیار گفت‌وگو پاسخ نادرست را مطمئن می‌گوید، خراب نیست؟\par\noindent \par\noindent پاسخ: چون همین‌طور ساخته شده؛ جمله را از واژه‌های پرتکرار می‌سازد و همیشه روان حرف می‌زند.\par
+\tasvir{G5-S03-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R08}}\textbf{جمله‌ی خودت را یادت هست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک جمله‌ی نادرست با لحن مطمئن، مثل همان که جلسه‌ی پیش ساختی:\par\noindent \par\noindent نمونه: «بدون شک پنگوئن‌ها در صحرا زندگی می‌کنند.» محکم گفته شده، ولی پنگوئن‌ها در جاهای سرد زندگی می‌کنند.\par
+\tasvir{G5-S03-P08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R09}}\textbf{چرا پایه‌ی کل فصل؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا کشف جلسه‌ی پیش، پایه‌ی کل فصل است؟\par\noindent \par\noindent پاسخ: چون از این به بعد در کار با هر ابزاری، باید محتوا را جدا از لحن بسنجیم.\par
+\tasvir{G5-S03-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-R10}}\textbf{دوستت این را می‌گوید}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «چون با اطمینان گفته شده، پس درست است.» چه پاسخی می‌دهی؟\par\noindent \par\noindent پاسخ خوب: «نه؛ لحن و درستی دو چیز جدا هستند. باید محتوا را بررسی کنیم.»\par
+\tasvir{G5-S03-P09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G5-S04-E01}}\textbf{مثال: درخواست مبهم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درخواست «این تصویر چیست؟» هیچ نشانه‌ای ندارد. تصویرخوان نمی‌داند به کدام بخش تصویر توجه کند، پس پاسخ کلی می‌دهد؛ مثل «یک عکس از بیرون». این پاسخ غلط نیست، ولی به درد نمی‌خورد. در فعالیت امروز خودت همین را امتحان می‌کنی.\par
+\tasvir{G5-S04-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E02}}\textbf{چرا پیش از توضیح عدد می‌دهی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش از هر توضیحی درباره‌ی پزشک تصویربرداری، یک عدد از ۱ تا ۵ دادی: چقدر می‌دانی این شغل چه می‌کند. همین عدد آخر سال با عدد تازه‌ات مقایسه می‌شود تا ببینی چقدر یاد گرفته‌ای. عدد کم یعنی جای یادگرفتن زیاد است، نه اینکه بد جواب داده‌ای.\par
+\tasvir{G5-S04-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E03}}\textbf{کار روزانه‌ی پزشک تصویربرداری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارهای اصلی این شغل سه‌تاست:\par
+\begin{itemize}
+\item خواندن تصویر: عکس استخوان یا داخل بدن را با دقت نگاه می‌کند
+\item تشخیص نشانه: دنبال نشانه‌ی مشخصی مثل یک ترک کوچک می‌گردد
+\item گفت‌وگو با بیمار: نتیجه را ساده و آرام توضیح می‌دهد
+\end{itemize}
+\tasvir{G5-S04-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E04}}\textbf{مثال حل‌شده: دو درخواست}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویر: یک باغ با یک سگ قهوه‌ای کنار حوض.\par\noindent \par\noindent مبهم: «به این تصویر نگاه کن.» \ensuremath{\leftarrow} «یک باغ.»\par\noindent دقیق: «دنبال این سه نشانه بگرد: رنگ حیوان، جای حیوان، چیزی که کنارش است.» \ensuremath{\leftarrow} «یک سگ قهوه‌ای کنار حوض.»\par\noindent \par\noindent تفاوت: پاسخ دوم دقیق است، چون درخواست نشانه داشت.\par
+\tasvir{G5-S04-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E05}}\textbf{چرا هم دانش، هم گفت‌وگو؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پزشک تصویربرداری اگر نشانه را درست نخواند، تشخیص اشتباه می‌شود. ولی اگر نتیجه را درست بخواند و نتواند ساده توضیح دهد، بیمار نمی‌فهمد چه کند و می‌ترسد. پس هر دو لازم است: دانش برای درست خواندن، گفت‌وگو برای رساندن نتیجه.\par
+\tasvir{G5-S04-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E06}}\textbf{مثال: کمترین نشانه‌ی ممکن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هدف، طولانی‌ترین درخواست نیست. مثال: در تصویری دو توپ هست، یکی قرمز و یکی آبی. برای اینکه تصویرخوان فقط درباره‌ی توپ قرمز بگوید، یک نشانه کافی است: «توپ قرمز». اگر دو توپ قرمز بود، نشانه‌ی دوم لازم می‌شد: «توپ قرمز کوچک‌تر».\par
+\tasvir{G5-S04-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E07}}\textbf{کارت شغل شماره‌ی ۲}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پایان امروز همان شش جمله‌ی کارت شغل را، این بار برای پزشک تصویربرداری، یکی‌یکی جواب می‌دهی؛ هر کدام با یک عدد از ۱ تا ۵. مثال: «فکر می‌کنم می‌توانم در این کار خوب باشم.» \ensuremath{\leftarrow} ۳. چون جمله‌ها برای هر شغل یکسان‌اند، بعداً می‌توانی شغل‌ها را با هم مقایسه کنی.\par
+\tasvir{G5-S04-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E08}}\textbf{نشان درخواست‌نویس}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تمام‌کردن مأموریت «کارآگاه درخواست حرفه‌ای»، نشان «درخواست‌نویس» را می‌گیری. این نشان یعنی یاد گرفتی دقت درخواست، نتیجه را عوض می‌کند.\par
+\tasvir{G5-S04-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E09}}\textbf{پاسخ کلی یعنی چه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ اگر پاسخ تصویرخوان کلی از آب درآمد، یعنی خراب شده؟ نه؛ بپرس: «چه نشانه‌ای به او ندادم؟» پاسخ کلی، اغلب نشانه‌ی درخواست کم‌نشانه است، نه خرابی ابزار.\par
+\tasvir{G5-S04-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G5-S04-E10}}\textbf{همین کار را در خانه هم امتحان کن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ از یکی از اعضای خانواده با یک درخواست مبهم چیزی بخواه. بعد با سه نشانه‌ی دقیق دوباره بخواه. تفاوت پاسخشان را ببین — همین اتفاق در خانه هم می‌افتد.\par
+\begin{itemize}
+\item اول: درخواست مبهم
+\item بعد: درخواست با سه نشانه
+\end{itemize}
+\tasvir{G5-S04-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۳ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G5-S04-P01}}\textbf{چرا پاسخ کلی شد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا درخواست «این تصویر چیست؟» پاسخ کلی می‌گیرد؟\par
+\lbl{maincol}{پرسش:}چرا این درخواست پاسخ کلی می‌گیرد؟\par
+\lbl{anscol}{پاسخ معین:}چون نشانه‌ی دقیقی در آن نیست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ چون نشانه‌ی دقیقی در آن نیست؛ چون هیچ نشانه‌ای ندارد؛ چون نشانه‌ای مشخص نکرده}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item این جمله دنبال چه چیز مشخصی می‌گردد؟
+\item هیچ نشانه‌ای در این جمله نیست؛ فقط یک سؤال کلی است.
+\item چون نشانه‌ی دقیقی در آن نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — بدون نشانه، پاسخ هم کلی می‌ماند.\ \textbar\ \textbf{نادرست:} به این فکر کن: این جمله از تصویرخوان دنبال چه چیز مشخصی می‌گردد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G5-S04-P02}}\textbf{کدام دقیق‌تر است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کدام درخواست دقیق‌تر است؟\par
+\begin{itemize}
+\item الف) به این تصویر نگاه کن
+\item ب) دنبال این سه نشانه در تصویر بگرد
+\end{itemize}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ دنبال این سه نشانه در تصویر بگرد}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به تعداد نشانه‌های هر جمله نگاه کن.
+\item کدام جمله دقیقاً می‌گوید دنبال چه بگرد؟
+\item گزینه‌ای که «سه نشانه» را نام می‌برد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — گزینه‌ی ب سه نشانه‌ی مشخص دارد.\ \textbar\ \textbf{نادرست:} گزینه‌ی الف هیچ نشانه‌ای ندارد؛ دوباره نگاه کن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ الف هیچ نشانه‌ای ندارد؛ کدام گزینه سه نشانه را نام می‌برد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G5-S04-P03}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ بیشتر بودن نشانه‌های درخواست، پاسخ تصویرخوان را کلی‌تر می‌کند.\par
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به تجربه‌ی امروز با دو درخواست فکر کن.
+\item درخواست با سه نشانه، پاسخش چطور بود؟
+\item نشانه‌ی بیشتر، پاسخ را دقیق‌تر می‌کند، نه کلی‌تر.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — نشانه‌ی بیشتر، پاسخ را دقیق‌تر می‌کند.\ \textbar\ \textbf{نادرست:} نه؛ امروز دیدیم نشانه‌ی بیشتر، پاسخ را دقیق‌تر کرد، نه کلی‌تر.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G5-S04-P04}}}\par
+\lbl{stepcol}{\en{G5-S04-P04-1}}\textbf{کار اول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پزشک و کارشناس تصویربرداری پزشکی هر روز با تصویرهای داخل بدن چه کاری انجام می‌دهد؟\par
+\lbl{maincol}{پرسش:}کار اول را بنویس.\par
+\lbl{anscol}{پاسخ معین:}خواندن تصویر\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ خواندن تصویر؛ خواندن عکس؛ نگاه کردن به تصویر؛ بررسی تصویر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به عکس رادیولوژی فکر کن.
+\item او تصویر را … می‌کند.
+\item خواندن …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — خواندن تصویر.\ \textbar\ \textbf{نادرست:} او با تصویر پزشکی چه می‌کند؟ نگاه می‌کند و …}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G5-S04-P04}}}\par
+\lbl{stepcol}{\en{G5-S04-P04-2}}\textbf{کار دوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی تصویر را می‌خواند، دنبال چه می‌گردد؟ کار دومش چیست؟\par
+\lbl{maincol}{پرسش:}کار دوم را بنویس.\par
+\lbl{anscol}{پاسخ معین:}تشخیص نشانه\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ تشخیص نشانه؛ پیدا کردن نشانه؛ نشانه؛ پیدا کردن نشانه‌ی دقیق}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item همان چیزی که در درخواست دقیق هم می‌نویسیم.
+\item یک لکه‌ی تیره یا یک ترک کوچک…
+\item تشخیص …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — تشخیص نشانه.\ \textbar\ \textbf{نادرست:} او در تصویر دنبال یک چیز مشخص می‌گردد؛ نامش چیست؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G5-S04-P04}}}\par
+\lbl{stepcol}{\en{G5-S04-P04-3}}\textbf{کار سوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ بعد از خواندن تصویر و پیدا کردن نشانه، با بیمار چه می‌کند؟\par
+\lbl{maincol}{پرسش:}کار سوم را بنویس.\par
+\lbl{anscol}{پاسخ معین:}گفت‌وگو با بیمار\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ گفت‌وگو با بیمار؛ صحبت با بیمار؛ توضیح به بیمار؛ حرف زدن با بیمار}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item بیمار باید نتیجه را بفهمد.
+\item با زبان ساده…
+\item گفت‌وگو با …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — گفت‌وگو با بیمار و توضیح ساده‌ی نتیجه.\ \textbar\ \textbf{نادرست:} فکر کن بیمار چطور از نتیجه باخبر می‌شود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ بازنویسی}}\par
+\lbl{stepcol}{\en{G5-S04-P05}}\textbf{درخواست را بازنویسی کن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درخواست مبهم «به این عکس نگاه کن» را با افزودن دست‌کم دو نشانه‌ی دقیق بازنویسی کن.\par
+\lbl{maincol}{پرسش:}درخواست را با دو نشانه بازنویسی کن.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دست‌کم دو نشانه‌ی مشخص و قابل جست‌وجو اضافه کرده باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ دنبال رنگ اصلی و شکل بزرگ‌ترین جزء این عکس بگرد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item نشانه باید چیزی مشخص باشد، نه یک کلمه‌ی کلی مثل «خوب».
+\item دو نشانه از هم جدا باید باشند، مثلاً رنگ و شکل.
+\item بنویس: «دنبال … و … در این عکس بگرد.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — این دو نشانه، پاسخ را دقیق‌تر می‌کند.\ \textbar\ \textbf{نیمه:} یک نشانه دادی؛ یک نشانه‌ی مشخص دیگر هم اضافه کن.\ \textbar\ \textbf{نادرست:} درخواستت هنوز کلی است؛ یک نشانه‌ی مشخص و قابل جست‌وجو اضافه کن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌نویسد «بهتر نگاه کن» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این نشانه‌ی مشخصی نیست. یک چیز قابل دیدن مثل رنگ یا تعداد را نام ببر.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ محاسبه}}\par
+\lbl{stepcol}{\en{G5-S04-P06}}\textbf{چند نشانه‌ی اضافه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با یک نشانه پاسخ نادرست گرفتی و با سه نشانه پاسخ درست. چند نشانه‌ی اضافه لازم بود؟\par
+\lbl{maincol}{پرسش:}چند نشانه‌ی اضافه لازم بود؟\par
+\lbl{anscol}{پاسخ معین:}دو نشانه\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ دو نشانه؛ ۲ نشانه؛ دو تا}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item از یک نشانه به سه نشانه رسیدی.
+\item سه منهای یک چند می‌شود؟
+\item ۳ - ۱ = ۲.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — دو نشانه‌ی اضافه.\ \textbar\ \textbf{نادرست:} از یک نشانه به سه نشانه رسیدی؛ تفاضل این دو عدد را حساب کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G5-S04-P07}}\textbf{چرا هر دو لازم است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا این شغل هم به دانش فنی و هم به گفت‌وگو با بیمار نیاز دارد؟\par
+\lbl{maincol}{پرسش:}چرا هر دو لازم است؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند باید نشانه را درست بخواند
+\item اشاره کند باید آن را به زبان ساده به بیمار توضیح دهد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون باید هم نشانه را درست بخواند، هم آن را به زبان ساده به بیمار توضیح دهد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به دو کار جدای این پزشک فکر کن.
+\item یکی با تصویر، یکی با حرف‌زدن.
+\item اگر فقط یکی را بلد باشد، چه مشکلی پیش می‌آید؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — هر دو مهارت لازم است.\ \textbar\ \textbf{نیمه:} خوب شروع کردی؛ آن نیمه‌ی دیگر را هم بگو.\ \textbar\ \textbf{نادرست:} به دو کار جدا فکر کن: خواندن تصویر و حرف‌زدن با بیمار.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی}}\par
+\lbl{stepcol}{\en{G5-S04-P08}}\textbf{درخواست سه‌نشانه‌ای بساز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای یک تصویر فرضی (مثلاً عکس یک باغ) یک درخواست سه‌نشانه‌ای بنویس که پاسخ دقیقی بگیرد.\par
+\lbl{maincol}{پرسش:}درخواست سه‌نشانه‌ای‌ات را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item سه نشانه‌ی مشخص و قابل بررسی در درخواست آمده باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ دنبال این سه نشانه در تصویر باغ بگرد: رنگ گل‌ها، تعداد درخت‌ها، وجود آب.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item هر نشانه باید چیزی باشد که واقعاً در تصویر دیده می‌شود.
+\item سه نشانه‌ی جدا از هم بنویس، نه یک نشانه‌ی طولانی.
+\item بنویس: «دنبال این سه نشانه بگرد: …، …، …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درخواست خوبی است — سه نشانه‌ی روشن و قابل بررسی.\ \textbar\ \textbf{نیمه:} نزدیک شدی؛ نشانه‌ها را مشخص‌تر یا کامل‌تر کن.\ \textbar\ \textbf{نادرست:} سه نشانه‌ی جدا و قابل‌دیدن بنویس، نه یک توضیح کلی.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط یک نشانه‌ی کلی می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این یک نشانه است و کلی هم هست. سه نشانه‌ی جدا و مشخص لازم داریم.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G5-S04-P09}}\textbf{دوستت این را می‌گوید}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «تصویرخوان جواب کلی داد چون خراب است.» پیش از پذیرفتن این حرف چه چیزی را باید بررسی کرد؟\par
+\lbl{maincol}{پرسش:}چه چیزی را باید اول بررسی کرد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند باید درخواست را بررسی کرد، نه ابزار را
+\item اشاره کند مشکل معمولاً از درخواست کم‌نشانه است
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ باید درخواستش را بررسی کنیم — آیا نشانه‌ی کافی داده بود؛ معمولاً مشکل از درخواست کم‌نشانه است، نه از ابزار.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به یاد بیاور امروز پاسخ کلی از کجا آمد.
+\item قبل از سرزنش ابزار، به خودِ درخواست نگاه کن.
+\item بپرس: درخواستش نشانه‌ی کافی داشت؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — اول درخواست را بررسی می‌کنیم، نه ابزار را.\ \textbar\ \textbf{نیمه:} خوب شروع کردی؛ حالا بگو معمولاً مشکل از کجاست.\ \textbar\ \textbf{نادرست:} به یاد بیاور پاسخ کلی امروز از کجا آمد — از نشانه‌ی کم در درخواست.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ عملی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G5-S04-P10}}}\par
+\lbl{stepcol}{\en{G5-S04-P10-1}}\textbf{چند نشانه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویری فرضی را در نظر بگیر (مثلاً دو گربه، یکی سفید و یکی سیاه). با کمترین نشانه‌ی ممکن درخواستی بنویس که فقط درباره‌ی یکی از آن‌ها پاسخ بگیرد. درخواستت چند نشانه دارد؟\par
+\lbl{maincol}{پرسش:}تعداد نشانه‌ها را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item تعداد نشانه‌ها را با یک عدد بگوید
+\item نشانه یا نشانه‌ها را نام ببرد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ یک نشانه: «گربه‌ی سیاه».}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اول بگو تصویرت چیست.
+\item چه چیزی دو گربه را از هم جدا می‌کند؟
+\item شاید یک نشانه کافی باشد!
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تعداد نشانه‌هایت روشن است.\ \textbar\ \textbf{نیمه:} عدد را گفتی؛ نشانه‌ها را هم نام ببر.\ \textbar\ \textbf{نادرست:} بنویس درخواستت چند نشانه داشت.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ عملی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G5-S04-P10}}}\par
+\lbl{stepcol}{\en{G5-S04-P10-2}}\textbf{پاسخ نهایی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با همان نشانه‌ها، پاسخ دقیقی که انتظار داری بگیری چیست؟ بگو چرا همین تعداد نشانه کافی بود.\par
+\lbl{maincol}{پرسش:}پاسخ و دلیلت را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item پاسخ دقیقی بیاورد که با نشانه‌هایش جور است
+\item بگوید چرا همین تعداد نشانه کافی بود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ «گربه‌ی سیاه روی فرش خوابیده.» کافی بود، چون فقط یک گربه‌ی سیاه در تصویر بود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item پاسخ باید فقط درباره‌ی یک چیز باشد.
+\item نشانه‌ات چه چیزی را کنار گذاشت؟
+\item «کافی بود، چون…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پاسخ و دلیلت با هم می‌خوانند.\ \textbar\ \textbf{نیمه:} پاسخ را گفتی؛ بگو چرا همین نشانه کافی بود.\ \textbar\ \textbf{نادرست:} بنویس انتظار داری ابزار چه بگوید.}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\end{document}

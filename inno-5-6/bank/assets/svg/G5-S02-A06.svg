@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="460" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">مثال حل‌شده: نقشه‌ی رطوبت</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">رنگ هر قطعه، رطوبت خاک آن را نشان می‌دهد</text>
+<rect x="670" y="120" width="140" height="125" rx="14" fill="#3D7BE0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="740" y="165" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">الف</text>
+<text x="740" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۷۰٪</text>
+<rect x="520" y="120" width="140" height="125" rx="14" fill="#5B91E6" stroke="#FFFFFF" stroke-width="2"/>
+<text x="590" y="165" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">ب</text>
+<text x="590" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۶۲٪</text>
+<rect x="370" y="120" width="140" height="125" rx="14" fill="#3D7BE0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="440" y="165" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">پ</text>
+<text x="440" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۶۸٪</text>
+<rect x="670" y="260" width="140" height="125" rx="14" fill="#5B91E6" stroke="#FFFFFF" stroke-width="2"/>
+<text x="740" y="305" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">ت</text>
+<text x="740" y="352" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۶۵٪</text>
+<rect x="520" y="260" width="140" height="125" rx="14" fill="#B07A3B" stroke="#FF6B6B" stroke-width="5"/>
+<text x="590" y="305" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">ث</text>
+<text x="590" y="352" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۱۸٪</text>
+<rect x="370" y="260" width="140" height="125" rx="14" fill="#3D7BE0" stroke="#FFFFFF" stroke-width="2"/>
+<text x="440" y="305" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">ج</text>
+<text x="440" y="352" font-family="Vazirmatn, Tahoma, sans-serif" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۷۲٪</text>
+<rect x="40" y="125" width="300" height="120" rx="16" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="190" y="155" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">راهنمای رنگ</text>
+<rect x="270" y="175" width="36" height="24" rx="6" fill="#3D7BE0"/>
+<text x="255" y="193" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">آبی: خاک مرطوب</text>
+<rect x="270" y="210" width="36" height="24" rx="6" fill="#B07A3B"/>
+<text x="255" y="228" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">قهوه‌ای: خاک خشک</text>
+<rect x="40" y="265" width="300" height="140" rx="16" fill="#FFE9E9" stroke="#FF6B6B" stroke-width="3"/>
+<svg x="177.625" y="282" width="24.75" height="36" viewBox="0 0 352 512" fill="#3D7BE0"><path d="M205.22 22.09c-7.94-28.78-49.44-30.12-58.44 0C100.01 179.85 0 222.72 0 333.91 0 432.35 78.72 512 176 512s176-79.65 176-178.09c0-111.75-99.79-153.34-146.78-311.82zM176 448c-61.75 0-112-50.25-112-112 0-8.84 7.16-16 16-16s16 7.16 16 16c0 44.11 35.89 80 80 80 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg>
+<text x="190" y="345" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">قطعه‌ی «ث» الگو را می‌شکند:</text>
+<text x="190" y="371" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">خشک است و آب لازم دارد.</text>
+<text x="450" y="438" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">داده را بخوان، نه اینکه کدام قطعه سبزتر به نظر می‌رسد.</text>
+</svg>

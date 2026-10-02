@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="395" viewBox="0 0 900 395" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="395" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">دو توصیف از یک تصویر</text>
+<rect x="463" y="96" width="407" height="267.3" rx="20" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<rect x="463" y="96" width="407" height="46" rx="20" fill="#06BEB6"/>
+<rect x="463" y="122" width="407" height="20" rx="0" fill="#06BEB6"/>
+<text x="666.5" y="127" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">توصیف تصویرخوان</text>
+<svg x="629.5" y="179.111" width="74" height="65.7778" viewBox="0 0 576 512" fill="#06BEB6"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>
+<circle cx="848" cy="264" r="5" fill="#06BEB6"/>
+<text x="834" y="270" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="start" direction="rtl">فقط شکل را می‌بیند</text>
+<circle cx="848" cy="302.65" r="5" fill="#06BEB6"/>
+<text x="834" y="308.65" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="start" direction="rtl">سبک ندارد</text>
+<rect x="30" y="96" width="407" height="267.3" rx="20" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<rect x="30" y="96" width="407" height="46" rx="20" fill="#FF6B6B"/>
+<rect x="30" y="122" width="407" height="20" rx="0" fill="#FF6B6B"/>
+<text x="233.5" y="127" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">توصیف من</text>
+<svg x="196.5" y="175" width="74" height="74" viewBox="0 0 512 512" fill="#FF6B6B"><path d="M79.18 282.94a32.005 32.005 0 0 0-20.24 20.24L0 480l4.69 4.69 92.89-92.89c-.66-2.56-1.57-5.03-1.57-7.8 0-17.67 14.33-32 32-32s32 14.33 32 32-14.33 32-32 32c-2.77 0-5.24-.91-7.8-1.57l-92.89 92.89L32 512l176.82-58.94a31.983 31.983 0 0 0 20.24-20.24l33.07-84.07-98.88-98.88-84.07 33.07zM369.25 28.32L186.14 227.81l97.85 97.85 199.49-183.11C568.4 67.48 443.73-55.94 369.25 28.32z"></path></svg>
+<circle cx="415" cy="264" r="5" fill="#FF6B6B"/>
+<text x="401" y="270" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="start" direction="rtl">سه جمله‌ی خودم</text>
+<circle cx="415" cy="302.65" r="5" fill="#FF6B6B"/>
+<text x="401" y="308.65" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="start" direction="rtl">سبک نوشتنم دیده می‌شود</text>
+<rect x="414.391" y="205.65" width="71.2178" height="48" rx="24" fill="#1E2761" stroke="#F2F5FF" stroke-width="5"/>
+<text x="450" y="236.49" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">تصویر</text>
+</svg>

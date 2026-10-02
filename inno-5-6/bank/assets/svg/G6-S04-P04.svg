@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="350" viewBox="0 0 900 350" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="350" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">پیش از کدنویسی، این‌جا چه می‌نویسیم؟</text>
+<rect x="672" y="126" width="198" height="190" rx="18" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<circle cx="771" cy="166" r="25" fill="#06BEB6"/>
+<text x="771" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="771" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">؟</text>
+<line x1="668" y1="221" x2="668.5" y2="221" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="660,221 669.004,216.65 669.004,225.35" fill="#8C97AB"/>
+<rect x="458" y="126" width="198" height="190" rx="18" fill="#FFFFFF" stroke="#FFC93C" stroke-width="3"/>
+<circle cx="557" cy="166" r="25" fill="#FFC93C"/>
+<text x="557" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="557" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">کدنویسی</text>
+<line x1="454" y1="221" x2="454.5" y2="221" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="446,221 455.004,216.65 455.004,225.35" fill="#8C97AB"/>
+<rect x="244" y="126" width="198" height="190" rx="18" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<circle cx="343" cy="166" r="25" fill="#FF6B6B"/>
+<text x="343" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="343" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">آزمایش</text>
+<line x1="240" y1="221" x2="240.5" y2="221" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="232,221 241.004,216.65 241.004,225.35" fill="#8C97AB"/>
+<rect x="30" y="126" width="198" height="190" rx="18" fill="#FFFFFF" stroke="#8E7CE8" stroke-width="3"/>
+<circle cx="129" cy="166" r="25" fill="#8E7CE8"/>
+<text x="129" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<text x="129" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">تحویل</text>
+</svg>

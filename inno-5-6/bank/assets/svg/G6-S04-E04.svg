@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="514" viewBox="0 0 900 514" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="514" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">چرا دقت توضیح مهم است؟</text>
+<path d="M 416 382 L 484 382 L 450 292 Z" fill="#1E2761"/>
+<rect x="376" y="382" width="148" height="16" rx="8" fill="#1E2761"/>
+<line x1="200" y1="252" x2="700" y2="320" stroke="#1E2761" stroke-width="8" stroke-linecap="round"/>
+<circle cx="450" cy="286" r="14" fill="#FFC93C"/>
+<line x1="700" y1="320" x2="700" y2="366" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+<path d="M 622 366 L 778 366 L 758 412 L 642 412 Z" fill="#06BEB6"/>
+<circle cx="700" cy="389" r="26" fill="#FFFFFF"/>
+<svg x="684" y="373" width="32" height="32" viewBox="0 0 512 512" fill="#06BEB6"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+<text x="700" y="442" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">درخواست دقیق</text>
+<line x1="200" y1="252" x2="200" y2="298" stroke="#1E2761" stroke-width="3" stroke-linecap="round"/>
+<path d="M 122 298 L 278 298 L 258 344 L 142 344 Z" fill="#FF6B6B"/>
+<circle cx="200" cy="321" r="26" fill="#FFFFFF"/>
+<svg x="194" y="305" width="12" height="32" viewBox="0 0 192 512" fill="#FF6B6B"><path d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"></path></svg>
+<text x="200" y="374" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">درخواست مبهم</text>
+<text x="450" y="480" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">نرم‌افزار دقیقاً همان چیزی ساخته می‌شود که خواسته‌ایم.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="440" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">چرا همیشه مطمئن حرف می‌زند؟</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">دستیار گفت‌وگو جمله را این‌طور می‌سازد</text>
+<rect x="650" y="120" width="220" height="200" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="650" y="120" width="220" height="34" rx="18" fill="#06BEB6"/>
+<rect x="650" y="137" width="220" height="17" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="137" r="12" fill="#FFFFFF"/>
+<text x="850" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<svg x="732" y="188.871" width="56" height="49.7778" viewBox="0 0 576 512" fill="#06BEB6"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path></svg>
+<text x="760" y="276.84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">نوشته‌های</text>
+<text x="760" y="300.09" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">خیلی زیاد</text>
+<line x1="646" y1="237" x2="577" y2="237" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="566,237 577,243.6 577,230.4" fill="#8C97AB"/>
+<rect x="340" y="120" width="220" height="200" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="340" y="120" width="220" height="34" rx="18" fill="#FFC93C"/>
+<rect x="340" y="137" width="220" height="17" rx="0" fill="#FFC93C"/>
+<circle cx="540" cy="137" r="12" fill="#FFFFFF"/>
+<text x="540" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<svg x="422" y="185.76" width="56" height="56" viewBox="0 0 512 512" fill="#FFC93C"><path d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path></svg>
+<text x="450" y="276.84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">حدس واژه‌ی</text>
+<text x="450" y="300.09" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">محتمل بعدی</text>
+<line x1="336" y1="237" x2="267" y2="237" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="256,237 267,243.6 267,230.4" fill="#8C97AB"/>
+<rect x="30" y="120" width="220" height="200" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="120" width="220" height="34" rx="18" fill="#8E7CE8"/>
+<rect x="30" y="137" width="220" height="17" rx="0" fill="#8E7CE8"/>
+<circle cx="230" cy="137" r="12" fill="#FFFFFF"/>
+<text x="230" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<svg x="112" y="188.871" width="56" height="49.7778" viewBox="0 0 576 512" fill="#8E7CE8"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path></svg>
+<text x="140" y="276.84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">جمله‌ی روان</text>
+<text x="140" y="300.09" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">و مطمئن</text>
+<rect x="170" y="345" width="560" height="60" rx="30" fill="#FFE9E9" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="7 6"/>
+<circle cx="700" cy="375" r="16" fill="#FF6B6B"/>
+<svg x="694.225" y="366.6" width="11.55" height="16.8" viewBox="0 0 352 512" fill="#FFFFFF"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+<text x="670" y="381" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="start" direction="rtl">بخش جداگانه برای «مطمئن نیستم» ندارد — دروغ هم نمی‌گوید.</text>
+</svg>

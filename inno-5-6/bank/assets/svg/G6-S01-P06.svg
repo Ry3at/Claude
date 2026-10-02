@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="306" viewBox="0 0 900 306" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="306" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">در بازی «این سبک کیست؟» چه می‌کنیم؟</text>
+<rect x="619.333" y="140" width="250.667" height="130" rx="65" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<svg x="724.667" y="161" width="40" height="40" viewBox="0 0 512 512" fill="#06BEB6"><path d="M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z"></path></svg>
+<text x="744.667" y="231" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">جمله را می‌شنوی</text>
+<line x1="611.333" y1="205" x2="592.683" y2="205" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="583.333,205 593.238,200.215 593.238,209.785" fill="#8C97AB"/>
+<polygon points="450,140 575.333,205 450,270 324.667,205" fill="#FFF2CE"/>
+<polygon points="450,140 575.333,205 450,270 324.667,205" fill="none" stroke="#FFC93C" stroke-width="3" stroke-linejoin="round"/>
+<text x="450" y="205" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">سبکش چیست؟</text>
+<line x1="316.667" y1="205" x2="298.017" y2="205" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="288.667,205 298.572,200.215 298.572,209.785" fill="#8C97AB"/>
+<rect x="30" y="140" width="250.667" height="130" rx="65" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<svg x="140.333" y="161" width="30" height="40" viewBox="0 0 384 512" fill="#FF6B6B"><path d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"></path></svg>
+<text x="155.333" y="231" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">؟</text>
+</svg>

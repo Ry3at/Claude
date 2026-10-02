@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="464" viewBox="0 0 900 464" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="464" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">بساز: جمله‌ی مطمئن ولی غلط</text>
+<circle cx="450" cy="298" r="92" fill="#FFFFFF"/>
+<svg x="396" y="244" width="108" height="108" viewBox="0 0 512 512" fill="#8E7CE8"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path></svg>
+<line x1="538" y1="250" x2="700" y2="188" stroke="#06BEB6" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="590" y="159" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<text x="700" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">ساختار قاطع</text>
+<line x1="362" y1="250" x2="200" y2="188" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="90" y="159" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<text x="200" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">محتوای نادرست</text>
+<line x1="538" y1="346" x2="700" y2="408" stroke="#FFC93C" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="590" y="379" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#FFC93C" stroke-width="3"/>
+<text x="700" y="408" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">گول زدن دوست</text>
+</svg>

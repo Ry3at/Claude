@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="400" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">محتوا را چطور بسنجیم؟</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">سه قدم کارآگاهی</text>
+<rect x="690" y="120" width="180" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="690" y="120" width="180" height="34" rx="18" fill="#FF6B6B"/>
+<rect x="690" y="137" width="180" height="17" rx="0" fill="#FF6B6B"/>
+<circle cx="850" cy="137" r="12" fill="#FFFFFF"/>
+<text x="850" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<svg x="755.5" y="189.36" width="49" height="56" viewBox="0 0 448 512" fill="#FF6B6B"><path d="M408.781 128.007C386.356 127.578 368 146.36 368 168.79V256h-8V79.79c0-22.43-18.356-41.212-40.781-40.783C297.488 39.423 280 57.169 280 79v177h-8V40.79C272 18.36 253.644-.422 231.219.007 209.488.423 192 18.169 192 40v216h-8V80.79c0-22.43-18.356-41.212-40.781-40.783C121.488 40.423 104 58.169 104 80v235.992l-31.648-43.519c-12.993-17.866-38.009-21.817-55.877-8.823-17.865 12.994-21.815 38.01-8.822 55.877l125.601 172.705A48 48 0 0 0 172.073 512h197.59c22.274 0 41.622-15.324 46.724-37.006l26.508-112.66a192.011 192.011 0 0 0 5.104-43.975V168c.001-21.831-17.487-39.577-39.218-39.993z"></path></svg>
+<text x="780" y="284.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">لحن را</text>
+<text x="780" y="307.49" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کنار بگذار</text>
+<line x1="686" y1="242" x2="667" y2="242" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="656,242 667,248.6 667,235.4" fill="#8C97AB"/>
+<rect x="470" y="120" width="180" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="470" y="120" width="180" height="34" rx="18" fill="#FFC93C"/>
+<rect x="470" y="137" width="180" height="17" rx="0" fill="#FFC93C"/>
+<circle cx="630" cy="137" r="12" fill="#FFFFFF"/>
+<text x="630" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<svg x="532" y="192.471" width="56" height="49.7778" viewBox="0 0 576 512" fill="#FFC93C"><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z"></path></svg>
+<text x="560" y="284.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">خودم درباره‌اش</text>
+<text x="560" y="307.49" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">چه می‌دانم؟</text>
+<line x1="466" y1="242" x2="447" y2="242" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="436,242 447,248.6 447,235.4" fill="#8C97AB"/>
+<rect x="250" y="120" width="180" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="250" y="120" width="180" height="34" rx="18" fill="#06BEB6"/>
+<rect x="250" y="137" width="180" height="17" rx="0" fill="#06BEB6"/>
+<circle cx="410" cy="137" r="12" fill="#FFFFFF"/>
+<text x="410" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<svg x="312" y="192.471" width="56" height="49.7778" viewBox="0 0 576 512" fill="#06BEB6"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path></svg>
+<text x="340" y="284.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">با یک منبع</text>
+<text x="340" y="307.49" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">معتبر بسنج</text>
+<line x1="246" y1="242" x2="227" y2="242" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="216,242 227,248.6 227,235.4" fill="#8C97AB"/>
+<rect x="30" y="120" width="180" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="120" width="180" height="34" rx="18" fill="#2E9E5B"/>
+<rect x="30" y="137" width="180" height="17" rx="0" fill="#2E9E5B"/>
+<circle cx="190" cy="137" r="12" fill="#FFFFFF"/>
+<text x="190" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#2E9E5B" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<svg x="92" y="189.36" width="56" height="56" viewBox="0 0 512 512" fill="#2E9E5B"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+<text x="120" y="284.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">حالا</text>
+<text x="120" y="307.49" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">داوری کن</text>
+<text x="450" y="368" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">هدف بی‌اعتمادی به همه‌چیز نیست؛ هر جمله را جدا بسنج.</text>
+</svg>

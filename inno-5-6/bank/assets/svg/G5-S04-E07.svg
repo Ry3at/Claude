@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="380" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">همان شش گویه، برای شغل دوم</text>
+<rect x="595.333" y="104" width="274.667" height="48" rx="12" fill="#2D3A8C"/>
+<text x="732.667" y="135" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">گویه</text>
+<rect x="312.667" y="104" width="274.667" height="48" rx="12" fill="#2D3A8C"/>
+<text x="450" y="135" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">شغل اول</text>
+<rect x="30" y="104" width="274.667" height="48" rx="12" fill="#2D3A8C"/>
+<text x="167.333" y="135" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">شغل دوم</text>
+<rect x="595.333" y="160" width="274.667" height="58" rx="10" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="732.667" y="189" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">K۱: چقدر می‌دانم؟</text>
+<rect x="312.667" y="160" width="274.667" height="58" rx="10" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="450" y="189" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">ثبت شد</text>
+<rect x="30" y="160" width="274.667" height="58" rx="10" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="167.333" y="189" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">ثبت شد</text>
+<rect x="595.333" y="224" width="274.667" height="58" rx="10" fill="#F7F9FF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="732.667" y="253" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">دوست دارم این شغل را؟</text>
+<rect x="312.667" y="224" width="274.667" height="58" rx="10" fill="#F7F9FF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="450" y="253" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">ثبت شد</text>
+<rect x="30" y="224" width="274.667" height="58" rx="10" fill="#F7F9FF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="167.333" y="253" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">ثبت شد</text>
+<rect x="595.333" y="288" width="274.667" height="58" rx="10" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="732.667" y="317" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">سخت است یا آسان؟</text>
+<rect x="312.667" y="288" width="274.667" height="58" rx="10" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="1.5"/>
+<text x="450" y="317" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">ثبت شد</text>
+<rect x="30" y="288" width="274.667" height="58" rx="10" fill="#FFF6DC" stroke="#06BEB6" stroke-width="3"/>
+<text x="167.333" y="317" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">ثبت شد</text>
+</svg>

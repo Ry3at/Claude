@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="354" viewBox="0 0 900 354" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="354" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">الگوی خانه را پیدا کن</text>
+<circle cx="737.333" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="689.333" y="144.453" width="96" height="85.3333" viewBox="0 0 576 512" fill="#2D3A8C"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
+<text x="737.333" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">خانه</text>
+<circle cx="450" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="402" y="139.12" width="96" height="96" viewBox="0 0 24 24" fill="#06BEB6"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z"></path></svg>
+<text x="450" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کاشی‌های کف</text>
+<circle cx="162.667" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="114.667" y="148.72" width="96" height="76.8" viewBox="0 0 640 512" fill="#FF6B6B"><path d="M631.2 96.5L436.5 0C416.4 27.8 371.9 47.2 320 47.2S223.6 27.8 203.5 0L8.8 96.5c-7.9 4-11.1 13.6-7.2 21.5l57.2 114.5c4 7.9 13.6 11.1 21.5 7.2l56.6-27.7c10.6-5.2 23 2.5 23 14.4V480c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V226.3c0-11.8 12.4-19.6 23-14.4l56.6 27.7c7.9 4 17.5.8 21.5-7.2L638.3 118c4-7.9.8-17.6-7.1-21.5z"></path></svg>
+<text x="162.667" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">ترتیب رنگ لباس‌ها</text>
+<text x="450" y="320.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="middle" direction="rtl">الگو فقط در کلاس نیست؛ در خانه هم هست.</text>
+</svg>

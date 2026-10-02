@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="354" viewBox="0 0 900 354" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="354" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">وقتی قاعده‌ی سبک یکسان است</text>
+<circle cx="737.333" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="695.333" y="139.12" width="84" height="96" viewBox="0 0 448 512" fill="#06BEB6"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="737.333" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">دانش‌آموز ۱</text>
+<circle cx="450" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="408" y="139.12" width="84" height="96" viewBox="0 0 448 512" fill="#06BEB6"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="450" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">دانش‌آموز ۲</text>
+<circle cx="162.667" cy="187.12" r="69.12" fill="#FFFFFF"/>
+<svg x="120.667" y="139.12" width="84" height="96" viewBox="0 0 448 512" fill="#06BEB6"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="162.667" y="280.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">دانش‌آموز ۳</text>
+<text x="450" y="320.24" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="middle" direction="rtl">هر سه از یک قاعده‌ی سبک استفاده می‌کنند.</text>
+</svg>

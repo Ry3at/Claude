@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="464" viewBox="0 0 900 464" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="464" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">بازتاب: کجا سبکت را دیدی؟</text>
+<circle cx="450" cy="298" r="92" fill="#FFFFFF"/>
+<svg x="412.875" y="244" width="74.25" height="108" viewBox="0 0 352 512" fill="#FF6B6B"><path d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"></path></svg>
+<line x1="538" y1="250" x2="700" y2="188" stroke="#06BEB6" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="590" y="159" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<text x="700" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">امروز کجا دیدی؟</text>
+<line x1="362" y1="250" x2="200" y2="188" stroke="#FFC93C" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="90" y="159" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#FFC93C" stroke-width="3"/>
+<text x="200" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">با صدا پاسخ می‌دهی</text>
+<line x1="538" y1="346" x2="700" y2="408" stroke="#8E7CE8" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6"/>
+<rect x="590" y="379" width="220" height="58" rx="14" fill="#FFFFFF" stroke="#8E7CE8" stroke-width="3"/>
+<text x="700" y="408" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">ضبط صدا، کار همیشگی</text>
+</svg>

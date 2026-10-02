@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="400" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">کدام‌یک قرار امروز است؟</text>
+<rect x="673.5" y="126" width="196.5" height="200.43" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<svg x="734.921" y="172.099" width="73.658" height="84.1806" viewBox="0 0 448 512" fill="#06BEB6"><path d="M408.781 128.007C386.356 127.578 368 146.36 368 168.79V256h-8V79.79c0-22.43-18.356-41.212-40.781-40.783C297.488 39.423 280 57.169 280 79v177h-8V40.79C272 18.36 253.644-.422 231.219.007 209.488.423 192 18.169 192 40v216h-8V80.79c0-22.43-18.356-41.212-40.781-40.783C121.488 40.423 104 58.169 104 80v235.992l-31.648-43.519c-12.993-17.866-38.009-21.817-55.877-8.823-17.865 12.994-21.815 38.01-8.822 55.877l125.601 172.705A48 48 0 0 0 172.073 512h197.59c22.274 0 41.622-15.324 46.724-37.006l26.508-112.66a192.011 192.011 0 0 0 5.104-43.975V168c.001-21.831-17.487-39.577-39.218-39.993z"></path></svg>
+<text x="771.75" y="306.43" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">دست بلند کن</text>
+<circle cx="850" cy="146" r="15" fill="#FFC93C"/>
+<text x="850" y="152" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">الف</text>
+<rect x="459" y="126" width="196.5" height="200.43" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<svg x="515.16" y="172.099" width="84.1806" height="84.1806" viewBox="0 0 512 512" fill="#FFC93C"><path d="M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z"></path></svg>
+<text x="557.25" y="306.43" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">هدفون روی گوش</text>
+<circle cx="635.5" cy="146" r="15" fill="#FFC93C"/>
+<text x="635.5" y="152" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">ب</text>
+<rect x="244.5" y="126" width="196.5" height="200.43" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<svg x="300.66" y="176.776" width="84.1806" height="74.8272" viewBox="0 0 576 512" fill="#FF6B6B"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path></svg>
+<text x="342.75" y="306.43" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کتاب را ببند</text>
+<circle cx="421" cy="146" r="15" fill="#FFC93C"/>
+<text x="421" y="152" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">پ</text>
+<rect x="30" y="126" width="196.5" height="200.43" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<svg x="87.475" y="172.099" width="81.55" height="84.1806" viewBox="0 0 496 512" fill="#8E7CE8"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm-160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm194.8 170.2C334.3 380.4 292.5 400 248 400s-86.3-19.6-114.8-53.8c-13.6-16.3 11-36.7 24.6-20.5 22.4 26.9 55.2 42.2 90.2 42.2s67.8-15.4 90.2-42.2c13.4-16.2 38.1 4.2 24.6 20.5z"></path></svg>
+<text x="128.25" y="306.43" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">بلند بخند</text>
+<circle cx="206.5" cy="146" r="15" fill="#FFC93C"/>
+<text x="206.5" y="152" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">ت</text>
+<text x="450" y="366.43" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">گزینه‌ی درست را با قرارهای کلاس مقایسه کن.</text>
+</svg>

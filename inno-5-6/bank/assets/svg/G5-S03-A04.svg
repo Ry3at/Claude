@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="480" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">لحن و درستی، دو چیز جدا</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">هر جمله را از دو سو بسنج</text>
+<text x="615" y="140" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#2E9E5B" font-weight="700" text-anchor="middle" direction="rtl">درست</text>
+<text x="285" y="140" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">نادرست</text>
+<text x="835" y="230" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#8E7CE8" font-weight="700" text-anchor="middle" direction="rtl">مطمئن</text>
+<text x="835" y="375" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#8C97AB" font-weight="700" text-anchor="middle" direction="rtl">نامطمئن</text>
+<rect x="470" y="160" width="300" height="130" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="620" y="232" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">«آب در صد درجه می‌جوشد.»</text>
+<rect x="140" y="160" width="300" height="130" rx="18" fill="#FFE9E9" stroke="#FF6B6B" stroke-width="4"/>
+<text x="290" y="232" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">«ماه از زمین بزرگ‌تر است.»</text>
+<rect x="470" y="305" width="300" height="130" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="620" y="377" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">«فکر کنم تهران پایتخت است.»</text>
+<rect x="140" y="305" width="300" height="130" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="290" y="377" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16.5" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">«شاید شترمرغ پرواز کند.»</text>
+<rect x="215" y="286" width="150" height="26.6" rx="13.3" fill="#FF6B6B"/>
+<text x="290" y="304.04" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">خطرناک‌ترین خانه</text>
+<text x="450" y="462" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">لحن می‌گوید «چطور گفته شد»؛ درستی می‌گوید «با واقعیت جور است یا نه».</text>
+</svg>

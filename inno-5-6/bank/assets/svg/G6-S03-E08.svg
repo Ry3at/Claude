@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="438" viewBox="0 0 900 438" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="438" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">دو نوع جزئیات در نقاشی</text>
+<rect x="325" y="106" width="250" height="62" rx="16" fill="#2D3A8C"/>
+<text x="450" y="137" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">جزئیات نقاشی دست‌ساز</text>
+<path d="M 450 168 L 450 196 L 664 196 L 664 228" fill="none" stroke="#D7DEF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="458" y="228" width="412" height="62" rx="14" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<text x="664" y="259" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">قابل توصیف با کلمه</text>
+<rect x="466" y="306" width="396" height="42" rx="12" fill="#EDF1FC"/>
+<text x="664" y="327" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">موضوع نقاشی</text>
+<rect x="466" y="358" width="396" height="42" rx="12" fill="#EDF1FC"/>
+<text x="664" y="379" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">رنگ اصلی</text>
+<path d="M 450 168 L 450 196 L 236 196 L 236 228" fill="none" stroke="#D7DEF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="30" y="228" width="412" height="62" rx="14" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<text x="236" y="259" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">فقط با دیدن اصل</text>
+<rect x="38" y="306" width="396" height="42" rx="12" fill="#EDF1FC"/>
+<text x="236" y="327" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">فشار مداد</text>
+<rect x="38" y="358" width="396" height="42" rx="12" fill="#EDF1FC"/>
+<text x="236" y="379" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">بافت رنگ</text>
+</svg>
