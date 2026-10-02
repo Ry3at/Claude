@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="470" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">مثال: قفل مبهم، قفل دقیق</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">آغاز دقیق، وسطِ داستان را مجبور می‌کند جور باشد</text>
+<rect x="30" y="120" width="840" height="140" rx="18" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<rect x="750" y="141" width="100" height="28.5" rx="14.25" fill="#FF6B6B"/>
+<text x="800" y="160.4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">مبهم</text>
+<svg x="806.875" y="200" width="26.25" height="30" viewBox="0 0 448 512" fill="#FF6B6B"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+<text x="780" y="195" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">«یک روز یک اتفاق افتاد.»</text>
+<circle cx="770" cy="232" r="14" fill="#FF6B6B"/>
+<svg x="764.947" y="224.65" width="10.1063" height="14.7" viewBox="0 0 352 512" fill="#FFFFFF"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+<text x="745" y="238" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#8C97AB" font-weight="600" text-anchor="start" direction="rtl">وسط می‌تواند هر چیزی باشد</text>
+<rect x="30" y="280" width="840" height="140" rx="18" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<rect x="750" y="301" width="100" height="28.5" rx="14.25" fill="#06BEB6"/>
+<text x="800" y="320.4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">دقیق</text>
+<svg x="806.875" y="360" width="26.25" height="30" viewBox="0 0 448 512" fill="#06BEB6"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+<text x="780" y="355" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">«گربه‌ی نارنجیِ نقاشی‌ام از قاب بیرون پرید.»</text>
+<circle cx="770" cy="392" r="14" fill="#2E9E5B"/>
+<svg x="762.65" y="384.65" width="14.7" height="14.7" viewBox="0 0 512 512" fill="#FFFFFF"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+<text x="745" y="398" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#8C97AB" font-weight="600" text-anchor="start" direction="rtl">وسط باید بگوید گربه کجا رفت و چه کرد</text>
+<text x="450" y="450" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#1E2761" font-weight="600" text-anchor="middle" direction="rtl">پایان قفل‌شده: «و از آن روز، قاب نقاشی هرگز خالی نماند.»</text>
+</svg>

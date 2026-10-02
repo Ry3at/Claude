@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="444" viewBox="0 0 900 444" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="444" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">درخواست مبهم و پاسخ کلی</text>
+<text x="870" y="82" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">هرچه نشانه کمتر، پاسخ کلی‌تر می‌شود</text>
+<rect x="645.264" y="144" width="170.736" height="51.5" rx="18" fill="#E8ECFB"/>
+<polygon points="816,152 830,160 816,170" fill="#E8ECFB"/>
+<circle cx="848" cy="168" r="20" fill="#2D3A8C"/>
+<svg x="839.25" y="158" width="17.5" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="794" y="170" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="start" direction="rtl">این تصویر چیست؟</text>
+<rect x="84" y="215.5" width="297.049" height="51.5" rx="18" fill="#DDF6F4"/>
+<polygon points="84,223.5 70,231.5 84,241.5" fill="#DDF6F4"/>
+<circle cx="52" cy="239.5" r="20" fill="#06BEB6"/>
+<svg x="42" y="231.5" width="20" height="16" viewBox="0 0 640 512" fill="#FFFFFF"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"></path></svg>
+<text x="359.049" y="241.5" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#0A5B57" font-weight="500" text-anchor="start" direction="rtl">تصویری با رنگ‌ها و شکل‌های گوناگون.</text>
+<rect x="613.688" y="287" width="202.312" height="51.5" rx="18" fill="#E8ECFB"/>
+<polygon points="816,295 830,303 816,313" fill="#E8ECFB"/>
+<circle cx="848" cy="311" r="20" fill="#2D3A8C"/>
+<svg x="839.25" y="301" width="17.5" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="794" y="313" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="start" direction="rtl">دقیق‌تر بگو چی می‌بینی!</text>
+<rect x="84" y="358.5" width="342.646" height="51.5" rx="18" fill="#DDF6F4"/>
+<polygon points="84,366.5 70,374.5 84,384.5" fill="#DDF6F4"/>
+<circle cx="52" cy="382.5" r="20" fill="#06BEB6"/>
+<svg x="42" y="374.5" width="20" height="16" viewBox="0 0 640 512" fill="#FFFFFF"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"></path></svg>
+<text x="404.646" y="384.5" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#0A5B57" font-weight="500" text-anchor="start" direction="rtl">برای پاسخ دقیق‌تر، نشانه‌ی بیشتری لازم دارم.</text>
+</svg>

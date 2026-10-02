@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="376" viewBox="0 0 900 376" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="376" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">نشان کارآگاه لحن</text>
+<rect x="602" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="602" y="130" width="268" height="34" rx="18" fill="#06BEB6"/>
+<rect x="602" y="146" width="268" height="18" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="147" r="12" fill="#FFFFFF"/>
+<text x="850" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="728" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="700.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#06BEB6"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+<text x="736" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">مأموریت کارآگاه اطمینان</text>
+<rect x="316" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="316" y="130" width="268" height="34" rx="18" fill="#FFC93C"/>
+<rect x="316" y="146" width="268" height="18" rx="0" fill="#FFC93C"/>
+<circle cx="564" cy="147" r="12" fill="#FFFFFF"/>
+<text x="564" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="442" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="414.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#FFC93C"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+<text x="450" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کشف: لحن با درستی فرق دارد</text>
+<rect x="30" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="130" width="268" height="34" rx="18" fill="#FF6B6B"/>
+<rect x="30" y="146" width="268" height="18" rx="0" fill="#FF6B6B"/>
+<circle cx="278" cy="147" r="12" fill="#FFFFFF"/>
+<text x="278" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="156" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="128.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#FF6B6B"><path d="M223.75 130.75L154.62 15.54A31.997 31.997 0 0 0 127.18 0H16.03C3.08 0-4.5 14.57 2.92 25.18l111.27 158.96c29.72-27.77 67.52-46.83 109.56-53.39zM495.97 0H384.82c-11.24 0-21.66 5.9-27.44 15.54l-69.13 115.21c42.04 6.56 79.84 25.62 109.56 53.38L509.08 25.18C516.5 14.57 508.92 0 495.97 0zM256 160c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm92.52 157.26l-37.93 36.96 8.97 52.22c1.6 9.36-8.26 16.51-16.65 12.09L256 393.88l-46.9 24.65c-8.4 4.45-18.25-2.74-16.65-12.09l8.97-52.22-37.93-36.96c-6.82-6.64-3.05-18.23 6.35-19.59l52.43-7.64 23.43-47.52c2.11-4.28 6.19-6.39 10.28-6.39 4.11 0 8.22 2.14 10.33 6.39l23.43 47.52 52.43 7.64c9.4 1.36 13.17 12.95 6.35 19.59z"></path></svg>
+<text x="164" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">نشان کارآگاه لحن</text>
+</svg>

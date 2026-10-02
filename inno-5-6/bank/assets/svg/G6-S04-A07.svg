@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450" viewBox="0 0 900 450" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="450" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">داور داستان تویی</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">وقتی متن میانی آمد، این‌طور تصمیم بگیر</text>
+<rect x="650" y="140" width="220" height="170" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="650" y="140" width="220" height="34" rx="18" fill="#8E7CE8"/>
+<rect x="650" y="157" width="220" height="17" rx="0" fill="#8E7CE8"/>
+<circle cx="850" cy="157" r="12" fill="#FFFFFF"/>
+<text x="850" y="163" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<svg x="728" y="194.516" width="64" height="56.8889" viewBox="0 0 576 512" fill="#8E7CE8"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path></svg>
+<text x="760" y="274.64" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">متن میانی</text>
+<text x="760" y="299.44" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">را بخوان</text>
+<line x1="640" y1="225" x2="571" y2="225" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="560,225 571,231.6 571,218.4" fill="#8C97AB"/>
+<polygon points="450,150 550,225 450,300 350,225" fill="#FFFFFF" stroke="#FFC93C" stroke-width="4" stroke-linejoin="round"/>
+<text x="450" y="218" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">با آغاز و پایانم</text>
+<text x="450" y="242" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">جور است؟</text>
+<line x1="345" y1="225" x2="278.313" y2="167.204" stroke="#2E9E5B" stroke-width="3" stroke-linecap="round"/>
+<polygon points="270,160 273.99,172.192 282.635,162.217" fill="#2E9E5B"/>
+<line x1="345" y1="225" x2="277.778" y2="292.222" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
+<polygon points="270,300 282.445,296.889 273.111,287.555" fill="#FF6B6B"/>
+<rect x="40" y="115" width="220" height="80" rx="16" fill="#E3F4EA" stroke="#2E9E5B" stroke-width="3"/>
+<text x="150" y="150" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">بله ← ذخیره کن</text>
+<text x="150" y="176" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#8C97AB" font-weight="500" text-anchor="middle" direction="rtl">روایت مال توست</text>
+<rect x="40" y="260" width="220" height="80" rx="16" fill="#FFE9E9" stroke="#FF6B6B" stroke-width="3"/>
+<text x="150" y="295" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="700" text-anchor="middle" direction="rtl">نه ← دوباره بخواه</text>
+<text x="150" y="321" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#8C97AB" font-weight="500" text-anchor="middle" direction="rtl">با توضیح دقیق‌تر</text>
+<text x="450" y="410" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">جمله‌های قفل‌شده هیچ‌وقت عوض نمی‌شوند.</text>
+</svg>

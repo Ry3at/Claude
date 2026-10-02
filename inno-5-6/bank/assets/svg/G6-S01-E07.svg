@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="416" viewBox="0 0 900 416" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="416" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">جمله‌ی امضادار</text>
+<rect x="602" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="602" y="130" width="268" height="34" rx="18" fill="#06BEB6"/>
+<rect x="602" y="146" width="268" height="18" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="147" r="12" fill="#FFFFFF"/>
+<text x="850" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="728" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="700.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#06BEB6"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path></svg>
+<text x="736" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">جمله را می‌نویسم</text>
+<rect x="316" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="316" y="130" width="268" height="34" rx="18" fill="#FFC93C"/>
+<rect x="316" y="146" width="268" height="18" rx="0" fill="#FFC93C"/>
+<circle cx="564" cy="147" r="12" fill="#FFFFFF"/>
+<text x="564" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="442" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="414.3" y="223.24" width="71.4" height="57.12" viewBox="0 0 640 512" fill="#FFC93C"><path d="M623.2 192c-51.8 3.5-125.7 54.7-163.1 71.5-29.1 13.1-54.2 24.4-76.1 24.4-22.6 0-26-16.2-21.3-51.9 1.1-8 11.7-79.2-42.7-76.1-25.1 1.5-64.3 24.8-169.5 126L192 182.2c30.4-75.9-53.2-151.5-129.7-102.8L7.4 116.3C0 121-2.2 130.9 2.5 138.4l17.2 27c4.7 7.5 14.6 9.7 22.1 4.9l58-38.9c18.4-11.7 40.7 7.2 32.7 27.1L34.3 404.1C27.5 421 37 448 64 448c8.3 0 16.5-3.2 22.6-9.4 42.2-42.2 154.7-150.7 211.2-195.8-2.2 28.5-2.1 58.9 20.6 83.8 15.3 16.8 37.3 25.3 65.5 25.3 35.6 0 68-14.6 102.3-30 33-14.8 99-62.6 138.4-65.8 8.5-.7 15.2-7.3 15.2-15.8v-32.1c.2-9.1-7.5-16.8-16.6-16.2z"></path></svg>
+<text x="450" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">فقط شبیه خودم است</text>
+<rect x="30" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="130" width="268" height="34" rx="18" fill="#8E7CE8"/>
+<rect x="30" y="146" width="268" height="18" rx="0" fill="#8E7CE8"/>
+<circle cx="278" cy="147" r="12" fill="#FFFFFF"/>
+<text x="278" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="156" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="128.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#8E7CE8"><path d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"></path></svg>
+<text x="164" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">در پروفایل ذخیره می‌شود</text>
+<text x="450" y="382" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">اولین امضای شخصی امسال.</text>
+</svg>

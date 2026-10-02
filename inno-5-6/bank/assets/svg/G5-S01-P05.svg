@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="352" viewBox="0 0 900 352" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="352" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">دنباله را ادامه بده</text>
+<rect x="725" y="136" width="120" height="120" rx="16" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="785" y="210" font-family="Vazirmatn, Tahoma, sans-serif" font-size="40" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۵</text>
+<rect x="591" y="136" width="120" height="120" rx="16" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="651" y="210" font-family="Vazirmatn, Tahoma, sans-serif" font-size="40" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۱۰</text>
+<rect x="457" y="136" width="120" height="120" rx="16" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<text x="517" y="210" font-family="Vazirmatn, Tahoma, sans-serif" font-size="40" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">۱۵</text>
+<rect x="323" y="136" width="120" height="120" rx="16" fill="#FFF6DC" stroke="#FFC93C" stroke-width="3" stroke-dasharray="7 6"/>
+<text x="383" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="46" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">؟</text>
+<rect x="189" y="136" width="120" height="120" rx="16" fill="#FFF6DC" stroke="#FFC93C" stroke-width="3" stroke-dasharray="7 6"/>
+<text x="249" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="46" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">؟</text>
+<rect x="55" y="136" width="120" height="120" rx="16" fill="#FFF6DC" stroke="#FFC93C" stroke-width="3" stroke-dasharray="7 6"/>
+<text x="115" y="212" font-family="Vazirmatn, Tahoma, sans-serif" font-size="46" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">؟</text>
+<text x="450" y="318" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">سه عدد بعدی و قاعده‌اش را بنویس.</text>
+</svg>

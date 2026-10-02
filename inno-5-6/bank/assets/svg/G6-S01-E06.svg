@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="491" viewBox="0 0 900 491" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="491" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">بازی «این سبک کیست؟»</text>
+<rect x="84" y="120" width="296.244" height="51.5" rx="18" fill="#DDF6F4"/>
+<polygon points="84,128 70,136 84,146" fill="#DDF6F4"/>
+<circle cx="52" cy="144" r="20" fill="#06BEB6"/>
+<svg x="42" y="136" width="20" height="16" viewBox="0 0 640 512" fill="#FFFFFF"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"></path></svg>
+<text x="358.244" y="146" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#0A5B57" font-weight="500" text-anchor="start" direction="rtl">سلام آقای عزیز، از دیدارتان خوشحالم.</text>
+<rect x="727.948" y="191.5" width="88.0522" height="51.5" rx="18" fill="#E8ECFB"/>
+<polygon points="816,199.5 830,207.5 816,217.5" fill="#E8ECFB"/>
+<circle cx="848" cy="215.5" r="20" fill="#2D3A8C"/>
+<svg x="839.25" y="205.5" width="17.5" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="794" y="217.5" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="start" direction="rtl">رسمی!</text>
+<rect x="84" y="263" width="220.84" height="51.5" rx="18" fill="#DDF6F4"/>
+<polygon points="84,271 70,279 84,289" fill="#DDF6F4"/>
+<circle cx="52" cy="287" r="20" fill="#06BEB6"/>
+<svg x="42" y="279" width="20" height="16" viewBox="0 0 640 512" fill="#FFFFFF"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"></path></svg>
+<text x="282.84" y="289" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#0A5B57" font-weight="500" text-anchor="start" direction="rtl">وای، هوا امروز چقدر خوبه!</text>
+<rect x="706.93" y="334.5" width="109.07" height="51.5" rx="18" fill="#E8ECFB"/>
+<polygon points="816,342.5 830,350.5 816,360.5" fill="#E8ECFB"/>
+<circle cx="848" cy="358.5" r="20" fill="#2D3A8C"/>
+<svg x="839.25" y="348.5" width="17.5" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+<text x="794" y="360.5" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#1E2761" font-weight="500" text-anchor="start" direction="rtl">خودمونی!</text>
+<rect x="84" y="406" width="236.611" height="51.5" rx="18" fill="#DDF6F4"/>
+<polygon points="84,414 70,422 84,432" fill="#DDF6F4"/>
+<circle cx="52" cy="430" r="20" fill="#06BEB6"/>
+<svg x="42" y="422" width="20" height="16" viewBox="0 0 640 512" fill="#FFFFFF"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"></path></svg>
+<text x="298.611" y="432" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#0A5B57" font-weight="500" text-anchor="start" direction="rtl">آفرین! حالا سخت‌ترش را بگو.</text>
+</svg>

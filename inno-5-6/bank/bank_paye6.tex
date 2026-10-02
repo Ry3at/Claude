@@ -1,0 +1,2475 @@
+% =====================================================================
+%  مخزن محتوای «هوشینو» — درس نوآوری و هوش
+%  پایه‌ی ششم ابتدایی — جلسات ۱ تا ۴
+%  نسخه‌ی کامل: برنامه‌ی اجرای هر جلسه + مخزن اقلام
+%  کامپایل با XeLaTeX (فونت: Vazirmatn)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,top=1.9cm,bottom=1.9cm,left=2cm,right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xepersian}
+
+\graphicspath{{assets/png/}}
+
+\settextfont[Scale=1.0]{Vazirmatn}
+\setlatintextfont[Scale=0.92]{DejaVu Sans}
+\setdigitfont[Scale=1.0]{Vazirmatn}
+
+\definecolor{maincol}{HTML}{1F4E79}
+\definecolor{morcol}{HTML}{00695C}
+\definecolor{mescol}{HTML}{1F4E79}
+\definecolor{tamcol}{HTML}{AD1457}
+\definecolor{anscol}{HTML}{2E7D32}
+\definecolor{stepcol}{HTML}{4527A0}
+\definecolor{aicol}{HTML}{6A1B9A}
+\definecolor{hintcol}{HTML}{B26A00}
+\definecolor{tchcol}{HTML}{546E7A}
+\definecolor{lightbg}{HTML}{F4F7FA}
+\definecolor{stepbg}{HTML}{F3F1FB}
+
+\newcommand{\software}{هوشینو}
+\newcommand{\payeh}{پایه‌ی ششم ابتدایی}
+\newcommand{\en}[1]{\lr{#1}}
+\newcommand{\sq}[1]{«#1»}
+\newcommand{\rtlbullet}{\textcolor{maincol}{\rule[0.25ex]{0.42em}{0.42em}}}
+\setlist[itemize]{label=\rtlbullet,leftmargin=1.4em,itemsep=1pt,topsep=2pt}
+
+\newtcolorbox{jalasebox}[2]{%
+  breakable, enhanced, colback=white, colframe=maincol!75,
+  coltitle=white, colbacktitle=maincol,
+  fonttitle=\bfseries, title={جلسه‌ی #1 \quad\textbar\quad #2},
+  boxrule=0.6pt, arc=3pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  before skip=8pt, after skip=8pt}
+
+\newtcolorbox{fasl}[1]{%
+  breakable, enhanced, colback=lightbg, colframe=maincol!35,
+  boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  title={#1}, coltitle=maincol, fonttitle=\bfseries, colbacktitle=lightbg}
+
+\newtcolorbox{stepbox}[1]{%
+  breakable, enhanced, colback=stepbg, colframe=stepcol!45,
+  boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  title={#1}, coltitle=white, fonttitle=\bfseries\small, colbacktitle=stepcol}
+
+\newcommand{\dastehead}[3]{%
+  \smallskip\noindent
+  \colorbox{#3!12}{\textcolor{#3}{\textbf{\,#1\,}}}\hspace{0.5em}%
+  \textcolor{#3}{\small #2}\par\nopagebreak\vspace{3pt}}
+
+\newcommand{\lbl}[2]{\noindent{\small\textbf{\textcolor{#1}{#2}}}\ }
+\newcommand{\tasvir}[1]{%
+  \par\nopagebreak\vspace{2pt}%
+  \begin{center}\includegraphics[width=0.62\textwidth]{#1}\end{center}%
+  \nopagebreak\vspace{1pt}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small مخزن محتوای \software{} \textbar\ \payeh}
+\fancyhead[L]{\small جلسات ۱ تا ۴}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\Large\bfseries\color{maincol}}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries\textcolor{maincol}{مخزن محتوای \software}}\\[0.8cm]
+{\Huge\bfseries درس «نوآوری و هوش»}\\[1.2cm]
+\rule{0.75\textwidth}{1pt}\\[0.8cm]
+{\LARGE \payeh}\\[0.5cm]
+{\Large جلسات ۱ تا ۴ — نسخه‌ی کامل، ویرایش ۱.۱}\\[1cm]
+{\large برنامه‌ی اجرای هر جلسه، گام‌به‌گام \textbar\ مخزن ۳۰ قلمی هر جلسه}\\[1.5cm]
+\rule{0.75\textwidth}{1pt}\\[1.5cm]
+{\large ساختار سه‌بخشی: آموزش \textbar\ فعالیت تعاملی \textbar\ ارزیابی}\\
+\vfill
+{\large تاریخ: \makebox[3cm]{\dotfill}}\\[0.4cm]
+{\large نام آموزشگاه: \makebox[5cm]{\dotfill}}\\[1cm]
+\end{titlepage}
+
+\section{این فایل چه چیزی دارد؟}
+
+این نسخه، دو چیز را کنار هم می‌آورد:
+
+\begin{fasl}{۱ — برنامه‌ی اجرای جلسه}
+برای هر جلسه، \textbf{گام‌به‌گام} نوشته شده که روی صفحه‌ی \software{} چه چیزی
+نمایش داده می‌شود، از دانش‌آموز چه خواسته می‌شود، پاسخ چطور داوری می‌شود، چه
+راهنمایی‌هایی در چه ترتیبی داده می‌شود و معلم کجا باید دخالت کند.
+همین گام‌ها عیناً همان چیزی است که به \software{} داده می‌شود.
+\end{fasl}
+
+\begin{fasl}{۲ — مخزن اقلام}
+سه دسته‌ی همیشگی: \textbf{مرور} جلسه‌ی پیش، \textbf{مثال} آموزشی و
+\textbf{تمرین} ارزیابی — هر کدام ۱۰ قلم. این‌ها بیش از نیاز یک جلسه‌اند تا
+\software{} بتواند برای هر دانش‌آموز زیرمجموعه‌ای متناسب با عملکرد خودش بردارد.
+\end{fasl}
+
+\begin{fasl}{ویرایش ۱.۱ — چه چیزی تغییر کرد؟}
+\begin{itemize}
+\item \textbf{بخش آموزش فقط نمایشی است.} هیچ ورودی‌ای از دانش‌آموز نمی‌گیرد و به‌جای ۲ تا ۳ گام،
+۶ تا ۷ صفحه‌ی آموزشی دارد: تعریف، مثال حل‌شده، کارت ابزار و معرفی شغل — هر صفحه با یک تصویر.
+پس در آموزش مجازی یا کلاس دونفره، نیاز به توضیح معلم کم است.
+\item \textbf{پیش‌سنجه.} گویه‌ی \en{K1} جلسه‌های پنجره‌ی مشاغل از بخش آموزش بیرون آمد و پیش از
+شروع آموزش، جدا از هر دانش‌آموز پرسیده می‌شود (بیرون از ۶۰ دقیقه).
+\item \textbf{مرور و مثال، کارت آموزشی‌اند.} اقلام مرور با پاسخشان و اقلام مثال به‌صورت مثال حل‌شده نمایش داده می‌شوند.
+\item \textbf{پرسش‌های چندجای‌خالی شکسته شد.} هر پرسشی که چند پاسخ جدا می‌خواست (چند گویه، چند مورد برای دسته‌بندی،
+چند جمله) در ارزیابی و مخزن تمرین به چند پرسش جداگانه تبدیل شد؛ پاره‌های یک پرسش شناسه‌ی گروه مشترک دارند.
+\end{itemize}
+\end{fasl}
+
+\begin{fasl}{دو حالت پاسخ}
+هر پرسش یکی از این دو حالت را دارد و \software{} باید بداند با کدام روبه‌روست:
+
+\smallskip\noindent
+\textbf{\textcolor{anscol}{پاسخ معین}} — یک پاسخ درست دارد. فهرست
+\sq{پذیرفتنی} همه‌ی صورت‌های قابل قبول را می‌آورد و \software{} فقط تطبیق می‌دهد.
+
+\smallskip\noindent
+\textbf{\textcolor{aicol}{پاسخ باز}} — پاسخ ثابت ندارد. به‌جای پاسخ،
+\sq{معیارها} نوشته شده؛ \software{} بررسی می‌کند کدام معیارها در پاسخ آمده است:
+همه‌ی معیارها آمد یعنی \textbf{درست}؛ بخشی آمد یعنی \textbf{نیمه}؛ هیچ‌کدام نیامد یعنی \textbf{نادرست}.
+\end{fasl}
+
+\begin{fasl}{راهنمایی سه‌سطحی}
+هر پرسش سه راهنمایی دارد و فقط وقتی داده می‌شود که دانش‌آموز گیر کند:
+\textbf{۱)} تلنگر، بدون لو دادن چیزی. \textbf{۲)} نشان‌دادن مسیر فکر.
+\textbf{۳)} تقریباً پاسخ، تا خودش خط آخر را بردارد.
+\software{} هرگز پیش از این سه، پاسخ را نمی‌گوید.
+\end{fasl}
+
+\begin{fasl}{یادداشت معلم}
+هرجا \textbf{\textcolor{tchcol}{یادداشت معلم}} آمده، متنی است که فقط شما
+می‌بینید — به دانش‌آموز نمایش داده نمی‌شود.
+\end{fasl}
+
+\section{جلسه‌ی ۱ — قرارداد سال و پرسش بزرگ}
+\begin{jalasebox}{۱}{قرارداد سال و پرسش بزرگ}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}آشنا شدن با قرارهای کلاس و طرح پرسش بزرگ سال: چه چیزی یک اثر را واقعاً «اثر خودم» می‌کند؟\par
+\lbl{maincol}{مفاهیم:}قرار کلاس، سبک، اصالت، پرسش بزرگ\par
+\lbl{maincol}{مأموریت:}کاوشگر اصالت \textbar\ \textbf{نشان:} نشان قرارداد\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ زبان فارسی — نگارش شخصی:}نوشتن جمله‌ای که فقط با انتخاب واژه‌های خود نویسنده ساخته می‌شود. هر دانش‌آموز یک جمله درباره‌ی خودش می‌نویسد که فکر می‌کند فقط خودش همین‌طور می‌نویسدش.\par
+\lbl{tamcol}{ابزار امروز:}ابزار تازه‌ای باز نمی‌شود.\par
+\noindent{\small امروز ابزار تازه‌ای باز نمی‌شود؛ فقط گفت‌وگوی ساده و جست‌وجوی سبک شخصی. کشف امروز: سبک از انتخاب‌های کوچک و تکراری ساخته می‌شود، نه از یک قانون بزرگ.}\par
+\lbl{maincol}{مواد:}کاغذ و مداد و مدادرنگی، تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}جمله‌ی امضادار ثبت‌شده + سه قرار کلاس + نشان قرارداد.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ پرسش بزرگ سال را در هر جلسه یادآوری کنید؛ امسال هر فصل به آن برمی‌گردد.}}\par
+\vspace{4pt}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۱۵ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A1}}\textbf{سه قرار ما}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امسال سه قرار داریم. این‌ها قانونی نیستند که کسی به ما تحمیل کند؛ خودمان می‌گذاریمشان تا کار همه راحت پیش برود. هر قرار یک دلیل دارد:\par
+\begin{itemize}
+\item هدفون روی گوش — صدای تبلتت فقط مال خودت
+\item صدای آرام — همه بتوانند فکر کنند
+\item نوبت را نگه می‌داریم — حرف هرکس شنیده شود
+\end{itemize}
+\tasvir{G6-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری، سه قرار را روی نمایشگر کلاسی بیاورید و با هم بلند تکرار کنید. در آموزش مجازی یا دونفره، همین صفحه کافی است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A2}}\textbf{هر جلسه چطور پیش می‌رود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر جلسه سه بخش دارد. در «آموزش» یاد می‌گیری، در «فعالیت تعاملی» بازی می‌کنی و می‌سازی، و در «ارزیابی» نشان می‌دهی چه یاد گرفتی. هر جلسه یک مأموریت دارد؛ با تمام‌کردنش یک نشان می‌گیری. نشان مال کسی است که مأموریت را تمام کند، نه کسی که بهترین باشد.\par
+\tasvir{G6-S01-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A3}}\textbf{قاعده‌ی سال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این جمله امسال روی دیوار کلاس می‌ماند:\par\noindent \par\noindent «مسئله را من انتخاب می‌کنم و معیار خوب‌بودن را من تعیین می‌کنم؛ ابزار هیچ‌کدام را به‌جای من انجام نمی‌دهد.»\par\noindent \par\noindent یعنی ابزار می‌تواند کمکت کند، ولی دو تصمیم همیشه با خودت است: درباره‌ی چه کار کنی، و چه چیزی «خوب» حساب شود.\par
+\tasvir{G6-S01-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری جمله را با هم بلند بخوانید. در طول سال هر فصل به این جمله برمی‌گردد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A4}}\textbf{سبک یعنی چه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سبک یعنی انتخاب‌هایی که یک نفر بارها و بارها تکرار می‌کند؛ مثل طول جمله‌هایش، واژه‌های محبوبش، ضخامت خط نقاشی‌اش یا زاویه‌ای که از آن عکس می‌گیرد. سبک از تکرار ساخته می‌شود، نه از یک کار درخشانِ یک‌باره. جالب اینکه صاحب سبک معمولاً خودش از آن خبر ندارد.\par
+\tasvir{G6-S01-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A5}}\textbf{مثال: یک صحنه، دو سبک}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر دو جمله درباره‌ی یک صبحانه‌اند:\par\noindent \par\noindent الف) «صبحانه خوردم.»\par\noindent ب) «صبح زود، نان داغ و پنیر را کنار پنجره با چای شیرین خوردم.»\par\noindent \par\noindent محتوا یکی است. «الف» ساده و مستقیم است؛ «ب» پرجزئیات. هیچ‌کدام بهتر نیست؛ فقط سبکشان فرق دارد.\par
+\tasvir{G6-S01-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A6}}\textbf{مثال: رسمی یا خودمانی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک خواسته را می‌شود با دو لحن گفت:\par\noindent \par\noindent رسمی: «لطفاً در را ببندید.» — کامل، مؤدب، کتابی.\par\noindent خودمانی: «درو ببند دیگه!» — کوتاه، شکسته، مثل حرف‌زدن.\par\noindent \par\noindent در بازی امروز همین‌ها را تشخیص می‌دهی: رسمی یا خودمانی، ساده یا پرجزئیات.\par
+\tasvir{G6-S01-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-A7}}\textbf{پرسش بزرگ امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال: «چه چیزی یک اثر را واقعاً اثر خودم می‌کند؟» اثر تازه همیشه مال تو نیست؛ اگر هیچ انتخابی از تو در آن نباشد، مال تو نیست. امروز ابزارها می‌توانند سبک را تقلید کنند؛ پس این پرسش واقعی است. امروز هیچ‌کس پاسخ کاملش را نمی‌داند.\par
+\tasvir{G6-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ صریح بگویید حتی خودتان هم پاسخ کامل را نمی‌دانید؛ پرسش بزرگ را در هر جلسه یادآوری کنید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۵ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۲ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S01-T1}}\textbf{چیزی که فقط تو داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هدفون را بگذار و با هوشینو سلام کن. حالا به این فکر کن: یک چیز که فقط خودت داری و هیچ‌کس دیگری مثل تو ندارد، چیست؟ می‌تواند یک عادت یا یک سلیقه باشد. پاسخت را تایپ کن.\par
+\tasvir{G6-S01-E04}
+\lbl{maincol}{پرسش:}یک چیز که فقط خودت داری و هیچ‌کس دیگری مثل تو ندارد، چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک ویژگی، عادت یا سلیقه‌ی مشخص را نام ببرد
+\item بگوید چرا فکر می‌کند این ویژگی مخصوص خودش است
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ وقتی داستان می‌نویسم، همیشه جمله‌های خیلی کوتاه می‌سازم؛ هیچ‌کدام از دوستانم این‌طور نمی‌نویسند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری فکر کن که همیشه به یک شکل خاص انجامش می‌دهی.
+\item شاید یک عادت در حرف‌زدن، نوشتن یا نقاشی‌کشیدنت باشد.
+\item مثلاً: «وقتی … می‌کنم، همیشه … انجام می‌دهم.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً همین چیزهای کوچک و خاص، اولین سرنخِ سبک شخصی‌اند.\ \textbar\ \textbf{نیمه:} چیز خوبی گفتی؛ حالا یک مثال دقیق‌تر بزن که چرا فکر می‌کنی مال خودت است.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: یک کار کوچک که همیشه یک‌جور خاص انجامش می‌دهی چیست؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌نویسد «نمی‌دانم» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ اشکالی ندارد؛ به کاری که امروز انجام دادی فکر کن — چطور آن را انجام دادی که شاید فرق داشت؟}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر دانش‌آموزی گیر کرد، مثال بزنید: طرز خندیدن، طرز نوشتن اسمش، رنگ موردعلاقه‌اش در نقاشی.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۳ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S01-T2}}\textbf{کدام جمله شبیه توست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ به این دو جمله درباره‌ی یک صحنه نگاه کن:\par\noindent \par\noindent الف) توی پارک نشستم.\par\noindent \par\noindent ب) زیر سایه‌ی درخت‌های بلند پارک، آرام و بی‌عجله نشستم و صدای برگ‌ها را گوش دادم.\par\noindent \par\noindent کدام‌یک به سبک نوشتن خودت نزدیک‌تر است؟ بنویس و بگو چرا.\par
+\tasvir{G6-S01-E05}
+\lbl{maincol}{پرسش:}کدام جمله به سبک نوشتن خودت نزدیک‌تر است و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یکی از دو گزینه (الف یا ب) را انتخاب کند
+\item دلیلی درباره‌ی سبک نوشتن خودش بیاورد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ گزینه‌ی الف، چون من هم دوست دارم کوتاه و مستقیم بنویسم، نه با جزئیات زیاد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item دوباره هر دو جمله را بخوان و ببین کدام‌یک بیشتر ذهنت را می‌گیرد.
+\item به این فکر کن: خودت وقتی می‌نویسی، بیشتر کوتاه می‌نویسی یا با جزئیات؟
+\item اگر کوتاه می‌نویسی، شبیه گزینه‌ی الف هستی؛ اگر با جزئیات، شبیه گزینه‌ی ب.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب بود — همین توجه به سبک خودت، دقیقاً کاری است که امروز دنبالش هستیم.\ \textbar\ \textbf{نیمه:} انتخابت را گفتی؛ حالا بگو چرا همین یکی به سبک خودت نزدیک‌تر است.\ \textbar\ \textbf{نادرست:} دوباره هر دو جمله را بخوان و بگو کدام شبیه‌تر به نوشته‌های خودت است.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌گوید هر دو خوبند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ می‌دانم هر دو خوبند؛ فقط بگو کدام‌یک بیشتر شبیه نوشته‌های خودت است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هدف این گام مقایسه‌ی درست و غلط نیست، خودشناسی است؛ هیچ پاسخی اشتباه نیست.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S01-T3}}\textbf{بازی: این سبک کیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ ده جمله‌ی کوتاه می‌بینی، هرکدام با سبک متفاوت. بعد از هر جمله فقط یک واژه بنویس: رسمی یا خودمانی، ساده یا پرجزئیات. هر دور کمی سخت‌تر می‌شود.\par
+\tasvir{G6-S01-E06}
+\lbl{maincol}{پرسش:}این جمله چه سبکی دارد؟\par
+\lbl{anscol}{پاسخ معین:}بستگی به جمله دارد\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ رسمی؛ خودمانی؛ ساده؛ پرجزئیات}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کلمه‌هایی که استفاده شده نگاه کن — رسمی‌اند یا محاوره‌ای؟
+\item اگر جمله جزئیات و توصیف زیاد دارد، پرجزئیات است؛ اگر کوتاه و مستقیم است، ساده است.
+\item کلمه‌هایی مثل «لطفاً» و «جنابعالی» نشانه‌ی رسمی‌بودن‌اند؛ کلمه‌هایی مثل «باحال» و «بریم» نشانه‌ی خودمانی‌بودن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست بود؛ حالا بگو از کجا فهمیدی؟\ \textbar\ \textbf{نیمه:} نزدیک بودی؛ یک بار دیگر به کلمه‌ها نگاه کن.\ \textbar\ \textbf{نادرست:} این‌بار نشد — ولی همین که دنبال نشانه‌ها گشتی مهم است.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ جمله‌های بلند را همیشه رسمی می‌داند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ بلندبودن جمله نشانه‌ی رسمی‌بودن نیست؛ به کلمه‌ها نگاه کن، نه طول جمله.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر کلاس روی یک جمله دو دسته شد، همان‌جا نگه دارید و بحث را باز بگذارید — این بهترین بخش بازی است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۷ دقیقه \textbar\ فردی \textbar\ ضبط صدا}
+\lbl{stepcol}{\en{G6-S01-E1}}\textbf{کجا سبکت را دیدی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ میکروفون را روشن کن و در چند جمله بگو: امروز کجا سبک خودت را در نوشته‌ات دیدی؟ به یکی از فعالیت‌های امروز اشاره کن.\par
+\tasvir{G6-S01-E08}
+\lbl{maincol}{پرسش:}صدایت را ضبط کن و بفرست.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به یک فعالیت مشخص از امروز اشاره کند
+\item بگوید چه چیزی در نوشته‌اش نشانه‌ی سبک خودش بود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ توی جمله‌ی امضادارم از کلمه‌های کوتاه استفاده کردم؛ من همیشه همین‌طور می‌نویسم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به فعالیت‌های امروز فکر کن — کدام‌یک درباره‌ی نوشتن خودت بود؟
+\item کدام جمله یا پاسخ امروز، مالِ خودِ توست و شبیه کس دیگری نیست؟
+\item بگو: «توی … نوشتم … و این مالِ خودم است چون …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ضبط شد و در پروفایلت ذخیره شد. ضبط صدا یکی از چهار کاری است که امسال بارها با هم انجام می‌دهیم.\ \textbar\ \textbf{نیمه:} شنیدم. یک چیز دیگر هم بگو: چه چیزی در نوشته‌ات نشانه‌ی سبک خودت بود؟\ \textbar\ \textbf{نادرست:} صدایت واضح نبود. هدفون و میکروفون را چک کن و دوباره بگو.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ خجالت می‌کشد و ضبط نمی‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ فقط من می‌شنوم و در پروفایل خودت ذخیره می‌شود. یک جمله هم کافی است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ برای بچه‌های خجالتی، اجازه بدهید این یکی را تایپ کنند. در جلسه‌های بعد کم‌کم به ضبط صدا بیایند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۳ دقیقه \textbar\ فردی \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S01-E2}}\textbf{مأموریت امروز تمام شد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت امروز «کاوشگر اصالت» بود و تو تمامش کردی. «نشان قرارداد» در پروفایلت ثبت شد.\par\noindent \par\noindent نشان‌ها را با تمام‌کردن مأموریت می‌گیری، نه با بهترین بودن. هیچ رتبه‌بندی‌ای در کار نیست.\par
+\begin{itemize}
+\item سه قرار کلاس \ensuremath{\checkmark}
+\item جمله‌ی امضادار \ensuremath{\checkmark}
+\item نشان قرارداد \ensuremath{\checkmark}
+\end{itemize}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تا جلسه‌ی بعد!}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ جمله‌ی «نشان با تمام‌کردن گرفته می‌شود» را بلند بگویید. اگر این را جا بیندازید، دانش‌آموز ضعیف‌تر هم تا آخر سال می‌ماند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز جمله‌ی امضادارش و پاسخ‌های بازی «این سبک کیست؟» را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک جمله‌ی رسمی و یک جمله‌ی خودمانی را از هم جدا کن.
+\item \textbf{سطح ۲:} سه جمله را با سبک‌های متفاوت بشناس.
+\item \textbf{سطح ۳:} خودت یک جمله بنویس که سبکش کاملاً مالِ خودت باشد و بگو چرا.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}جمله‌ی امضادار، سه قرار کلاس و نشان قرارداد.\par
+\lbl{mescol}{تمرین خانه:}در خانه یک جمله از یکی از اعضای خانواده بشنو و بگو از روی چه چیزی فهمیدی سبک نوشتن یا حرف‌زدنش مالِ خودش است.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{ندارد — نخستین جلسه‌ی سال است}{morcol}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G6-S01-E01}}\textbf{سه قرار ما}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه قراری که امسال با هم می‌گذاریم: هدفون روی گوش، صدای آرام، نوبت را نگه می‌داریم. این سه را با کلاس بلند بخوان — قراری که فقط شنیده شود، رعایت نمی‌شود.\par
+\tasvir{G6-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E02}}\textbf{قاعده‌ی امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این جمله امسال روی دیوار کلاس می‌ماند: «مسئله را من انتخاب می‌کنم و معیار خوب‌بودن را من تعیین می‌کنم؛ ابزار هیچ‌کدام را به‌جای من انجام نمی‌دهد.» با کلاس بلند بخوانش.\par
+\tasvir{G6-S01-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E03}}\textbf{پرسش بزرگ امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ همین جمله‌ی روی دیوار، ما را به پرسش بزرگ امسال می‌رساند:\par\noindent \par\noindent «چه چیزی یک اثر را واقعاً اثر خودم می‌کند؟»\par\noindent \par\noindent امروز هیچ‌کس پاسخ کاملش را نمی‌داند — حتی معلمت. قرار است در طول سال با هم بسازیمش.\par
+\tasvir{G6-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E04}}\textbf{مثال: چیزی که فقط تو داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در فعالیت امروز می‌گویی چه چیزی فقط مال توست. نمونه‌ی خوب: «همیشه وقتی نقاشی می‌کشم، گوشه‌ی کاغذ یک ستاره‌ی کوچک می‌گذارم؛ از کلاس سوم این عادت را دارم.» این پاسخ یک عادت مشخص را می‌گوید و دلیل می‌آورد که چرا مال خودش است.\par
+\tasvir{G6-S01-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E05}}\textbf{مثال: کدام جمله شبیه توست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه‌ی پاسخ خوب به این پرسش: «جمله‌ی ب به سبک من نزدیک‌تر است، چون من هم وقتی می‌نویسم، صداها و رنگ‌ها را می‌آورم.» این پاسخ یکی را انتخاب کرده و دلیلش را به عادت نوشتن خودش وصل کرده است، نه به اینکه کدام «قشنگ‌تر» است.\par
+\tasvir{G6-S01-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E06}}\textbf{مثال حل‌شده: این سبک کیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی، هر جمله را با یک واژه دسته‌بندی می‌کنی:\par
+\begin{itemize}
+\item «با سلام، جلسه ساعت ده آغاز می‌شود.» \ensuremath{\leftarrow} رسمی
+\item «بچه‌ها بدویید، بازی شروع شد!» \ensuremath{\leftarrow} خودمانی
+\item «باران آمد.» \ensuremath{\leftarrow} ساده
+\item «باران ریز و سرد، آرام روی شیشه‌ی کلاس نشست.» \ensuremath{\leftarrow} پرجزئیات
+\end{itemize}
+\tasvir{G6-S01-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E07}}\textbf{مثال: جمله‌ی امضادار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله‌ی امضادار، جمله‌ای است که فقط تو همین‌طور می‌نویسی. جمله‌ی کلیشه‌ای: «من فوتبال را دوست دارم.» جمله‌ی امضادار: «وقتی توپ به تور می‌خورد، صدایش برایم از هر آهنگی قشنگ‌تر است.» دومی انتخاب‌های خود نویسنده را دارد: صدا و مقایسه.\par
+\tasvir{G6-S01-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E08}}\textbf{نمونه‌ی یک بازتاب صوتی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش پایان جلسه: «امروز کجا سبک خودت را در نوشته‌ات دیدی؟»\par\noindent \par\noindent نمونه‌ی پاسخ خوب: «در بازی این سبک کیست، فهمیدم بیشتر جمله‌هایم خودمانی‌اند. در جمله‌ی امضادارم هم دوباره یک صدا آوردم؛ فکر کنم آوردن صدا، عادت من است.»\par
+\tasvir{G6-S01-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E09}}\textbf{امروز ابزار تازه‌ای نداریم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز هیچ ابزار هوش مصنوعی تازه‌ای باز نمی‌شود. فقط گفت‌وگو می‌کنیم و دنبال سبک شخصی خودمان می‌گردیم.\par\noindent \par\noindent کشف امروز: سبک از انتخاب‌های کوچک و تکراری ساخته می‌شود، نه از یک قانون بزرگ.\par
+\tasvir{G6-S01-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S01-E10}}\textbf{مثال: سبک یک نفر در خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه‌ی تمرین خانه: «مادربزرگم همیشه جمله‌هایش را با یک ضرب‌المثل تمام می‌کند. از همین می‌فهمم سبک حرف‌زدنش مال خودش است.» نشانه‌ی سبک، چیزی است که تکرار می‌شود؛ یک بار گفتن کافی نیست.\par
+\tasvir{G6-S01-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۲ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G6-S01-P01}}\textbf{قرارهای امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کدام‌یک از سه قرار کلاس امروز است؟\par
+\begin{itemize}
+\item الف) دست بلند کن
+\item ب) هدفون روی گوش
+\item پ) کتاب را ببند
+\item ت) بلند بخند
+\end{itemize}
+\tasvir{G6-S01-P01}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ هدفون روی گوش؛ هدفون}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به چیزی فکر کن که با تبلت کار داری.
+\item کدام‌یک به صدا مربوط است؟
+\item سه قرار: هدفون، صدای آرام، نوبت.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — هدفون روی گوش، یکی از سه قرار امروز.\ \textbar\ \textbf{نادرست:} نه؛ سه قرار امروز درباره‌ی هدفون، صدا و نوبت بودند. دوباره نگاه کن.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ دست‌بلندکردن خوب است، ولی جزو سه قرار امروز نبود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S01-P02}}\textbf{قاعده‌ی روی دیوار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی سال را که روی دیوار نوشته شد، بنویس.\par
+\lbl{maincol}{پرسش:}قاعده‌ی امسال چه بود؟\par
+\lbl{anscol}{پاسخ معین:}مسئله را من انتخاب می‌کنم و معیار خوب‌بودن را من تعیین می‌کنم؛ ابزار هیچ‌کدام را به‌جای من انجام نمی‌دهد.\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ مسئله را من انتخاب می‌کنم و معیار خوب‌بودن را من تعیین می‌کنم؛ ابزار هیچ‌کدام را به‌جای من انجام نمی‌دهد.؛ خودم مسئله را انتخاب می‌کنم و خودم معیار خوب‌بودن را تعیین می‌کنم}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item یکی درباره‌ی انتخاب مسئله است.
+\item یکی درباره‌ی تعیین معیار خوب‌بودن، و یکی درباره‌ی نقش ابزار است.
+\item مسئله را من … ، معیار را من … ، ابزار … من نمی‌شود.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} هر سه ایده را گفتی.\ \textbar\ \textbf{نیمه:} بخشی از جمله را گفتی؛ ایده‌ی جامانده را هم بیاور.\ \textbar\ \textbf{نادرست:} دوباره به جمله‌ی روی دیوار فکر کن — با کلاس بلند خوانده شد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G6-S01-P03}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «امروز هوشینو یک ابزار هوش مصنوعی تازه به ما نشان داد.»\par
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به اول جلسه فکر کن.
+\item امروز با چه چیزی کار کردیم؟
+\item امروز فقط قرار گذاشتیم، قاعده‌ی سال را خواندیم و پرسش بزرگ را شنیدیم.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — امروز هیچ ابزار تازه‌ای باز نشد.\ \textbar\ \textbf{نادرست:} نه؛ امروز ابزار تازه‌ای نداشتیم. فقط قرار کلاس، قاعده‌ی سال و پرسش بزرگ.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S01-P04}}\textbf{پرسش بزرگ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال را بنویس.\par
+\lbl{maincol}{پرسش:}پرسش بزرگ امسال چیست؟\par
+\lbl{anscol}{پاسخ معین:}چه چیزی یک اثر را واقعاً اثر خودم می‌کند؟\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ چه چیزی یک اثر را واقعاً اثر خودم می‌کند؟؛ چه چیزی یک اثر را اثر خودم می‌کند؛ چه چیزی یک اثر را واقعاً اثر خودمان می‌کند}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item درباره‌ی یک اثر بود که خودمان می‌سازیم.
+\item درباره‌ی این بود که چه چیزی آن اثر را مالِ خودمان می‌کند.
+\item چه چیزی یک اثر را … خودم … می‌کند؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همین است — و تا آخر سال هر فصل به آن برمی‌گردیم.\ \textbar\ \textbf{نیمه:} نزدیک شدی؛ کلمه‌ی «اثر» یا «خودم» را هم بیاور.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: پرسش امروز درباره‌ی چه‌چیزبودنِ یک اثر بود.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S01-P05}}}\par
+\lbl{stepcol}{\en{G6-S01-P05-1}}\textbf{جمله‌ی ۱}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این جمله ساده و مستقیم است یا پرجزئیات؟\par\noindent \par\noindent «در باغ راه رفتم.»\par
+\tasvir{G6-S01-P05}
+\lbl{maincol}{پرسش:}ساده یا پرجزئیات؟\par
+\lbl{anscol}{پاسخ معین:}ساده\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ساده و مستقیم؛ ساده؛ مستقیم}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item واژه‌هایش را بشمار.
+\item چیزی درباره‌ی رنگ، صدا یا حس گفته؟
+\item جمله کوتاه است و فقط کار را می‌گوید.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ساده و مستقیم.\ \textbar\ \textbf{نادرست:} ببین جمله غیر از کار اصلی، چیز دیگری هم می‌گوید یا نه.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ دسته‌بندی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S01-P05}}}\par
+\lbl{stepcol}{\en{G6-S01-P05-2}}\textbf{جمله‌ی ۲}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این جمله ساده و مستقیم است یا پرجزئیات؟\par\noindent \par\noindent «زیر درختِ سیبِ پرشکوفه، آهسته و در سکوت قدم زدم.»\par
+\tasvir{G6-S01-P05}
+\lbl{maincol}{پرسش:}ساده یا پرجزئیات؟\par
+\lbl{anscol}{پاسخ معین:}پرجزئیات\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ پرجزئیات؛ پر از جزئیات؛ پر جزئیات}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item واژه‌هایش را بشمار.
+\item درباره‌ی جا، حس و صدا چیزی گفته؟
+\item درخت سیب، شکوفه، آهسته، سکوت…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — پرجزئیات.\ \textbar\ \textbf{نادرست:} به جزئیاتی مثل «پرشکوفه» و «در سکوت» نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S01-P06}}\textbf{قانون بازی «این سبک کیست؟»}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هوشینو در بازی «این سبک کیست؟» درباره‌ی هر جمله چه چیزی از ما می‌پرسید؟\par
+\tasvir{G6-S01-P06}
+\lbl{maincol}{پرسش:}چه چیزی از ما خواسته می‌شد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید باید با یک واژه پاسخ دهیم
+\item دست‌کم یک جفت از سبک‌ها را نام ببرد (رسمی یا خودمانی، ساده یا پرجزئیات)
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ با یک کلمه می‌گفتیم رسمی است یا خودمانی، ساده است یا پرجزئیات.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item پاسخ باید کوتاه باشد — چند کلمه‌ای؟
+\item دو جفت واژه به کار می‌رفت: یکی درباره‌ی رسمی‌بودن، یکی درباره‌ی جزئیات.
+\item با یک واژه می‌گفتیم: رسمی یا خودمانی، ساده یا پرجزئیات.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — باید سبک هر جمله را با یک واژه می‌گفتیم.\ \textbar\ \textbf{نیمه:} نزدیکی؛ حالا نام آن دو جفت واژه را هم بگو.\ \textbar\ \textbf{نادرست:} به بازی فکر کن: بعد از هر جمله، دقیقاً چند کلمه می‌نوشتیم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی}}\par
+\lbl{stepcol}{\en{G6-S01-P07}}\textbf{جمله‌ی امضادار خودت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک جمله درباره‌ی خودت بنویس که فکر می‌کنی فقط خودت همین‌طور می‌نویسیش.\par
+\lbl{maincol}{پرسش:}جمله‌ی امضادارت را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item جمله با کلمات خودِ دانش‌آموز و نه کلیشه‌ای باشد
+\item جمله درباره‌ی خودِ دانش‌آموز باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ وقتی چیزی یادم می‌رود، بلند بلند با خودم حرف می‌زنم تا یادم بیاید.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به یک کار کوچک روزمره‌ات فکر کن.
+\item جمله‌ات باید چیزی باشد که گمان نمی‌کنی دوستت هم دقیقاً همین را بنویسد.
+\item مثلاً: «من وقتی … ، همیشه …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد — این جمله در پروفایلت می‌ماند.\ \textbar\ \textbf{نیمه:} خوب شروع کردی؛ یک جزئیات دقیق‌تر و مالِ خودت اضافه کن.\ \textbar\ \textbf{نادرست:} بیا ساده‌تر: کاری که امروز انجام دادی و فقط خودت این‌طور انجامش می‌دهی چه بود؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S01-P08}}\textbf{چرا این قاعده می‌ماند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گفتیم قاعده‌ی سال تا پایان سال روی دیوار می‌ماند؟\par
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند که این جمله معیار داوری آثار امسال است
+\item اشاره کند که هر فصل امسال به این جمله برمی‌گردیم
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون این جمله معیاری است که با آن آثار خودمان را می‌سنجیم و امسال بارها بهش برمی‌گردیم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن این جمله قرار است چه کاری برای آثار امسال بکند.
+\item این جمله فقط برای امروز است یا برای همه‌ی فصل‌ها؟
+\item چون هر اثری که امسال می‌سازیم، با همین جمله سنجیده می‌شود.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — این جمله معیار داوری همه‌ی آثار امسال است.\ \textbar\ \textbf{نیمه:} خوب شروع کردی؛ حالا بگو این جمله چه نقشی در طول سال دارد.\ \textbar\ \textbf{نادرست:} بیا ساده‌تر: این جمله برای فقط امروز است یا برای همیشه؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S01-P09}}}\par
+\lbl{stepcol}{\en{G6-S01-P09-1}}\textbf{جمله‌ی ساده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک صحنه انتخاب کن (مثلاً زنگ تفریح). درباره‌ی آن یک جمله‌ی ساده و مستقیم بنویس.\par
+\tasvir{G6-S01-P09}
+\lbl{maincol}{پرسش:}جمله‌ی ساده‌ات را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جمله‌ی کوتاه و ساده درباره‌ی یک صحنه بنویسد
+\item جمله جزئیات اضافه (رنگ، صدا، حس) نداشته باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ زنگ تفریح خورد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item صحنه‌ات را در ذهنت انتخاب کن.
+\item فقط کار اصلی را بگو.
+\item مثلاً: «زنگ خورد.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} جمله‌ات ساده و مستقیم است.\ \textbar\ \textbf{نیمه:} جمله‌ات جزئیات زیادی دارد؛ کوتاه‌ترش کن.\ \textbar\ \textbf{نادرست:} یک جمله‌ی کوتاه درباره‌ی صحنه‌ات بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S01-P09}}}\par
+\lbl{stepcol}{\en{G6-S01-P09-2}}\textbf{جمله‌ی پرجزئیات}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا درباره‌ی همان صحنه، یک جمله‌ی پرجزئیات بنویس.\par
+\tasvir{G6-S01-P09}
+\lbl{maincol}{پرسش:}جمله‌ی پرجزئیات را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item درباره‌ی همان صحنه‌ی جمله‌ی قبلی باشد
+\item دست‌کم دو جزئیات (صدا، رنگ، حس، مکان) داشته باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ زنگ تفریح با صدای تیز و بلندش خورد و حیاط در یک لحظه پر از دویدن و خنده شد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item همان صحنه را نگه دار.
+\item صدا، رنگ یا حس را اضافه کن.
+\item مثلاً: «زنگ با صدای تیزش…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همان صحنه را این بار پرجزئیات نوشتی.\ \textbar\ \textbf{نیمه:} جزئیات آوردی؛ مطمئن شو صحنه همان صحنه‌ی قبلی است.\ \textbar\ \textbf{نادرست:} به جمله‌ی ساده‌ات صدا، رنگ یا حس اضافه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G6-S01-P10}}\textbf{«من سبک ندارم»}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «من سبک ندارم، هرجور که پیش بیاید می‌نویسم.» با او موافقی؟ چرا؟\par
+\tasvir{G6-S01-P10}
+\lbl{maincol}{پرسش:}با دوستت موافقی؟ چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item نظر خودش (موافق یا مخالف) را بگوید
+\item اشاره کند که حتی نوشتن «هرجور پیش بیاید» هم الگوی تکراری قابل‌کشف دارد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ موافق نیستم، چون حتی وقتی کسی می‌گوید هرجور پیش بیاید می‌نویسد، باز هم یک الگو در انتخاب کلماتش هست که می‌شود پیدا کرد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به بازی «این سبک کیست؟» فکر کن — آیا هر جمله‌ای واقعاً بی‌سبک بود؟
+\item کسی که فکر می‌کند سبک ندارد، شاید فقط هنوز به عادت‌های نوشتنش دقت نکرده.
+\item بنویس: «موافق/مخالفم، چون حتی نوشتن هرجور پیش‌بیاید هم …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — حتی «هرجور پیش بیاید» هم یک الگوی قابل‌کشف است.\ \textbar\ \textbf{نیمه:} نظرت را گفتی؛ حالا دلیلش را هم بیاور.\ \textbar\ \textbf{نادرست:} به بازی امروز فکر کن: آیا هیچ جمله‌ای واقعاً بدون هیچ سبکی بود؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۲ — سبک، امضا، اصالت}
+\begin{jalasebox}{۲}{سبک، امضا، اصالت}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}کشف اینکه سبک شخصی از انتخاب‌های تکراری ساخته می‌شود، نه از یک قانون واحد.\par
+\lbl{maincol}{مفاهیم:}سبک، امضا، انتخاب تکراری، اصالت\par
+\lbl{maincol}{مأموریت:}کارآگاه سبک \textbar\ \textbf{نشان:} نشان امضا\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ هنر و زبان فارسی — عناصر سبک:}یافتن ویژگی‌های تکراری‌ای که سبک یک اثر را می‌سازند. هر دانش‌آموز سه ویژگی تکراری در نوشته یا نقاشی‌های خودش پیدا می‌کند و تایپ می‌کند.\par
+\lbl{tamcol}{ابزار امروز — تصویرخوان:}تصویر را می‌بیند و توصیفش می‌کند، اما فقط شکل را می‌بیند، نه سبک را. کشف امروز این است: دو نفر می‌توانند یک چیز را دقیقاً یکسان ببینند و کاملاً متفاوت توصیف کنند — همین تفاوت، سبک است.\par
+\noindent{\small امروز تصویرخوان برای اولین‌بار باز می‌شود؛ فقط شکل تصویر را می‌بیند، نه سبک توصیف را.}\par
+\lbl{maincol}{مواد:}تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}توصیف دوگانه‌ی تصویر + سه قاعده‌ی سبک + کارت شغل شماره‌ی ۱ + نشان امضا.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ وقتی دانش‌آموزی گفت «سبک ندارم»، بپرسید: «اگر سه هم‌کلاسی‌ات این جمله را می‌نوشتند، مال تو را از کجا می‌شناختند؟»}}\par
+\vspace{4pt}
+\dastehead{پیش‌سنجه}{پیش از بخش آموزش، جدا برای هر دانش‌آموز — بیرون از ۶۰ دقیقه}{tamcol}
+\begin{stepbox}{پیش‌سنجه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-K1}}\textbf{پیش از شروع: شغل امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز با شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» آشنا می‌شوی. پیش از هر توضیحی، صادقانه بگو این جمله چقدر درباره‌ی تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E02}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. حالا برویم سراغ درس امروز.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گویه باید پیش از هر توضیحی درباره‌ی شغل ثبت شود، وگرنه سنجش رشد آشنایی بی‌معنا می‌شود. هوشینو آن را هنگام ورود هر دانش‌آموز، پیش از بخش آموزش، روی دستگاه خودش می‌پرسد؛ پس بخش آموزش بدون ورودی می‌ماند و در کلاس دونفره یا مجازی هر نفر جدا پاسخ می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۲۰ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A1}}\textbf{مرور: قرارداد سال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش سال را با یک قاعده و یک پرسش بزرگ شروع کردیم و دیدیم سبک از انتخاب‌های تکراری ساخته می‌شود. این نکته‌ها را مرور کن؛ بعد کارت‌های مرور را می‌بینی.\par
+\begin{itemize}
+\item قاعده‌ی سال: مسئله و معیار را من تعیین می‌کنم
+\item پرسش بزرگ: چه چیزی اثر را اثر خودم می‌کند؟
+\item سبک = انتخاب‌هایی که بارها تکرار می‌شوند
+\item رسمی یا خودمانی، ساده یا پرجزئیات
+\end{itemize}
+\tasvir{G6-S02-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه کارت‌های مرور را با پاسخ نشان می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A2}}\textbf{ابزار امروز: تصویرخوان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز نخستین ابزار هوشینو باز می‌شود: تصویرخوان. او تصویر را می‌بیند و در چند جمله توصیفش می‌کند. ولی فقط شکل را می‌بیند؛ حس و نگاه و سبک تو را نمی‌بیند. هر ابزار را با چهار پرسش می‌شناسیم؛ پاسخ‌ها را در تصویر ببین.\par
+\tasvir{G6-S02-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A3}}\textbf{سبک را کی می‌شود دید؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ اگر دو نفر دو تصویر مختلف را توصیف کنند، نمی‌فهمی فرق توصیف‌ها از سبک است یا از خود تصویر. ولی اگر هر دو یک تصویر ثابت را توصیف کنند، هر فرقی که می‌بینی، از سبک توصیف‌کننده است. برای همین امروز توصیف تو و تصویرخوان از یک تصویر کنار هم گذاشته می‌شوند.\par
+\tasvir{G6-S02-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A4}}\textbf{مثال حل‌شده: یک تصویر، دو توصیف}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویر: فنجان چای کنار پنجره‌ی بارانی.\par\noindent \par\noindent تصویرخوان: «یک فنجان روی میز، کنار پنجره.»\par\noindent یک دانش‌آموز: «چای داغم بخار می‌کرد و باران آرام به شیشه می‌خورد؛ دلم نمی‌خواست بلند شوم.»\par\noindent \par\noindent فرق‌ها: حس، صدا و نگاه خودش. هیچ‌کدام «بهتر» نیست؛ دومی سبک دارد.\par
+\tasvir{G6-S02-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A5}}\textbf{امضا یعنی الگوی تکراری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امضا قاعده‌ای نیست که کسی آگاهانه انتخابش کند؛ الگویی است که در کارهای پشت‌سرهمِ یک نفر تکرار می‌شود، حتی وقتی خودش متوجه نیست. مثل نقاشی که در گوشه‌ی هر کارش یک ستاره‌ی کوچک می‌کشد. اگر فکر می‌کنی سبک نداری، احتمالاً هنوز کسی کارت را کنار کار دیگری نگذاشته است.\par
+\tasvir{G6-S02-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A6}}\textbf{شغل امروز: تدوینگر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تدوینگر و سازنده‌ی محتوای صوتی-تصویری، از میان ساعت‌ها تصویر و صدا، چند دقیقه‌ی معنادار می‌سازد. او چیزی از هیچ نمی‌سازد؛ از میان چیزهای زیاد انتخاب می‌کند. سبکش در همین انتخاب‌ها دیده می‌شود:\par
+\begin{itemize}
+\item ریتم: برش‌های تند یا آرام
+\item انتخاب نما: از دور، از نزدیک، از کدام زاویه
+\item موسیقی: پرضرب، آرام یا سکوت
+\end{itemize}
+\tasvir{G6-S02-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S02-A7}}\textbf{مثال: ریتم تند، ریتم آرام}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک صحنه‌ی گل‌زدن را دو تدوینگر تدوین کرده‌اند.\par\noindent \par\noindent تدوین «تند»: برش‌های خیلی کوتاه و موسیقی پرضرب؛ هیجان را بالا می‌برد.\par\noindent تدوین «آرام»: نماهای طولانی و سکوت؛ لحظه را کش می‌دهد.\par\noindent \par\noindent صحنه یکی است؛ فرق، انتخاب تدوینگر است. همین فرق، سبک است.\par
+\tasvir{G6-S02-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۰ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-T1}}\textbf{توصیف تو در برابر توصیف تصویرخوان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان همین تصویر را دید و توصیفش را نوشت — ولی او فقط شکل را می‌بیند. حالا نوبت توست: همین تصویر را با سه جمله‌ی خودت توصیف کن. جمله‌هایت را کنار توصیف تصویرخوان می‌گذاریم تا فرق‌شان را ببینیم.\par
+\tasvir{G6-S02-E03}
+\lbl{maincol}{پرسش:}تصویر را در سه جمله‌ی خودت توصیف کن.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دقیقاً سه جمله‌ی جدا بنویسد
+\item دست‌کم یک جمله چیزی فراتر از شکل ساده بگوید — حس، تفسیر یا زاویه‌ی نگاه خودش
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ این حیاط پاییزی کمی غمگین به نظرم می‌آید. برگ‌های نارنجی روی زمین ریخته‌اند. انگار همین الان کسی از اینجا رد شده.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به شکل تصویر فکر نکن؛ به حسی که به تو می‌دهد فکر کن.
+\item یک جمله درباره‌ی چیزی که می‌بینی، یک جمله درباره‌ی چیزی که حس می‌کنی.
+\item مثلاً: «این … به نظرم …» — خودت ادامه بده.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همین فرق — بین دیدن شکل و توصیف‌کردن با نگاه خودت — همان سبک است.\ \textbar\ \textbf{نیمه:} سه جمله‌ی خوبی نوشتی. حالا یکی از آن‌ها را با نگاه یا حس خودت بازنویسی کن.\ \textbar\ \textbf{نادرست:} یک جمله‌ی دیگر کم داری؛ سه جمله‌ی جدا می‌خواهیم.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فقط رنگ و شکل را توصیف می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ خوب دیدی، ولی حالا یک جمله هم از نگاه خودت اضافه کن — چیزی که فقط تو می‌بینی.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ توصیف تصویرخوان را روی نمایشگر کلاسی نگه دارید تا بچه‌ها بعد از فرستادن پاسخ، دو توصیف را کنار هم ببینند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-T2}}\textbf{دو تدوین، یک صحنه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هوشینو دو توصیف از یک صحنه‌ی مشابه نشانت می‌دهد: یکی با نام «تند» و یکی با نام «آرام». هر دو از همان لحظه ساخته شده‌اند، ولی هرکدام با ریتم متفاوتی روایت شده‌اند.\par
+\tasvir{G6-S02-E01}
+\lbl{maincol}{پرسش:}یک تفاوت سبک بین این دو توصیف چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به ریتم یا سرعت اشاره کند — برش تند در برابر نماهای آرام
+\item تفاوت را به انتخاب تدوینگر نسبت دهد، نه به خود صحنه
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ توصیف «تند» برش‌های کوتاه و پرشتاب دارد، ولی توصیف «آرام» نماهای طولانی‌تر دارد. صحنه یکی است؛ فقط انتخاب تدوینگر فرق کرده.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به طول برش‌ها و سرعت روایت فکر کن، نه به خود صحنه.
+\item صحنه در هر دو یکی است؛ پس فرق از کجا آمده؟
+\item تدوینگر با انتخاب برش‌ها، یکی را تند و دیگری را آرام کرده است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — صحنه یکی بود، فقط انتخاب تدوینگر فرق داشت. همین انتخاب، سبک است.\ \textbar\ \textbf{نیمه:} خوب شروع کردی. حالا بگو این تفاوت از کجا می‌آید — از خود صحنه یا از انتخاب تدوینگر؟\ \textbar\ \textbf{نادرست:} دوباره نگاه کن: طول هر برش و سرعت روایت در این دو توصیف چه فرقی دارد؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌نویسد «صحنه فرق دارد» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ صحنه یکی است؛ چیزی که فرق دارد، انتخاب تدوینگر برای روایت‌کردن آن است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر وقت ماند، بپرسید کدام ریتم برای چه نوع صحنه‌ای مناسب‌تر است — این بحث را باز نگه دارید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-T3}}\textbf{سه قاعده‌ی سبک خودت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای یک اثر فرضی، سه «قاعده‌ی سبک» بساز — قاعده‌هایی که اگر همیشه رعایت‌شان کنی، اثر واقعاً به نظر خودت برسد. مثلاً درباره‌ی رنگ، ریتم یا نوع جمله‌هایی که همیشه انتخاب می‌کنی.\par
+\tasvir{G6-S02-E04}
+\lbl{maincol}{پرسش:}سه قاعده‌ی سبک تو چیستند؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item سه قاعده‌ی جدا و مشخص بنویسد
+\item هر قاعده به‌اندازه‌ای دقیق باشد که بشود با آن یک اثر را از اثر دیگری جدا کرد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ ۱) همیشه با یک سؤال شروع می‌کنم. ۲) رنگ آبی را در هر نقاشی می‌گذارم. ۳) جمله‌های کوتاه و بدون توضیح اضافه می‌نویسم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری فکر کن که هر بار، بدون قصد، همان‌طور انجامش می‌دهی.
+\item یک قاعده می‌تواند درباره‌ی رنگ باشد، یکی درباره‌ی ریتم، یکی درباره‌ی جمله‌ها.
+\item هر قاعده را طوری بنویس که یک نفر دیگر با خواندنش بفهمد اثر تو را چطور بشناسد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} سه قاعده‌ی خوبی نوشتی — دقیق و قابل‌تشخیص، نه فقط یک حس کلی.\ \textbar\ \textbf{نیمه:} شروع خوبی بود. حالا یکی از قاعده‌هایت را دقیق‌تر کن تا فقط مال تو باشد.\ \textbar\ \textbf{نادرست:} یک قاعده‌ی دیگر کم داری؛ سه قاعده‌ی جدا می‌خواهیم.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ قاعده‌ای کلی مثل «خوب می‌نویسم» می‌نویسد \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این قاعده آن‌قدر کلی است که همه می‌توانند ادعایش کنند. دقیق‌ترش کن: خوب نوشتن یعنی چه کاری، دقیقاً؟}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ بعد از پاسخ، هوشینو از هر دانش‌آموز می‌پرسد سه قاعده‌اش چطور اثرش را از دیگران متفاوت می‌کند؛ این گفت‌وگو نمره ندارد، فقط تعمیق فکر است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E1}}\textbf{اگر همه یک قاعده داشته باشند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک لحظه فکر کن: اگر همه‌ی هم‌کلاسی‌هایت دقیقاً از یک «قاعده‌ی سبک» استفاده کنند، چه اتفاقی می‌افتد؟ آیا هنوز می‌شود کار هرکس را از کار بقیه تشخیص داد؟\par
+\tasvir{G6-S02-E05}
+\lbl{maincol}{پرسش:}اگر همه از یک قاعده‌ی سبک استفاده کنند چه اتفاقی می‌افتد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید آثار شبیه هم می‌شوند یا دیگر قابل‌تشخیص نیستند
+\item اشاره کند که سبک شخصی معنایش را از دست می‌دهد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ اگر همه یک قاعده داشته باشند، همه‌ی کارها شبیه هم می‌شوند و دیگر نمی‌شود فهمید کار کیست.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به سه قاعده‌ای فکر کن که تو نوشتی؛ اگر همه همان‌ها را داشتند چه می‌شد؟
+\item اگر همه‌ی آثار شبیه هم باشند، دیگر می‌شود کار کیست را از کار کی تشخیص داد؟
+\item اگر همه یک قاعده دارند، همه‌ی کارها شبیه هم می‌شوند و سبک شخصی دیگر معنایی ندارد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — سبک شخصی وقتی معنا دارد که واقعاً شخصی بماند.\ \textbar\ \textbf{نیمه:} درست شروع کردی. حالا بگو این شبیه‌شدن برای سبک شخصی چه معنایی دارد.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: اگر همه دقیقاً یک قاعده داشته باشند، آثارشان چقدر شبیه هم می‌شود؟}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌گوید «چیزی عوض نمی‌شود» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ اگر واقعاً همه یک قاعده داشته باشند، آثارشان هم شبیه هم می‌شود — این یک تغییر بزرگ است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ بگذارید چند نفر نظرشان را بلند بگویند؛ این گفت‌وگو، پلی است به سمت اهمیت کارت شغل و ثبت سبک شخصی هرکس.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E2}}\textbf{گویه‌ی ۱ از ۶ — رغبت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم کارهایی را که در این شغل انجام می‌شود، انجام دهم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی I1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E3}}\textbf{گویه‌ی ۲ از ۶ — آگاهی از فرصت‌ها}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی K1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E4}}\textbf{گویه‌ی ۳ از ۶ — خودآگاهی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «فکر می‌کنم می‌توانم در این کار خوب باشم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی S1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E5}}\textbf{گویه‌ی ۴ از ۶ — ارزش اجتماعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «این شغل برای زندگی مردم مفید است.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی V1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E6}}\textbf{گویه‌ی ۵ از ۶ — تمایل به کاوش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم درباره‌ی این شغل بیشتر بدانم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی E1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E7}}\textbf{گویه‌ی ۶ از ۶ — پیوند با هوش مصنوعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «هوش مصنوعی به این شغل کمک می‌کند.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی A1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۸ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S02-E8}}\textbf{پرسشی که هنوز داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آخرین قسمت کارت شغل شماره‌ی ۱: یک پرسش بنویس که هنوز درباره‌ی شغل «تدوینگر و سازنده‌ی محتوای صوتی-تصویری» داری. این بخش امتیاز ندارد؛ فقط کنجکاوی‌ات ثبت می‌شود.\par
+\tasvir{G6-S02-E09}
+\lbl{maincol}{پرسش:}یک پرسش که هنوز درباره‌ی این شغل داری چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پرسش واقعی (با علامت سؤال یا واژه‌ی پرسشی) بنویسد
+\item پرسش درباره‌ی همین شغل یا کار روزانه‌ی آن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ کارشناس‌ها از کجا می‌فهمند داده‌ی حسگر درست است؟}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کار روزانه‌ی این شغل فکر کن.
+\item چه چیزی از آن هنوز برایت عجیب یا ناشناخته است؟
+\item جمله‌ات را با «چطور…» یا «چرا…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پرسشت ثبت شد. کارت شغل شماره‌ی ۱ ذخیره شد و «نشان امضا» را گرفتی.\ \textbar\ \textbf{نیمه:} این یک جمله است، نه پرسش؛ آن را به شکل پرسش بنویس.\ \textbar\ \textbf{نادرست:} یک پرسش درباره‌ی همین شغل بنویس — هر پرسشی که واقعاً داری.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ پرسش باز کارت شغل (Q)؛ امتیاز نمی‌گیرد. با ثبت آن، کارت و نشان ذخیره می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز توصیف تصویرخوان، توصیف خودش و سه قاعده‌ی سبکش را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک ویژگی تکراری در نوشته‌ی خودت پیدا کن.
+\item \textbf{سطح ۲:} سه قاعده‌ی سبک بنویس.
+\item \textbf{سطح ۳:} یک قاعده‌ی سبک بنویس که هیچ هم‌کلاسی‌ای مثل تو ننوشته باشد.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}توصیف دوگانه‌ی تصویر، سه قاعده‌ی سبک، شش گویه‌ی کارنما و کارت شغل شماره‌ی ۱.\par
+\lbl{mescol}{تمرین خانه:}در خانه یک وسیله پیدا کن که صاحبش با سلیقه‌ی خاص خودش چیده یا انتخابش کرده و بگو آن سلیقه در چه چیزی دیده می‌شود.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G6-S02-R01}}\textbf{پرسش بزرگ امسال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش بزرگ امسال چیست؟\par\noindent \par\noindent پاسخ: «چه چیزی یک اثر را واقعاً اثر خودم می‌کند؟» — پرسشی که تا آخر سال با ماست.\par
+\tasvir{G6-S01-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R02}}\textbf{سه قرار دیروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه قرار کلاس چه بودند؟\par\noindent \par\noindent پاسخ: هدفون روی گوش، صدای آرام، نوبت را نگه می‌داریم.\par
+\tasvir{G6-S01-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R03}}\textbf{مأموریت و نشان دیروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت و نشان جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: مأموریت «کاوشگر اصالت» و نشان «نشان قرارداد».\par
+\tasvir{G6-S01-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R04}}\textbf{قاعده‌ی روی دیوار کلاس}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی روی دیوار کلاس چیست؟\par\noindent \par\noindent پاسخ: «مسئله را من انتخاب می‌کنم و معیار خوب‌بودن را من تعیین می‌کنم؛ ابزار هیچ‌کدام را به‌جای من انجام نمی‌دهد.»\par
+\tasvir{G6-S01-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R05}}\textbf{بازی «این سبک کیست؟»}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی «این سبک کیست؟» چه کار می‌کردیم؟\par\noindent \par\noindent پاسخ: ده جمله‌ی کوتاه با سبک‌های متفاوت می‌دیدیم و با یک واژه می‌گفتیم سبکش چیست: رسمی یا خودمانی، ساده یا پرجزئیات.\par
+\tasvir{G6-S01-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R06}}\textbf{چرا دیروز ابزار تازه‌ای نبود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا جلسه‌ی پیش ابزار تازه‌ای باز نشد؟\par\noindent \par\noindent پاسخ: چون جلسه‌ی اول فقط برای آشنایی با قرارهای کلاس و پرسش بزرگ بود. ابزارها از امروز باز می‌شوند.\par
+\tasvir{G6-S01-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R07}}\textbf{جمله‌ی امضادار تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش یک جمله‌ی امضادار درباره‌ی خودت نوشتی. جمله‌ی امضادار چه ویژگی‌ای دارد؟\par\noindent \par\noindent پاسخ: فقط تو همین‌طور می‌نویسی‌اش؛ با واژه‌ها و جزئیاتی که خودت انتخاب کرده‌ای، نه جمله‌ای که هرکسی بتواند بنویسد.\par
+\tasvir{G6-S01-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R08}}\textbf{دو توصیف از یک صحنه‌ی مشابه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دو جمله‌ی توصیفی جلسه‌ی پیش از یک صحنه‌ی مشابه چه فرقی داشتند؟\par\noindent \par\noindent پاسخ: یکی ساده و مستقیم بود («توی پارک نشستم»)، دیگری پرجزئیات؛ هرکدام به یک سبک نزدیک‌تر بود.\par
+\tasvir{G6-S01-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R09}}\textbf{چرا یک اثر تنها کافی نیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا برای پیدا کردن سبک، باید چند اثر از یک نفر را دید، نه فقط یکی؟\par\noindent \par\noindent پاسخ: چون سبک از تکرار ساخته می‌شود؛ یک اثر تنها نشان نمی‌دهد چه چیزی همیشه تکرار می‌شود.\par
+\tasvir{G6-S01-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-R10}}\textbf{چیزی که در خانه بررسی کردی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در تمرین خانه دنبال سبک حرف‌زدن یکی از اعضای خانواده گشتی. چه چیزی نشانه‌ی سبک است؟\par\noindent \par\noindent پاسخ: چیزی که تکرار می‌شود؛ مثلاً «مادربزرگم همیشه حرفش را با یک ضرب‌المثل تمام می‌کند.»\par
+\tasvir{G6-S01-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G6-S02-E01}}\textbf{مثال حل‌شده: دو تدوین}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش: «یک تفاوت سبک بین تدوین تند و آرام چیست؟»\par\noindent \par\noindent پاسخ خوب: «تدوین تند برش‌های کوتاه و پشت‌سرهم دارد، ولی تدوین آرام نماهای طولانی دارد.» این پاسخ فرق را به انتخاب تدوینگر نسبت داده، نه به خود صحنه؛ چون صحنه در هر دو یکی است.\par
+\tasvir{G6-S02-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E02}}\textbf{چرا پیش از توضیح عدد می‌دهی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش از هر توضیحی درباره‌ی تدوینگری، یک عدد از ۱ تا ۵ دادی: چقدر می‌دانی این شغل چه می‌کند. این کار برای هر ده شغل امسال تکرار می‌شود و آخر سال با عدد تازه‌ات مقایسه می‌شود. پس عدد صادقانه از عدد بالا مهم‌تر است.\par
+\tasvir{G6-S02-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E03}}\textbf{مثال: سه جمله‌ی خودت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویر: حیاط مدرسه در پاییز.\par\noindent تصویرخوان: «یک حیاط با درخت و برگ‌های زرد.»\par\noindent \par\noindent نمونه‌ی توصیف یک دانش‌آموز در سه جمله: «این حیاط پاییزی کمی غمگین به نظر می‌رسد. برگ‌ها مثل فرشی زرد روی زمین ریخته‌اند. من صدای خش‌خششان را زیر کفشم تصور می‌کنم.» دو جمله‌ی آخر فراتر از شکل‌اند.\par
+\tasvir{G6-S02-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E04}}\textbf{مثال: سه قاعده‌ی سبک}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی سبک باید آن‌قدر مشخص باشد که بشود با آن اثرت را از اثر دیگری جدا کرد. نمونه:\par
+\begin{itemize}
+\item همیشه داستانم را با یک پرسش شروع می‌کنم
+\item در نقاشی فقط رنگ‌های سرد به کار می‌برم
+\item امضایم را گوشه‌ی پایین سمت چپ می‌گذارم
+\item «قشنگ بکشم» قاعده نیست؛ خیلی کلی است
+\end{itemize}
+\tasvir{G6-S02-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E05}}\textbf{اگر همه یک قاعده داشته باشند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ فرض کن همه‌ی کلاس قاعده‌ی «فقط رنگ آبی، خط ضخیم» را به کار ببرند. نتیجه: همه‌ی نقاشی‌ها شبیه هم می‌شوند و دیگر نمی‌شود فهمید کدام مال کیست. پس سبک شخصی وقتی معنا دارد که واقعاً شخصی بماند.\par
+\tasvir{G6-S02-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E06}}\textbf{همان چیزی که ما دنبالش هستیم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تدوینگر هم دقیقاً دنبال همان چیزی می‌گردد که امروز در کلاس دنبالش هستیم: انتخاب‌های تکراری‌ای که سبک را می‌سازند.\par
+\tasvir{G6-S02-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E07}}\textbf{چند دقیقه‌ی معنادار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تدوینگر از میان ساعت‌ها تصویر و صدا، فقط چند دقیقه‌ی معنادار را انتخاب می‌کند. سبک او در ریتم، انتخاب نما و موسیقی دیده می‌شود.\par
+\tasvir{G6-S02-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E08}}\textbf{پرسشی برای خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ از یک بزرگ‌سال بپرس: «آیا کاری که با سلیقه‌ی خودت انجام می‌دهی، امضای خودت را دارد؟ چگونه؟» پاسخش را در کارت شغل ثبت کن.\par
+\tasvir{G6-S02-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E09}}\textbf{کارت شغل شماره‌ی یک}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ بعد از هر شغل، شش گویه‌ی کارنما را کامل می‌کنی و یک کارت شغل ذخیره می‌شود. این شش گویه برای هر ده شغل امسال یکسان است.\par
+\tasvir{G6-S02-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S02-E10}}\textbf{نشان امضا}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تکمیل مأموریت «کارآگاه سبک»، نشان «نشان امضا» در پروفایلت ثبت می‌شود. نشان با تکمیل مأموریت گرفته می‌شود، نه با بهترین سبک.\par
+\tasvir{G6-S02-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۷ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S02-P01}}}\par
+\lbl{stepcol}{\en{G6-S02-P01-1}}\textbf{پیش یا بعد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ عددِ «می‌دانم در این شغل چه کاری انجام می‌شود» را پیش از توضیح درباره‌ی شغل تدوینگری ثبت کردی یا بعد از آن؟\par
+\lbl{maincol}{پرسش:}پیش یا بعد؟\par
+\lbl{anscol}{پاسخ معین:}پیش از توضیح\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ پیش از توضیح؛ پیش؛ قبل؛ قبل از توضیح؛ پیش از درس}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به لحظه‌ی شروع جلسه فکر کن.
+\item آن عدد پیش از درس پرسیده شد یا بعدش؟
+\item پیش‌سنجه…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — پیش از توضیح.\ \textbar\ \textbf{نادرست:} به اول جلسه فکر کن؛ عدد را کِی دادی؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S02-P01}}}\par
+\lbl{stepcol}{\en{G6-S02-P01-2}}\textbf{چرا این ترتیب؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا مهم است آن عدد پیش از توضیح ثبت شود؟\par
+\lbl{maincol}{پرسش:}دلیلش چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند تا بعداً بشود رشد آشنایی را اندازه گرفت یا مقایسه کرد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ تا آخر سال بفهمیم چقدر با این شغل آشناتر شده‌ایم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آخر سال دوباره همین را می‌پرسیم.
+\item اگر بعد از توضیح بود، چه چیزی را نمی‌فهمیدیم؟
+\item برای اندازه گرفتن …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — تا بشود رشد آشنایی را اندازه گرفت.\ \textbar\ \textbf{نیمه:} به مقایسه اشاره کردی؛ بگو چه چیزی مقایسه می‌شود.\ \textbar\ \textbf{نادرست:} فکر کن چرا عدد قبل و بعد مقایسه می‌شوند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G6-S02-P02}}\textbf{چیزی که تصویرخوان نمی‌بیند}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان در تمرین امروز چه چیزی را نمی‌بیند؟\par
+\begin{itemize}
+\item الف) شکل تصویر
+\item ب) رنگ تصویر
+\item پ) سبک توصیف
+\item ت) اندازه‌ی تصویر
+\end{itemize}
+\tasvir{G6-S02-P02}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}پ\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ پ؛ پ)؛ سبک توصیف؛ سبک}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به چیزی فکر کن که فقط با نگاه دقیق‌تر دیده می‌شود.
+\item تصویرخوان شکل، رنگ و اندازه را می‌بیند.
+\item چیزی که تصویرخوان نمی‌بیند، سبک توصیف است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست است — تصویرخوان فقط شکل را می‌بیند، نه سبک را.\ \textbar\ \textbf{نادرست:} تصویرخوان شکل، رنگ و اندازه را می‌بیند؛ چیزی که نمی‌بیند، سبک توصیف است.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ تصویرخوان شکل را می‌بیند؛ آن چیزی که نمی‌بیند، سبک است.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G6-S02-P03}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «اگر همه از یک قاعده‌ی سبک استفاده کنند، هنوز می‌شود آثار را از هم تشخیص داد.»\par
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به فعالیت امروز درباره‌ی قاعده‌های سبک فکر کن.
+\item اگر همه دقیقاً یک قاعده داشته باشند، آثارشان چقدر شبیه می‌شود؟
+\item وقتی همه یک قاعده دارند، آثار شبیه هم می‌شوند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — وقتی همه یک قاعده دارند، آثار شبیه هم می‌شوند و سبک شخصی معنایش را از دست می‌دهد.\ \textbar\ \textbf{نادرست:} نه؛ اگر همه یک قاعده داشته باشند، آثار شبیه هم می‌شوند و دیگر نمی‌شود آن‌ها را از هم تشخیص داد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S02-P04}}\textbf{کار تدوینگر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تدوینگر و سازنده‌ی محتوای صوتی-تصویری چه کاری انجام می‌دهد؟\par
+\lbl{maincol}{پرسش:}کار این شغل را در یک یا دو جمله بنویس.\par
+\lbl{anscol}{پاسخ معین:}از میان ساعت‌ها تصویر و صدا، چند دقیقه‌ی معنادار می‌سازد؛ سبکش در ریتم، انتخاب نما و موسیقی دیده می‌شود\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ چند دقیقه‌ی معنادار از میان ساعت‌ها تصویر و صدا می‌سازد؛ با انتخاب برش، ریتم و موسیقی، تصویر و صدا را به یک روایت کوتاه تبدیل می‌کند}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به شغلی فکر کن که امروز درباره‌اش خواندی.
+\item این شغل با تصویر و صدای زیاد شروع می‌شود و چیزی کوتاه می‌سازد.
+\item از میان ساعت‌ها تصویر و صدا، چند دقیقه‌ی … می‌سازد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — و سبکش دقیقاً در همین انتخاب‌ها دیده می‌شود.\ \textbar\ \textbf{نیمه:} بخشی از کارش را گفتی؛ حالا بگو سبکش کجا دیده می‌شود.\ \textbar\ \textbf{نادرست:} تدوینگر از میان ساعت‌ها تصویر و صدا، چند دقیقه‌ی معنادار می‌سازد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G6-S02-P05}}}\par
+\lbl{stepcol}{\en{G6-S02-P05-1}}\textbf{جمله‌ی ۱: شکل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک صحنه را در ذهنت انتخاب کن (مثلاً پارک در غروب). جمله‌ی اول: فقط بگو چه چیزهایی در صحنه هست؛ همان کاری که تصویرخوان می‌کند.\par
+\tasvir{G6-S02-P05}
+\lbl{maincol}{پرسش:}جمله‌ی اول را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item چند چیز دیدنی در یک صحنه‌ی مشخص را نام ببرد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ در پارک چند نیمکت، یک درخت بزرگ و یک تاب هست.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item چه چیزهایی دیده می‌شوند؟
+\item فقط اسم چیزها و جایشان.
+\item «در این صحنه یک … و چند … هست.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} جمله‌ات شکل صحنه را می‌گوید.\ \textbar\ \textbf{نیمه:} جمله‌ات فقط یک چیز را گفت؛ یکی دو چیز دیگر هم بیاور.\ \textbar\ \textbf{نادرست:} بنویس در صحنه چه چیزهایی هست.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G6-S02-P05}}}\par
+\lbl{stepcol}{\en{G6-S02-P05-2}}\textbf{جمله‌ی ۲: رنگ یا نور}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله‌ی دوم درباره‌ی همان صحنه: رنگ یا نور را توصیف کن.\par
+\tasvir{G6-S02-P05}
+\lbl{maincol}{پرسش:}جمله‌ی دوم را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item رنگ یا نور همان صحنه را توصیف کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ نور نارنجی غروب روی تاب خالی افتاده است.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آسمان چه رنگی است؟
+\item نور از کجا می‌تابد؟
+\item «نور … روی … افتاده است.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} رنگ یا نور را دقیق گفتی.\ \textbar\ \textbf{نیمه:} رنگ را گفتی؛ بگو روی چه چیزی است.\ \textbar\ \textbf{نادرست:} یک جمله درباره‌ی رنگ یا نور صحنه بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G6-S02-P05}}}\par
+\lbl{stepcol}{\en{G6-S02-P05-3}}\textbf{جمله‌ی ۳: نگاه تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله‌ی سوم: چیزی بگو که تصویرخوان هرگز نمی‌گوید؛ حس تو، صدایی که تصور می‌کنی، یا نگاه خودت.\par
+\tasvir{G6-S02-P05}
+\lbl{maincol}{پرسش:}جمله‌ی سوم را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item چیزی فراتر از شکل بگوید: حس، صدا، تفسیر یا نگاه شخصی
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ انگار پارک بعد از رفتن بچه‌ها کمی تنها شده است.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item این صحنه چه حسی به تو می‌دهد؟
+\item اگر آنجا بودی چه می‌شنیدی؟
+\item «به نظر من…» یا «حس می‌کنم…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} این جمله سبک خودت را دارد؛ تصویرخوان آن را نمی‌گفت.\ \textbar\ \textbf{نیمه:} جمله‌ات هنوز شبیه توصیف شکل است؛ حس یا نگاه خودت را اضافه کن.\ \textbar\ \textbf{نادرست:} بنویس این صحنه چه حسی به تو می‌دهد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ طراحی \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G6-S02-P06}}}\par
+\lbl{stepcol}{\en{G6-S02-P06-1}}\textbf{قاعده‌ی رنگ}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای یک اثر فرضی (نقاشی، داستان یا عکس) سه قاعده‌ی سبک می‌سازی. قاعده‌ی اول درباره‌ی رنگ است. بنویس همیشه با رنگ‌ها چه می‌کنی.\par
+\tasvir{G6-S02-P06}
+\lbl{maincol}{پرسش:}قاعده‌ی رنگ را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک قاعده‌ی مشخص درباره‌ی رنگ بنویسد
+\item قاعده کلی و مبهم (مثل «قشنگ باشد») نباشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ همیشه فقط رنگ‌های سرد مثل آبی و سبز به کار می‌برم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item کدام رنگ‌ها را بیشتر دوست داری؟
+\item قاعده باید چیزی باشد که همیشه تکرار شود.
+\item «همیشه…» یا «هیچ‌وقت…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} قاعده‌ات مشخص است و می‌شود با آن اثرت را شناخت.\ \textbar\ \textbf{نیمه:} قاعده را گفتی؛ مشخص‌ترش کن که همیشه یک‌جور تکرار شود.\ \textbar\ \textbf{نادرست:} یک قاعده‌ی مشخص درباره‌ی رنگ بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ طراحی \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G6-S02-P06}}}\par
+\lbl{stepcol}{\en{G6-S02-P06-2}}\textbf{قاعده‌ی خط یا شکل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی دوم درباره‌ی خط یا شکل است. بنویس همیشه خط‌ها یا شکل‌هایت چطورند.\par
+\tasvir{G6-S02-P06}
+\lbl{maincol}{پرسش:}قاعده‌ی خط یا شکل را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک قاعده‌ی مشخص درباره‌ی خط یا شکل بنویسد
+\item با قاعده‌ی قبلی تکراری نباشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ همیشه دور شکل‌ها را با خط ضخیم مشکی می‌کشم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item خط‌هایت نازک‌اند یا ضخیم؟
+\item شکل‌ها گردند یا تیز؟
+\item «همیشه خط‌هایم…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} قاعده‌ات مشخص است.\ \textbar\ \textbf{نیمه:} قاعده را گفتی؛ بگو دقیقاً چطور تکرار می‌شود.\ \textbar\ \textbf{نادرست:} یک قاعده درباره‌ی خط یا شکل بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ طراحی \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G6-S02-P06}}}\par
+\lbl{stepcol}{\en{G6-S02-P06-3}}\textbf{قاعده‌ی امضای خودت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی سوم را خودت انتخاب کن؛ چیزی که اثرت را از اثر یک هم‌کلاسی جدا کند.\par
+\tasvir{G6-S02-P06}
+\lbl{maincol}{پرسش:}قاعده‌ی سوم را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک قاعده‌ی مشخص و قابل‌تشخیص بنویسد
+\item قاعده بتواند اثر او را از اثر دیگری جدا کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ در هر اثرم یک گربه‌ی کوچک پنهان می‌کنم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به عادتی فکر کن که فقط خودت داری.
+\item جای امضا؟ نوع شروع داستان؟ یک نشانه‌ی همیشگی؟
+\item «در هر اثرم…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} این قاعده اثرت را از دیگران جدا می‌کند.\ \textbar\ \textbf{نیمه:} قاعده‌ات خوب است؛ بگو چطور اثرت را از اثر دیگران جدا می‌کند.\ \textbar\ \textbf{نادرست:} یک قاعده‌ی مخصوص خودت بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S02-P07}}\textbf{چرا همان چیز؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز گفتیم تدوینگر هم دنبال همان چیزی می‌گردد که در کلاس دنبالش بودیم. چرا؟\par
+\lbl{maincol}{پرسش:}چرا تدوینگر هم دنبال همان چیزی می‌گردد که امروز در کلاس دنبالش بودیم؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید کار تدوینگر هم پیدا کردن انتخاب‌های تکراری‌ای است که سبک را می‌سازد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون کار تدوینگر هم پیدا کردن انتخاب‌های تکراری‌ای است که سبک را می‌سازد، نه چیز دیگری.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری که امروز در کلاس کردی فکر کن: دنبال چه چیزی بودی؟
+\item تدوینگر هم دقیقاً همان چیز را در کارش دنبال می‌کند.
+\item هر دو دنبال انتخاب‌های تکراری‌ای هستند که سبک را می‌سازند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — پیدا کردن انتخاب‌های تکراری، کار مشترک تدوینگر و ماست.\ \textbar\ \textbf{نیمه:} نزدیک شدی؛ حالا بگو دقیقاً چه چیزی مشترک بود.\ \textbar\ \textbf{نادرست:} کار تدوینگر هم پیدا کردن انتخاب‌های تکراری‌ای است که سبک را می‌سازد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G6-S02-P08}}\textbf{آیا این یک قاعده‌ی سبک است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «قاعده‌ی سبک من اینه که قشنگ بکشم.» آیا این یک قاعده‌ی سبک است؟ چرا؟\par
+\lbl{maincol}{پرسش:}به نظرت این یک قاعده‌ی سبک است؟ چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید نه، این قاعده نیست
+\item دلیل بیاورد: خیلی کلی است و هر کسی می‌تواند ادعایش کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ نه — «قشنگ بکشم» آن‌قدر کلی است که هر کسی می‌تواند ادعایش کند؛ قاعده‌ی سبک باید مشخص و قابل‌تشخیص باشد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن آیا خیلی از آدم‌ها می‌توانند همین جمله را بگویند.
+\item قاعده‌ی سبک باید فقط برای یک نفر درست باشد، نه برای همه.
+\item «قشنگ بکشم» آن‌قدر کلی است که هرکسی می‌تواند ادعایش کند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — قاعده‌ی سبک باید مشخص و قابل‌تشخیص باشد، نه یک ادعای کلی.\ \textbar\ \textbf{نیمه:} نظرت را گفتی؛ حالا بگو چرا این جمله کلی است.\ \textbar\ \textbf{نادرست:} دوباره فکر کن: آیا با این جمله می‌شود اثر او را از اثر یک هم‌کلاسی دیگر جدا کرد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ تطبیق \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S02-P09}}}\par
+\lbl{stepcol}{\en{G6-S02-P09-1}}\textbf{توصیف الف}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ توصیف الف: «برش‌های تند، موسیقی پرضرب.»\par\noindent \par\noindent این توصیف ریتم تند دارد یا ریتم آرام؟\par
+\lbl{maincol}{پرسش:}تند یا آرام؟\par
+\lbl{anscol}{پاسخ معین:}تند\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ریتم تند؛ تند}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item برش‌های تند یعنی نماها کوتاه‌اند.
+\item موسیقی پرضرب چه حسی دارد؟
+\item هر دو نشانه‌ی سرعت‌اند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ریتم تند.\ \textbar\ \textbf{نادرست:} به «برش‌های تند» دوباره نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ تطبیق \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S02-P09}}}\par
+\lbl{stepcol}{\en{G6-S02-P09-2}}\textbf{توصیف ب}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ توصیف ب: «نماهای طولانی، سکوت.»\par\noindent \par\noindent این توصیف ریتم تند دارد یا ریتم آرام؟\par
+\lbl{maincol}{پرسش:}تند یا آرام؟\par
+\lbl{anscol}{پاسخ معین:}آرام\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ریتم آرام؛ آرام؛ کند}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item نمای طولانی یعنی هر تصویر مدت زیادی می‌ماند.
+\item سکوت چه حسی دارد؟
+\item هر دو نشانه‌ی کندی‌اند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — ریتم آرام.\ \textbar\ \textbf{نادرست:} به «نماهای طولانی» دوباره نگاه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S02-P10}}}\par
+\lbl{stepcol}{\en{G6-S02-P10-1}}\textbf{پاسخ بزرگ‌سال}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ برای خانه از یک بزرگ‌سال پرسیدی: «آیا کاری که با سلیقه‌ی خودت انجام می‌دهی، امضای خودت را دارد؟» پاسخ او چه بود؟\par
+\lbl{maincol}{پرسش:}پاسخ او را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item پاسخ بزرگ‌سال را بیاورد
+\item به یک کار مشخص او اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ عمویم گفت همیشه اول طرح را با مداد می‌کشد و بعد رنگ می‌کند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item او درباره‌ی چه کاری حرف زد؟
+\item چه چیزی را همیشه یک‌جور انجام می‌دهد؟
+\item «گفت که همیشه…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پاسخ او را نوشتی.\ \textbar\ \textbf{نیمه:} گفتی با چه کسی حرف زدی؛ حالا پاسخش را بنویس.\ \textbar\ \textbf{نادرست:} بنویس آن بزرگ‌سال چه گفت.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S02-P10}}}\par
+\lbl{stepcol}{\en{G6-S02-P10-2}}\textbf{چه یاد گرفتی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ از پاسخ او، چه چیزی درباره‌ی امضای شخصی یاد گرفتی؟\par
+\lbl{maincol}{پرسش:}چه یاد گرفتی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک نکته درباره‌ی امضای شخصی بگوید
+\item نکته را به پاسخ همان بزرگ‌سال وصل کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ یاد گرفتم امضا فقط در هنر نیست؛ در ترتیب کارهای عمویم هم هست.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item امضا یعنی الگوی تکراری.
+\item در پاسخ او چه چیزی تکرار می‌شد؟
+\item «یاد گرفتم امضای شخصی…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادگیری‌ات را به امضای شخصی وصل کردی.\ \textbar\ \textbf{نیمه:} یک چیز گفتی؛ آن را به «تکرار» یا «انتخاب» وصل کن.\ \textbar\ \textbf{نادرست:} بگو پاسخ او درباره‌ی امضا چه چیزی نشانت داد.}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۳ — اثر من}
+\begin{jalasebox}{۳}{اثر من}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}ساختن اثری دست‌ساز و دیدن حدس تصویرخوان درباره‌ی آن، برای شناخت مرز بین اثر انسان و توصیف ماشین.\par
+\lbl{maincol}{مفاهیم:}اثر دست‌ساز، توصیف، حدس، تفاوت\par
+\lbl{maincol}{مأموریت:}هنرمند مستقل \textbar\ \textbf{نشان:} نشان اثر من\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ هنر — نقاشی و توصیف:}کشیدن یک نقاشی با یکی از قاعده‌های سبک و مقایسه‌ی توصیف خود با توصیف تصویرخوان از همان نقاشی.\par
+\lbl{tamcol}{ابزار امروز — تصویرخوان:}نقاشی را می‌بیند و حدس می‌زند چه کشیده شده؛ جزئیات دست‌ساز مثل ضربه‌ی مداد یا رنگ ناهماهنگ را نمی‌بیند.\par
+\noindent{\small کشف امروز: اثر دست‌ساز چیزهایی دارد که فقط با دیدن نسخه‌ی واقعی‌اش، نه توصیفش، می‌شود فهمید.}\par
+\lbl{maincol}{مواد:}کاغذ و مداد و مدادرنگی، تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}نقاشی دست‌ساز + دو توصیف مقایسه‌شده + نشان اثر من.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ تأکید کنید حدس اشتباه تصویرخوان جرم نیست؛ نشان می‌دهد چیزی در اثر دست‌ساز هست که با کلمه به‌تنهایی منتقل نمی‌شود.}}\par
+\vspace{4pt}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۱۵ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A1}}\textbf{مرور: سبک و امضا}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش دیدیم سبک وقتی دیده می‌شود که محتوا ثابت بماند و توصیف‌کننده عوض شود. با تدوینگر هم آشنا شدی و سه قاعده‌ی سبک خودت را نوشتی. این نکته‌ها را مرور کن؛ بعد کارت‌های مرور را می‌بینی.\par
+\begin{itemize}
+\item تصویرخوان شکل را می‌بیند، نه سبک را
+\item امضا = الگویی که در کارهایت تکرار می‌شود
+\item تدوینگر: سبکش در ریتم، نما و موسیقی
+\item امروز با یکی از سه قاعده‌ات نقاشی می‌کشی
+\end{itemize}
+\tasvir{G6-S03-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه کارت‌های مرور را با پاسخ نشان می‌دهد. یادآوری کنید سه قاعده‌ی سبک جلسه‌ی پیش در پروفایل هر دانش‌آموز هست.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A2}}\textbf{ردّ دست}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ از کجا بفهمیم چیزی را یک آدم با دست کشیده، نه چاپگر یا ابزار؟ خط ابزار کاملاً صاف و یکنواخت است. ولی دست ردّ خودش را جا می‌گذارد. این نشانه‌ها را «ردّ دست» می‌نامیم:\par
+\begin{itemize}
+\item فشار مداد: جایی پررنگ، جایی کم‌رنگ
+\item لرزش خط: خط‌ها کاملاً صاف نیستند
+\item رگه‌ی رنگ: رنگ یکدست نیست
+\item جای پاک‌کن یا خط اضافه
+\end{itemize}
+\tasvir{G6-S03-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ در کلاس حضوری می‌توانید یک نقاشی ساده روی نمایشگر کلاسی بکشید و کلاس نشانه‌ها را در آن پیدا کند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A3}}\textbf{مثال: کدام دست‌ساز است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دو خورشید می‌بینی. خورشید «الف» کاملاً گرد است و پرتوهایش همه یک‌اندازه و با فاصله‌ی برابرند. خورشید «ب» کمی کج است، پرتوهایش نابرابرند، خط‌هایش جایی پررنگ و جایی کم‌رنگ است.\par\noindent \par\noindent نتیجه: «ب» دست‌ساز است. این نشانه‌ها عیب نیستند؛ ردّ دست‌اند.\par
+\tasvir{G6-S03-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A4}}\textbf{توصیف یعنی فشرده‌کردن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی نقاشی را توصیف می‌کنی، چند جمله نگه می‌داری و بقیه را دور می‌ریزی؛ مثلاً «یک خانه‌ی قرمز با یک درخت». چیزهایی که دور ریخته می‌شوند، مثل فشار مداد و رگه‌ی رنگ، همان ردّ دست تو هستند. برای همین هیچ توصیفی، حتی توصیف خودت، نقاشی را کامل منتقل نمی‌کند.\par
+\tasvir{G6-S03-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A5}}\textbf{وقتی تصویرخوان اشتباه حدس می‌زند}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز تصویرخوان نقاشی تو را می‌بیند و حدس می‌زند چیست. شاید گوسفندت را «ابر» بداند! این نه خرابی ابزار است و نه یعنی نقاشی‌ات بد است. یعنی اثرت چیزی دارد که فقط با دیدن نسخه‌ی واقعی‌اش فهمیده می‌شود. اشتباه او را با کیفیت کارت یکی نگیر.\par
+\tasvir{G6-S03-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۱ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-A6}}\textbf{اصالت با تازگی فرق دارد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ لازم نیست اثرت بی‌نظیر یا کاملاً تازه باشد تا مال تو باشد. نقاشی امروزت با یکی از قاعده‌های سبک خودت کشیده می‌شود و ردّ دست تو را دارد؛ همین آن را مال تو می‌کند.\par
+\tasvir{G6-S03-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۵ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۲ دقیقه \textbar\ فردی \textbar\ بارگذاری عکس}
+\lbl{stepcol}{\en{G6-S03-T1}}\textbf{نقاشی خودت را بکش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یکی از سه قاعده‌ی سبکی را که برای خودت نوشتی انتخاب کن و با همان، روی کاغذ یک نقاشی بکش.\par\noindent \par\noindent بعد با دوربین تبلت از آن عکس بگیر و بفرست.\par
+\tasvir{G6-S03-E02}
+\lbl{maincol}{پرسش:}عکس نقاشی‌ات را بفرست.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item تصویر یک نقاشی دست‌ساز روی کاغذ باشد
+\item کل نقاشی در قاب باشد و روشن دیده شود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ عکس صاف و از بالا، با نور کافی، از یک نقاشی مدادرنگی.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item قاعده‌ی سبکت را انتخاب کن و همان را در کل نقاشی اجرا کن.
+\item لازم نیست نقاشی سخت باشد — مهم این است که قاعده‌ات در آن دیده شود.
+\item کاغذ را صاف بگذار، از بالا عکس بگیر و مطمئن شو چهار گوشه در قاب است.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} نقاشی‌ات ثبت شد. حالا ببینیم تصویرخوان چه می‌بیند.\ \textbar\ \textbf{نیمه:} بخشی از نقاشی بیرون قاب مانده. دوباره از بالاتر عکس بگیر.\ \textbar\ \textbf{نادرست:} تصویر خوانا نبود. کاغذ را صاف بگذار و در نور بهتر دوباره عکس بگیر.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌پرسد نقاشی‌اش قشنگ است یا نه \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ امروز قشنگی را نمی‌سنجیم. مهم این است که قاعده‌ی سبک خودت در آن دیده شود.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ با ابزار تصویر می‌سازد به‌جای کشیدن \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ امروز نقاشی باید کاملاً دست‌ساز باشد — همین دست‌ساز بودن، موضوع درس امروز است.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ بچه‌هایی که «بلد نیستم نقاشی بکشم» می‌گویند را مطمئن کنید: امروز مهارت نقاشی سنجیده نمی‌شود، فقط اجرای قاعده.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۳ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S03-T2}}\textbf{دو توصیف، کنار هم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان حدس زد نقاشی‌ات چیست و آن را در دو جمله توصیف کرد.\par\noindent \par\noindent حالا خودت هم در دو جمله نقاشی‌ات را توصیف کن. بعد بگو دو توصیف کجا با هم فرق دارند.\par
+\tasvir{G6-S03-E04}
+\lbl{maincol}{پرسش:}دو توصیف کجا با هم فرق دارند؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دست‌کم دو تفاوت مشخص نام ببرد
+\item تفاوت‌ها قابل نشان‌دادن در خود نقاشی باشند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ تصویرخوان گفت یک درخت است ولی نگفت برگ‌ها را با فشار کم کشیده‌ام. رنگ آسمان را هم آبی گفت، درحالی‌که من دو آبی متفاوت زده‌ام.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اول ببین تصویرخوان چه چیزهایی را اصلاً نگفته.
+\item به جزئیاتی فکر کن که تو می‌دانی در نقاشی هست ولی در توصیف او نیامده.
+\item بنویس: «تصویرخوان گفت … ولی در نقاشی من …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} همین فاصله‌ی بین دو توصیف، همان چیزی است که فقط در اثر واقعی دیده می‌شود.\ \textbar\ \textbf{نیمه:} یک تفاوت پیدا کردی. یکی دیگر هم بگو — به جزئیات ریز نگاه کن.\ \textbar\ \textbf{نادرست:} بیا مشخص‌تر کنیم: یک چیز در نقاشی‌ات بگو که تصویرخوان اصلاً به آن اشاره نکرد.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌نویسد «کاملاً اشتباه گفت» \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ کدام قسمتش؟ یک جمله از توصیف او را بیاور و بگو در نقاشی چه چیزی واقعاً هست.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اگر تصویرخوان حدس کاملاً پرتی زد، همان را جشن بگیرید — بهترین ماده‌ی بحث امروز همین است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ کل کلاس \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S03-T3}}\textbf{بازی: این را که کشیده؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ توصیف سه نقاشی از سه نفر کلاس را می‌بینی — بدون نام.\par\noindent \par\noindent کدام‌یک با سه قاعده‌ی سبک امروز جور درمی‌آید؟ حدست را بنویس و بگو از کجا فهمیدی. بعد نام‌ها فاش می‌شود.\par
+\tasvir{G6-S03-E05}
+\lbl{maincol}{پرسش:}کدام توصیف با قاعده‌های سبک امروز جور است و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یکی از سه توصیف را انتخاب کند
+\item دلیلش را به یک قاعده‌ی سبک مشخص وصل کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ دومی، چون در توصیفش از خط ضخیم گفته و همین یکی از قاعده‌های سبک امروز بود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item سه قاعده‌ی سبک امروز را دوباره جلوی چشمت بیاور.
+\item کدام توصیف واژه‌ای دارد که به یکی از آن قاعده‌ها می‌خورد؟
+\item بنویس: «… را انتخاب می‌کنم چون در توصیفش … آمده که همان قاعده‌ی … است.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب استدلال کردی — و این یعنی قاعده‌ی سبک واقعاً در اثر دیده می‌شود.\ \textbar\ \textbf{نیمه:} انتخابت ثبت شد. حالا بگو کدام قاعده باعث این انتخاب شد.\ \textbar\ \textbf{نادرست:} به واژه‌های خود توصیف نگاه کن: کدامشان به قاعده‌های امروز شبیه است؟}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ سه توصیف را از نقاشی‌های واقعی همین کلاس بردارید. فاش‌کردن نام‌ها در پایان را حتماً انجام بدهید — بخش لذت‌بخش بازی همین است. اگر کسی نخواست نقاشی‌اش در بازی بیاید، حق اوست.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۷ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S03-E1}}\textbf{کجا اشتباه توصیف کرد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کدام بخش نقاشی‌ات را تصویرخوان اشتباه توصیف کرد؟\par\noindent \par\noindent بنویس آن بخش چه بود و به نظرت چرا تصویرخوان آن را ندید.\par
+\tasvir{G6-S03-E06}
+\lbl{maincol}{پرسش:}کدام بخش را اشتباه توصیف کرد و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک بخش مشخص از نقاشی را نام ببرد
+\item دلیلی برای ندیدن آن بگوید
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ سایه‌ی زیر گلدان را ندید. فکر می‌کنم چون خیلی کم‌رنگ بود و شبیه لکه به نظر می‌رسید.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به ریزترین چیزی که در نقاشی‌ات هست فکر کن.
+\item چه چیزی در نقاشی‌ات هست که با کلمه سخت توصیف می‌شود؟
+\item بنویس: «بخش … را ندید، چون …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — بعضی چیزها در اثر دست‌ساز با کلمه منتقل نمی‌شوند.\ \textbar\ \textbf{نیمه:} بخش را پیدا کردی. حالا حدس بزن چرا تصویرخوان آن را ندید.\ \textbar\ \textbf{نادرست:} یک جزئیات کوچک را انتخاب کن — مثل فشار مداد یا یک رنگ کم‌رنگ.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ فکر می‌کند اشتباه تصویرخوان یعنی نقاشی‌اش بد است \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ برعکس — یعنی نقاشی‌ات چیزی دارد که فقط با دیدن اصلش فهمیده می‌شود.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این پاسخ‌ها را برای جلسه‌ی بعد نگه دارید؛ روایت جلسه‌ی ۴ روی همین نقاشی ساخته می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۳ دقیقه \textbar\ فردی \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S03-E2}}\textbf{مأموریت امروز تمام شد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت «هنرمند مستقل» تمام شد و «نشان اثر من» در پروفایلت ثبت شد.\par\noindent \par\noindent این نشان را با کشیدن و فرستادن اثرت گرفتی، نه با زیبایی آن.\par
+\begin{itemize}
+\item نقاشی دست‌ساز \ensuremath{\checkmark}
+\item دو توصیف مقایسه‌شده \ensuremath{\checkmark}
+\item نشان اثر من \ensuremath{\checkmark}
+\end{itemize}
+\tasvir{G6-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} نقاشی‌ات را نگه دار — جلسه‌ی بعد رویش کار می‌کنیم.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ نقاشی‌های کاغذی را جمع و نگه دارید؛ جلسه‌ی ۴ به آن‌ها نیاز دارد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز نقاشی‌اش، توصیف تصویرخوان و توصیف خودش را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک تفاوت بین دو توصیف را بگو.
+\item \textbf{سطح ۲:} سه تفاوت بین دو توصیف پیدا کن.
+\item \textbf{سطح ۳:} یک جزئیات در نقاشی‌ات بگذار که فقط با دیدن نسخه‌ی واقعی معلوم شود، نه با توصیف.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}نقاشی، دو توصیف مقایسه‌شده و نشان اثر من.\par
+\lbl{mescol}{تمرین خانه:}یک نقاشی قدیمی‌ات را در خانه پیدا کن و بگو چه چیزی در آن نشان می‌دهد کار دست خودت بوده، نه کپی.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G6-S03-R01}}\textbf{نخستین شغل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نخستین شغل سال چه بود؟\par\noindent \par\noindent پاسخ: تدوینگر و سازنده‌ی محتوای صوتی-تصویری؛ کسی که از ساعت‌ها تصویر و صدا، چند دقیقه‌ی معنادار می‌سازد.\par
+\tasvir{G6-S02-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R02}}\textbf{مأموریت و نشان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت و نشان جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: مأموریت «کارآگاه سبک» و «نشان امضا».\par
+\tasvir{G6-S02-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R03}}\textbf{گویه‌ی نخست کارنما}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ عددِ «می‌دانم در این شغل چه کاری انجام می‌شود» را کِی ثبت کردیم؟\par\noindent \par\noindent پاسخ: پیش از هر توضیحی درباره‌ی شغل تدوینگری؛ تا بعداً رشد آشنایی را بسنجیم.\par
+\tasvir{G6-S02-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R04}}\textbf{تصویرخوان چه می‌دید؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان جلسه‌ی پیش چه می‌کرد و چه چیزی را نمی‌دید؟\par\noindent \par\noindent پاسخ: تصویر را توصیف می‌کرد، ولی فقط شکل را می‌دید، نه سبک و حس و نگاه را.\par
+\tasvir{G6-S02-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R05}}\textbf{سه قاعده‌ی سبک تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ قاعده‌ی سبک خوب چه ویژگی‌ای دارد؟\par\noindent \par\noindent پاسخ: آن‌قدر مشخص است که بشود با آن اثرت را از اثر دیگری جدا کرد؛ مثل «همیشه خط ضخیم و رنگ‌های سرد». سه قاعده‌ی خودت در پروفایلت ذخیره است.\par
+\tasvir{G6-S02-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R06}}\textbf{اگر همه یک قاعده داشته باشند}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ اگر همه از یک قاعده‌ی سبک استفاده کنند چه می‌شود؟\par\noindent \par\noindent پاسخ: آثار شبیه هم می‌شوند و دیگر نمی‌شود فهمید کدام مال کیست؛ سبک شخصی معنایش را از دست می‌دهد.\par
+\tasvir{G6-S02-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R07}}\textbf{کار تدوینگر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کار تدوینگر در یک جمله چیست؟\par\noindent \par\noindent پاسخ: از میان ساعت‌ها تصویر و صدا چند دقیقه‌ی معنادار می‌سازد؛ سبکش در ریتم، انتخاب نما و موسیقی دیده می‌شود.\par
+\tasvir{G6-S02-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R08}}\textbf{تغییر کارت شغل}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ کارت شغل شماره‌ی ۱ را تا کِی می‌توانی تغییر بدهی؟\par\noindent \par\noindent پاسخ: تا جلسه‌ی ۳۱؛ تاریخ هر تغییر هم ثبت می‌شود.\par
+\tasvir{G6-S02-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R09}}\textbf{چرا گویه‌ها یکسان‌اند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا شش گویه‌ی کارت شغل برای همه‌ی شغل‌ها یکسان است؟\par\noindent \par\noindent پاسخ: چون وقتی پرسش‌ها یکی باشند، می‌شود پاسخ‌های شغل‌های مختلف را با هم مقایسه کرد.\par
+\tasvir{G6-S02-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-R10}}\textbf{گفت‌وگو درباره‌ی امضای شخصی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ از یک بزرگ‌سال درباره‌ی امضای شخصی‌اش پرسیدی. یک نمونه‌ی پاسخ:\par\noindent \par\noindent «عمویم گفت همیشه اول طرح را با مداد می‌کشد و بعد رنگ می‌کند.» یعنی امضا فقط در هنر نیست؛ در ترتیب انجام کارها هم دیده می‌شود.\par
+\tasvir{G6-S02-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G6-S03-E01}}\textbf{مثال: نشانه‌های کار دست}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در یک نقاشی ساده از گلدان، این نشانه‌ها را می‌شود دید: «خط‌ها صاف نیستند و کمی می‌لرزند. رنگ گلبرگ‌ها یکدست نیست. یک جا مداد خیلی پررنگ شده.» این نشانه‌ها به اجرای دستی مربوط‌اند، نه به موضوع نقاشی.\par
+\tasvir{G6-S03-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E02}}\textbf{مثال: عکس خوب از نقاشی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در فعالیت امروز از نقاشی‌ات عکس می‌گیری. عکس خوب: از بالا و صاف گرفته شده، نور کافی دارد و کل نقاشی در قاب است. اگر نقاشی کج یا نیمه‌تاریک باشد، تصویرخوان حتی شکل را هم درست نمی‌بیند. یادت باشد: قاعده‌ی سبکی که فقط نوشته شود ولی اجرا نشود، هنوز سبک نیست.\par
+\tasvir{G6-S03-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E03}}\textbf{تصویرخوان چه دید؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان نقاشی‌ات را دید، حدس زد چه کشیده‌ای و آن را در دو جمله توصیف کرد.\par\noindent \par\noindent او فقط چیزی را می‌بیند که در شکل کلی نقاشی هست؛ جزئیات ریز از نظرش پنهان می‌ماند.\par
+\tasvir{G6-S03-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E04}}\textbf{مثال حل‌شده: دو توصیف کنار هم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان: «یک درخت.»\par\noindent توصیف صاحب نقاشی: «درختی با شاخه‌های نامساوی که برگ‌هایش را کم‌رنگ کشیده‌ام تا پاییزی باشد.»\par\noindent \par\noindent تفاوت‌ها: ۱) شاخه‌های نامساوی را نگفت. ۲) کم‌رنگی برگ‌ها و دلیلش را ندید. هر دو تفاوت در خود نقاشی قابل نشان‌دادن‌اند.\par
+\tasvir{G6-S03-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E05}}\textbf{مثال: این را که کشیده؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ سه توصیف بی‌نام می‌بینی و می‌خواهی صاحب یکی را حدس بزنی که قاعده‌اش «خط ضخیم» است. نمونه‌ی استدلال خوب: «دومی، چون در توصیفش آمده خط‌های دور شکل‌ها پررنگ و ضخیم است.» حدس روی مدرک ایستاده، نه روی دوستی.\par
+\tasvir{G6-S03-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E06}}\textbf{مثال: کجا اشتباه توصیف کرد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه‌ی پاسخ خوب: «تصویرخوان سایه‌ی زیر گلدان را ندید و فقط گفت یک گلدان روی میز. فکر می‌کنم چون سایه را خیلی کم‌رنگ کشیده بودم و از دور شبیه لکه بود.» این پاسخ یک بخش مشخص را نام برده و برایش دلیل آورده است.\par
+\tasvir{G6-S03-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E07}}\textbf{امروز فقط عکس، نه ساخت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز از دوربین تبلت فقط برای عکس‌گرفتن از نقاشی دست‌سازت استفاده می‌کنی. هیچ تصویری با ابزار ساخته نمی‌شود.\par\noindent \par\noindent این نقاشی پایه‌ی روایت جلسه‌ی بعد است و باید کاملاً کار دست خودت باشد.\par
+\tasvir{G6-S03-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E08}}\textbf{مثال: جزئیات پنهان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جزئیاتی که فقط با دیدن نسخه‌ی واقعی معلوم می‌شود. نمونه: «در گوشه‌ی آسمان مداد را خیلی محکم فشار دادم تا رنگ تیره‌تر و براق شود.» این را با کلمه به‌سختی می‌شود رساند؛ باید خود نقاشی را دید.\par
+\tasvir{G6-S03-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E09}}\textbf{نشان اثر من}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تمام‌کردن مأموریت «هنرمند مستقل»، «نشان اثر من» در پروفایلت ثبت می‌شود.\par\noindent \par\noindent این نشان را با کشیدن و فرستادن اثرت می‌گیری، نه با زیبایی آن.\par
+\tasvir{G6-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S03-E10}}\textbf{مثال: یک نقاشی قدیمی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه‌ی تمرین خانه: «نقاشی خانه‌ای که کلاس سوم کشیدم: پنجره‌ها را نامساوی کشیده بودم و رنگ سقف از خط بیرون زده بود.» همین نشانه‌ها می‌گویند کار دست خودش بوده، نه کپی.\par
+\tasvir{G6-S03-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۴ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ چندگزینه‌ای}}\par
+\lbl{stepcol}{\en{G6-S03-P01}}\textbf{دوربین برای چه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز دوربین تبلت برای چه کاری استفاده شد؟\par
+\begin{itemize}
+\item الف) ساختن تصویر تازه
+\item ب) عکس‌گرفتن از نقاشی دست‌ساز
+\item پ) ضبط صدا
+\item ت) نمایش فیلم
+\end{itemize}
+\tasvir{G6-S03-P01}
+\lbl{maincol}{پرسش:}حرف گزینه‌ی درست را بنویس.\par
+\lbl{anscol}{پاسخ معین:}ب\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ ب؛ ب)؛ عکس‌گرفتن از نقاشی دست‌ساز؛ عکس گرفتن}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کاری فکر کن که بعد از کشیدن نقاشی کردی.
+\item دوربین امروز چیزی نساخت — فقط چیزی را ثبت کرد.
+\item از نقاشی کاغذی چه کاری کردیم؟
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — دوربین امروز فقط عکس گرفت، تصویری نساخت.\ \textbar\ \textbf{نادرست:} نه؛ امروز هیچ تصویری با ابزار ساخته نشد.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ «الف» را انتخاب می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ امروز عمداً هیچ تصویری با ابزار نساختیم — نقاشی باید دست‌ساز می‌ماند.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G6-S03-P02}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «تصویرخوان همیشه دقیقاً همان چیزی را توصیف می‌کند که در نقاشی هست.»\par
+\tasvir{G6-S03-P02}
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به تجربه‌ی امروز خودت فکر کن.
+\item همه‌ی جزئیات نقاشی‌ات را دید؟
+\item جزئیات ریز دست‌ساز را نمی‌بیند.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — جزئیات دست‌ساز از نظرش پنهان می‌ماند.\ \textbar\ \textbf{نادرست:} امروز خودت دیدی که بخشی از نقاشی‌ات را ندید.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S03-P03}}}\par
+\lbl{stepcol}{\en{G6-S03-P03-1}}\textbf{روی چه چیزی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نقاشی امروز را روی چه چیزی کشیدیم؟\par
+\lbl{maincol}{پرسش:}پاسخ را بنویس.\par
+\lbl{anscol}{پاسخ معین:}روی کاغذ\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ کاغذ؛ روی کاغذ؛ کاغذ و مداد؛ با مداد روی کاغذ}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item ابزار ساخت تصویر به کار نرفت.
+\item کار کاملاً دست‌ساز بود.
+\item روی کا…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — روی کاغذ، با دست.\ \textbar\ \textbf{نادرست:} به وسیله‌ای فکر کن که با مداد رویش می‌کشی.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S03-P03}}}\par
+\lbl{stepcol}{\en{G6-S03-P03-2}}\textbf{بر چه پایه‌ای؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نقاشی امروز بر پایه‌ی چه چیزی کشیده شد؟\par
+\lbl{maincol}{پرسش:}پاسخ را بنویس.\par
+\lbl{anscol}{پاسخ معین:}یکی از سه قاعده‌ی سبک خودمان\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ یکی از سه قاعده‌ی سبک خودمان؛ قاعده‌ی سبک؛ قاعده سبک؛ یکی از قاعده‌های سبک؛ قاعده‌ی سبک خودم؛ سه قاعده‌ی سبک}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جلسه‌ی پیش سه چیز درباره‌ی سبکت نوشتی.
+\item یکی از آن سه را انتخاب کردی.
+\item یکی از سه قاعده‌ی …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — با یکی از سه قاعده‌ی سبک خودمان.\ \textbar\ \textbf{نادرست:} به سه چیزی فکر کن که جلسه‌ی پیش درباره‌ی سبکت نوشتی.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S03-P04}}\textbf{چرا اشتباهش جرم نیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا اشتباه حدس تصویرخوان درباره‌ی نقاشی‌ات جرم نیست؟\par
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند چیزی در اثر دست‌ساز هست که توصیف منتقلش نمی‌کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون نشان می‌دهد نقاشی‌ام چیزی دارد که فقط با دیدن خودش فهمیده می‌شود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اشتباه او درباره‌ی نقاشی تو چه می‌گوید؟
+\item چه چیزی در نقاشی هست که در توصیف جا نمی‌شود؟
+\item یعنی اثر دست‌ساز چیزی دارد که فقط با دیدن اصلش …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — اشتباهش درباره‌ی اثر تو حرف می‌زند، نه علیه آن.\ \textbar\ \textbf{نیمه:} نزدیکی. حالا بگو این برای نقاشی تو چه معنایی دارد.\ \textbar\ \textbf{نادرست:} فکر کن: اگر همه‌چیز نقاشی با کلمه گفتنی بود، دیگر چرا باید اصلش را ببینیم؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S03-P05}}}\par
+\lbl{stepcol}{\en{G6-S03-P05-1}}\textbf{تفاوت اول}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ توصیف تصویرخوان و توصیف خودت از نقاشی‌ات را کنار هم بگذار. یک تفاوت بنویس که در خود نقاشی قابل نشان‌دادن باشد.\par
+\tasvir{G6-S03-P05}
+\lbl{maincol}{پرسش:}تفاوت اول را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک تفاوت مشخص میان دو توصیف بنویسد
+\item تفاوت در خود نقاشی قابل نشان‌دادن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ تصویرخوان نگفت برگ‌ها را کم‌رنگ کشیده‌ام.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item ببین تصویرخوان چه چیزی را نگفت.
+\item به رنگ، خط یا یک جزء کوچک فکر کن.
+\item «تصویرخوان نگفت که…»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تفاوتت مشخص است و در نقاشی دیده می‌شود.\ \textbar\ \textbf{نیمه:} تفاوت را گفتی؛ بگو در کجای نقاشی دیده می‌شود.\ \textbar\ \textbf{نادرست:} یک چیز مشخص بگو که در یکی از توصیف‌ها هست و در دیگری نیست.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S03-P05}}}\par
+\lbl{stepcol}{\en{G6-S03-P05-2}}\textbf{تفاوت دوم}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک تفاوت دیگر بنویس؛ غیر از تفاوت اول.\par
+\tasvir{G6-S03-P05}
+\lbl{maincol}{پرسش:}تفاوت دوم را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item تفاوتی متفاوت از تفاوت اول بنویسد
+\item تفاوت مشخص و قابل نشان‌دادن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ من گفتم شاخه‌ها نامساوی‌اند، ولی تصویرخوان فقط گفت «یک درخت».}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item این بار به بخش دیگری از نقاشی نگاه کن.
+\item شاید به حس یا نگاه تو مربوط باشد.
+\item «در توصیف من … آمده، ولی در توصیف تصویرخوان نه.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} تفاوت دومت هم مشخص است.\ \textbar\ \textbf{نیمه:} این تفاوت شبیه قبلی است؛ بخش دیگری را پیدا کن.\ \textbar\ \textbf{نادرست:} بخش دیگری از نقاشی را با دو توصیف مقایسه کن.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S03-P06}}\textbf{چطور می‌شد حدس زد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی «این را که کشیده؟»، چطور می‌شد از روی توصیف، صاحب نقاشی را حدس زد؟\par
+\tasvir{G6-S03-P06}
+\lbl{maincol}{پرسش:}چطور می‌شد حدس زد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به قاعده‌ی سبک شخصی هر نفر اشاره کند
+\item بگوید آن قاعده در توصیف هم دیده می‌شد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون هر نفر با قاعده‌ی خودش کشیده بود و همان قاعده در توصیف هم پیدا بود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item هر نفر نقاشی را بر چه پایه‌ای کشیده بود؟
+\item آن قاعده در توصیف هم اثری گذاشته بود یا نه؟
+\item چون قاعده‌ی سبک در اثر اجرا شده بود، در توصیف هم …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — قاعده‌ی اجراشده، تا توصیف هم می‌رسد.\ \textbar\ \textbf{نیمه:} نزدیکی. بگو این سبک چطور خودش را در توصیف نشان داد.\ \textbar\ \textbf{نادرست:} فکر کن هر نفر با قاعده‌ی متفاوتی کشیده بود. آن تفاوت کجا دیده می‌شد؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ طراحی}}\par
+\lbl{stepcol}{\en{G6-S03-P07}}\textbf{یک جزئیات پنهان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک جزئیات برای نقاشی‌ات پیشنهاد بده که فقط با دیدن نسخه‌ی واقعی معلوم شود، نه با توصیف.\par
+\tasvir{G6-S03-P07}
+\lbl{maincol}{پرسش:}چه جزئیاتی پیشنهاد می‌دهی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جزئیات مشخص پیشنهاد بدهد
+\item آن جزئیات با کلمه به‌سختی منتقل شود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ بافت رنگ را در یک گوشه ضخیم‌تر بگذارم تا وقتی نور بخورد براق شود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item چیزی که با چشم دیده می‌شود ولی گفتنش سخت است.
+\item به جنس و بافت فکر کن، نه به شکل.
+\item مثلاً فشار مداد یا ضخامت رنگ در یک نقطه.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب است — این با هیچ توصیفی کامل منتقل نمی‌شود.\ \textbar\ \textbf{نیمه:} این را می‌شود با کلمه توصیف کرد. چیزی بگو که نشود.\ \textbar\ \textbf{نادرست:} به حسی فکر کن که با دست‌کشیدن روی کاغذ می‌فهمی.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G6-S03-P08}}\textbf{با دوستت موافقی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دوستت می‌گوید: «چون تصویرخوان نقاشی‌ام را اشتباه حدس زد، نقاشی‌ام بد است.»\par\noindent \par\noindent موافقی؟ چرا؟\par
+\lbl{maincol}{پرسش:}موافقی یا نه، و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item موضع خودش را روشن بگوید
+\item دلیلی بیاورد که اشتباه ماشین را از کیفیت اثر جدا کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ موافق نیستم. اشتباه او یعنی نقاشی چیزی داشته که در توصیف جا نمی‌شود، نه اینکه بد باشد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اول بگو موافقی یا نه.
+\item خوب یا بد بودن یک نقاشی را چه کسی تعیین می‌کند؟
+\item اشتباه تصویرخوان درباره‌ی محدودیت خودش حرف می‌زند، نه درباره‌ی نقاشی.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب داوری کردی — و دلیلت روشن است.\ \textbar\ \textbf{نیمه:} موضعت را گفتی؛ حالا دلیلش را بنویس.\ \textbar\ \textbf{نادرست:} فکر کن: اگر ابزاری چیزی را نفهمد، مشکل از آن چیز است یا از ابزار؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S03-P09}}\textbf{چرا اول نشانه‌ها؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا پیش از کشیدن نقاشی خودمان، نشانه‌های کار دست را شناختیم؟\par
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند بدون شناخت نشانه‌ها نمی‌شود آگاهانه جزئیات دست‌ساز گذاشت
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون اگر ندانیم چه چیزی کار دست را نشان می‌دهد، نمی‌توانیم عمداً چنین جزئیاتی در نقاشی بگذاریم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item فکر کن اگر آن فهرست نشانه‌ها را نداشتیم چه می‌شد.
+\item می‌توانستی عمداً یک جزئیات دست‌ساز بگذاری؟
+\item بدون شناخت نشانه‌ها، نمی‌شود آگاهانه …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — شناختن نشانه، شرط گذاشتن آگاهانه‌ی آن است.\ \textbar\ \textbf{نیمه:} نزدیکی. بگو این شناخت به تو اجازه‌ی چه کاری داد.\ \textbar\ \textbf{نادرست:} اگر نمی‌دانستی چه چیزی کار دست را لو می‌دهد، می‌توانستی از آن استفاده کنی؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ تطبیق \textbar\ پاره‌ی ۱ از ۳ پرسش \en{G6-S03-P10}}}\par
+\lbl{stepcol}{\en{G6-S03-P10-1}}\textbf{موضوع نقاشی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این را با «قابل توصیف با کلمه» یا «فقط با دیدن اصل» جور کن:\par\noindent \par\noindent موضوع نقاشی\par
+\tasvir{G6-S03-P10}
+\lbl{maincol}{پرسش:}کدام دسته؟\par
+\lbl{anscol}{پاسخ معین:}قابل توصیف با کلمه\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ قابل توصیف؛ با کلمه؛ قابل توصیف با کلمه}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آیا می‌شود موضوع را در یک جمله گفت؟
+\item مثلاً «یک خانه کنار رود».
+\item اگر با یک جمله گفته می‌شود…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — قابل توصیف با کلمه.\ \textbar\ \textbf{نادرست:} آیا می‌شود موضوع را در یک جمله گفت؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ تطبیق \textbar\ پاره‌ی ۲ از ۳ پرسش \en{G6-S03-P10}}}\par
+\lbl{stepcol}{\en{G6-S03-P10-2}}\textbf{فشار مداد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این را با «قابل توصیف با کلمه» یا «فقط با دیدن اصل» جور کن:\par\noindent \par\noindent فشار مداد روی کاغذ\par
+\tasvir{G6-S03-P10}
+\lbl{maincol}{پرسش:}کدام دسته؟\par
+\lbl{anscol}{پاسخ معین:}فقط با دیدن اصل\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ فقط با دیدن اصل؛ دیدن اصل؛ با دیدن اصل؛ فقط با دیدن اصل معلوم می‌شود}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آیا با کلمه می‌شود دقیقاً گفت مداد چقدر فشار داده شده؟
+\item این یکی از نشانه‌های ردّ دست است.
+\item ردّ دست با توصیف منتقل نمی‌شود.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — فقط با دیدن اصل.\ \textbar\ \textbf{نادرست:} فشار مداد را با کلمه کامل می‌شود رساند؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ تطبیق \textbar\ پاره‌ی ۳ از ۳ پرسش \en{G6-S03-P10}}}\par
+\lbl{stepcol}{\en{G6-S03-P10-3}}\textbf{رنگ اصلی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ این را با «قابل توصیف با کلمه» یا «فقط با دیدن اصل» جور کن:\par\noindent \par\noindent رنگ اصلی به‌کاررفته\par
+\tasvir{G6-S03-P10}
+\lbl{maincol}{پرسش:}کدام دسته؟\par
+\lbl{anscol}{پاسخ معین:}قابل توصیف با کلمه\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ قابل توصیف؛ با کلمه؛ قابل توصیف با کلمه}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آیا می‌شود رنگ اصلی را نام برد؟
+\item مثلاً «بیشتر آبی است».
+\item اگر با یک واژه گفته می‌شود…
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — قابل توصیف با کلمه.\ \textbar\ \textbf{نادرست:} آیا می‌شود رنگ اصلی را با یک واژه گفت؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\section{جلسه‌ی ۴ — از اثر تا روایت}
+\begin{jalasebox}{۴}{از اثر تا روایت}
+\dastehead{شناسنامه‌ی جلسه}{هدف، مفاهیم، مأموریت و مواد}{maincol}
+\lbl{maincol}{هدف:}نوشتن روایتی بر پایه‌ی اثر خود، با قفل‌بودن جمله‌های خود دانش‌آموز و نوشتن ابزار فقط میان آن‌ها.\par
+\lbl{maincol}{مفاهیم:}روایت، جمله‌ی قفل‌شده، اصالت، متن میانی\par
+\lbl{maincol}{مأموریت:}راوی قفل‌شده \textbar\ \textbf{نشان:} نشان روایت‌گر\par
+\lbl{maincol}{پیوند با برنامه‌ی درسی \textbar\ زبان فارسی — روایت‌نویسی:}نوشتن جمله‌ی آغازین و پایانی خود و حفظ آن‌ها بدون تغییر، درحالی‌که یک ابزار فقط متن میانی را می‌نویسد.\par
+\lbl{tamcol}{ابزار امروز — دستیار گفت‌وگو:}بین دو جمله‌ی داده‌شده متن میانی می‌نویسد، اما نمی‌تواند جمله‌های قفل‌شده‌ی آغاز و پایان را تغییر دهد.\par
+\noindent{\small کشف امروز: وقتی آغاز و پایان قصه مال خودمان باشد، حتی اگر وسط را ابزار بنویسد، قصه هنوز روایت خودمان است.}\par
+\lbl{maincol}{مواد:}تبلت شخصی با هوشینو، هدفون و میکروفون، نمایشگر کلاسی\par
+\lbl{maincol}{خروجی:}روایت سه‌بخشی ثبت‌شده + کارت شغل شماره‌ی ۲ + نشان روایت‌گر.\par
+\noindent{\small\textcolor{tchcol}{\textbf{نکته‌ی معلم:}\ تأکید کنید قفل‌بودن آغاز و پایان قانون امروز است، نه محدودیت؛ همین قانون تضمین می‌کند روایت هنوز مال خود دانش‌آموز بماند.}}\par
+\vspace{4pt}
+\dastehead{پیش‌سنجه}{پیش از بخش آموزش، جدا برای هر دانش‌آموز — بیرون از ۶۰ دقیقه}{tamcol}
+\begin{stepbox}{پیش‌سنجه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-K1}}\textbf{پیش از شروع: شغل امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز با شغل «مهندس نرم‌افزار» آشنا می‌شوی. پیش از هر توضیحی، صادقانه بگو این جمله چقدر درباره‌ی تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E02}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. حالا برویم سراغ درس امروز.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این گویه باید پیش از هر توضیحی درباره‌ی شغل ثبت شود، وگرنه سنجش رشد آشنایی بی‌معنا می‌شود. هوشینو آن را هنگام ورود هر دانش‌آموز، پیش از بخش آموزش، روی دستگاه خودش می‌پرسد؛ پس بخش آموزش بدون ورودی می‌ماند و در کلاس دونفره یا مجازی هر نفر جدا پاسخ می‌دهد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{برنامه‌ی اجرای جلسه}{گام‌به‌گام، همان چیزی که به \software{} داده می‌شود}{stepcol}
+\dastehead{آموزش — ۲۰ دقیقه}{}{morcol}
+\begin{stepbox}{گام ۱ \textbar\ ۵ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A1}}\textbf{مرور: اثر من}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش با یکی از قاعده‌های سبکت نقاشی کشیدی و دیدی تصویرخوان چه چیزهایی را نمی‌بیند. امروز درباره‌ی همان نقاشی، روایت می‌نویسی. این نکته‌ها را مرور کن؛ بعد کارت‌های مرور را می‌بینی.\par
+\begin{itemize}
+\item ردّ دست: فشار مداد، لرزش خط، رگه‌ی رنگ
+\item توصیف یعنی فشرده‌کردن؛ ردّ دست جا می‌ماند
+\item اشتباه تصویرخوان نه جرم است، نه یعنی نقاشی بد
+\item اصالت با تازگی فرق دارد
+\end{itemize}
+\tasvir{G6-S04-A01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ هوشینو پس از این صفحه کارت‌های مرور را با پاسخ نشان می‌دهد. مطمئن شوید نقاشی جلسه‌ی پیش در پروفایل هر دانش‌آموز هست.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A2}}\textbf{ابزار امروز: دستیار گفت‌وگو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز دستیار گفت‌وگو کار تازه‌ای می‌کند: بین دو جمله‌ای که تو می‌نویسی، چند جمله‌ی میانی می‌نویسد. او از دیدن داستان‌های زیاد یاد گرفته، ولی گاهی وسطی می‌نویسد که با آغاز یا پایانت جور نیست. و هرگز اجازه ندارد جمله‌های تو را عوض کند.\par
+\tasvir{G6-S04-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A3}}\textbf{روایت سه‌بخشی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ هر روایت سه بخش دارد: آغاز، میانه و پایان. امروز آغاز و پایان را خودت می‌نویسی و «قفل» می‌کنی؛ یعنی هیچ ابزاری حق تغییرشان را ندارد. ابزار فقط میانه را می‌نویسد. کسی که مرزهای داستان را تعیین می‌کند، صاحب داستان است؛ حتی اگر همه‌ی واژه‌ها را خودش ننوشته باشد.\par
+\tasvir{G6-S04-A03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A4}}\textbf{مثال: قفل مبهم، قفل دقیق}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آغاز مبهم: «یک روز یک اتفاق افتاد.» \ensuremath{\leftarrow} وسط می‌تواند هر چیزی باشد؛ داستان از دستت می‌رود.\par\noindent \par\noindent آغاز دقیق: «گربه‌ی نارنجیِ نقاشی‌ام از قاب بیرون پرید.»\par\noindent پایان: «و از آن روز، قاب نقاشی هرگز خالی نماند.»\par\noindent \ensuremath{\leftarrow} وسط مجبور است بگوید گربه کجا رفت و چرا برگشت.\par
+\tasvir{G6-S04-A04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A5}}\textbf{شغل امروز: مهندس نرم‌افزار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مهندس نرم‌افزار پیش از نوشتن حتی یک خط برنامه، «صورت مسئله» را دقیق می‌کند: نرم‌افزار دقیقاً چه کاری باید بکند؟ چون ابزار و برنامه فقط همان چیزی را می‌سازند که در توضیح آمده. درخواست مبهم، نرم‌افزار اشتباه می‌سازد؛ مشخصات دقیق، نرم‌افزار درست.\par
+\tasvir{G6-S04-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A6}}\textbf{مثال: مشخصات دقیق یعنی چه؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مبهم: «یک بازی بساز.» — چه بازی‌ای؟ چه کسی بازی می‌کند؟ چطور برنده می‌شویم؟\par\noindent \par\noindent دقیق: «بازی‌ای که گربه با کلید چپ و راست حرکت کند، با گرفتن هر ماهی یک امتیاز بگیرد و با سه بار خوردن به سنگ، بازی تمام شود.»\par\noindent \par\noindent هر جمله‌ی دقیق، تصمیمی است که تو گرفته‌ای.\par
+\tasvir{G6-S04-A06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۲ دقیقه \textbar\ کل کلاس \textbar\ نمایش}
+\lbl{stepcol}{\en{G6-S04-A7}}\textbf{داور داستان تویی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی دستیار گفت‌وگو متن میانی را نوشت، کار تو تمام نشده. آن را بخوان و داوری کن: با آغاز و پایانت جور است؟ اگر بله، ذخیره‌اش کن. اگر نه، جمله‌های قفل‌شده را دست نزن؛ دوباره و دقیق‌تر از ابزار بخواه. پاسخ جورنشده معمولاً یعنی راهنمایی کافی ندادی، نه اینکه ابزار خراب است.\par
+\tasvir{G6-S04-A07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ادامه بده.}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{فعالیت تعاملی — ۳۰ دقیقه}{}{mescol}
+\begin{stepbox}{گام ۱ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-T1}}\textbf{دو جمله‌ی قفل‌شده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی نقاشی جلسه‌ی پیش، یک جمله‌ی آغازین و یک جمله‌ی پایانی بنویس.\par\noindent \par\noindent این دو جمله از حالا «قفل»‌اند: هیچ ابزاری اجازه‌ی تغییرشان را ندارد.\par
+\tasvir{G6-S04-E01}
+\lbl{maincol}{پرسش:}جمله‌ی آغازین و جمله‌ی پایانی‌ات را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item دو جمله‌ی جدا بنویسد: یکی آغازین، یکی پایانی
+\item هر دو به نقاشی خودش مربوط باشند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ آغاز: «آن روز صبح، خانه‌ی توی نقاشی‌ام هنوز پنجره نداشت.» پایان: «حالا از همان پنجره، نور به همه‌ی اتاق‌ها می‌رسد.»}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به نقاشی‌ات نگاه کن: داستانش از کجا شروع می‌شود؟
+\item جمله‌ی پایانی جایی است که داستان تمام می‌شود — لازم نیست شبیه آغاز باشد.
+\item بنویس: «آغاز: …» و در خط بعد «پایان: …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} هر دو جمله قفل شد. از این به بعد فقط وسط نوشته می‌شود.\ \textbar\ \textbf{نیمه:} یک جمله داری؛ آن یکی هم لازم است.\ \textbar\ \textbf{نادرست:} دو جمله بنویس: یکی برای شروع داستان نقاشی‌ات، یکی برای پایانش.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ یک بند کامل می‌نویسد به‌جای دو جمله \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ فقط دو جمله لازم داریم — وسط داستان را ابزار می‌نویسد، نه تو.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ واژه‌ی «قفل» را جدی بگیرید و بلند بگویید. اگر بعداً کسی جمله‌اش را عوض کرد، همان‌جا برگردانید — قانون امروز همین است.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-T2}}\textbf{مراحل ساخت یک نرم‌افزار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مراحل ساخت یک نرم‌افزار را از نیاز تا تحویل می‌بینی.\par\noindent \par\noindent به نظرت کدام مرحله کوتاه‌ترین و در عین حال مبهم‌ترین است؟ نامش را بنویس و بگو چرا.\par
+\tasvir{G6-S04-E03}
+\lbl{maincol}{پرسش:}کدام مرحله و چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یکی از مراحل نشان‌داده‌شده را نام ببرد
+\item دلیلی برای مبهم بودن آن بیاورد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ مرحله‌ی «فهمیدن نیاز» — چون کوتاه نوشته شده ولی اگر اشتباه فهمیده شود، همه‌ی کار بعدی خراب می‌شود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به مرحله‌ای فکر کن که در یک کلمه نوشته شده ولی کار زیادی پشتش است.
+\item کدام مرحله اگر اشتباه انجام شود، بقیه‌ی مراحل هم خراب می‌شوند؟
+\item بنویس: «مرحله‌ی … ، چون …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب استدلال کردی — همین ابهام، کار مهندس را سخت می‌کند.\ \textbar\ \textbf{نیمه:} مرحله را انتخاب کردی؛ حالا بگو چرا مبهم است.\ \textbar\ \textbf{نادرست:} یکی از مراحل را انتخاب کن و بگو چه چیزی در آن روشن نیست.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ مراحل را یکی‌یکی روی نمایشگر بیاورید، نه همه با هم. بعد از پاسخ‌ها، دو سه دیدگاه متفاوت را بلند بخوانید.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱۰ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-T3}}\textbf{وسط را ابزار می‌نویسد}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ دستیار گفت‌وگو بین دو جمله‌ی قفل‌شده‌ات، دو یا سه جمله‌ی میانی نوشت.\par\noindent \par\noindent بخوان و بگو: آیا با آغاز و پایان تو جور درمی‌آید؟ اگر نه، کجا نمی‌خواند؟\par
+\tasvir{G6-S04-E05}
+\lbl{maincol}{پرسش:}متن میانی با آغاز و پایانت جور است؟ کجا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item داوری روشن بدهد: جور هست یا نیست
+\item به یک جای مشخص در متن اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ جور نیست. جمله‌ی دوم می‌گوید خانه خالی بود، ولی در پایان من نور به اتاق‌ها می‌رسد و کسی باید آنجا باشد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item اول جمله‌ی آغازینت را بخوان، بعد متن میانی، بعد پایان.
+\item جایی هست که ناگهان پرش کند یا چیزی جا افتاده باشد؟
+\item بنویس: «جمله‌ی … با پایان من نمی‌خواند، چون …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} خوب خواندی. اگر جور نبود، دوباره درخواست بده — متن را خودت دست‌کاری نکن.\ \textbar\ \textbf{نیمه:} داوری‌ات را گفتی؛ حالا بگو دقیقاً کدام جمله.\ \textbar\ \textbf{نادرست:} سه بخش را پشت‌سرهم بخوان و ببین کجا رشته پاره می‌شود.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ متن میانی را خودش ویرایش می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ امروز متن میانی را دست‌کاری نمی‌کنیم. اگر جور نیست، دوباره و دقیق‌تر بخواه.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ جمله‌ی قفل‌شده را عوض می‌کند تا جور شود \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ آغاز و پایان قفل‌اند. به‌جای عوض‌کردن آن‌ها، درخواستت را دقیق‌تر کن.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ اینجا جای کشف اصلی جلسه است: وقتی متن جور نیست، مشکل معمولاً از راهنمایی ناقص است نه از خرابی ابزار. بگذارید خودشان دوباره درخواست بدهند و تفاوت را ببینند.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{ارزیابی — ۱۰ دقیقه}{}{tamcol}
+\begin{stepbox}{گام ۱ \textbar\ ۳ دقیقه \textbar\ کل کلاس \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E1}}\textbf{چرا توضیح دقیق؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا شغل مهندس نرم‌افزار هم به توضیح دقیق نیاز دارد، نه فقط به مهارت فنی؟\par
+\tasvir{G6-S04-E07}
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند مهارت فنی بدون صورت مسئله‌ی دقیق بی‌فایده است
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون اگر ندانی دقیقاً چه چیزی باید ساخته شود، هرچقدر هم خوب کد بزنی، چیز اشتباهی ساخته‌ای.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item تصور کن کسی خیلی خوب کد می‌زند ولی نمی‌داند چه باید بسازد.
+\item نتیجه‌ی کارش چه می‌شود؟
+\item بهترین مهارت فنی هم بی‌فایده است اگر …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — چیز اشتباه را هم می‌شود عالی ساخت.\ \textbar\ \textbf{نیمه:} نزدیکی. بگو اگر توضیح مبهم باشد چه چیزی ساخته می‌شود.\ \textbar\ \textbf{نادرست:} فکر کن: اگر صورت مسئله اشتباه باشد، مهارت زیاد چه کمکی می‌کند؟}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ این را به‌صورت گفت‌وگوی کلاسی ببرید؛ دو سه پاسخ بلند شنیده شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۲ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E2}}\textbf{گویه‌ی ۱ از ۶ — رغبت}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم کارهایی را که در این شغل انجام می‌شود، انجام دهم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی I1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۳ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E3}}\textbf{گویه‌ی ۲ از ۶ — آگاهی از فرصت‌ها}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «می‌دانم در این شغل چه کاری انجام می‌شود.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی K1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۴ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E4}}\textbf{گویه‌ی ۳ از ۶ — خودآگاهی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «فکر می‌کنم می‌توانم در این کار خوب باشم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی S1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۵ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E5}}\textbf{گویه‌ی ۴ از ۶ — ارزش اجتماعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «این شغل برای زندگی مردم مفید است.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی V1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۶ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E6}}\textbf{گویه‌ی ۵ از ۶ — تمایل به کاوش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «دوست دارم درباره‌ی این شغل بیشتر بدانم.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی E1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۷ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E7}}\textbf{گویه‌ی ۶ از ۶ — پیوند با هوش مصنوعی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ درباره‌ی شغل «مهندس نرم‌افزار» این جمله را بخوان و با یک عدد بگو چقدر برای تو درست است:\par\noindent \par\noindent «هوش مصنوعی به این شغل کمک می‌کند.»\par\noindent \par\noindent ۱ اصلاً · ۲ کم · ۳ متوسط · ۴ زیاد · ۵ خیلی زیاد\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک عدد از ۱ تا ۵ بنویس.\par
+\lbl{anscol}{پاسخ معین:}عددی از ۱ تا ۵\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ عددی از ۱ تا ۵؛ ۱؛ ۲؛ ۳؛ ۴؛ ۵؛ 1؛ 2؛ 3؛ 4؛ 5}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item جمله را یک بار دیگر آرام بخوان.
+\item ۱ یعنی اصلاً، ۳ یعنی متوسط، ۵ یعنی خیلی زیاد.
+\item همان عددی را بنویس که الان واقعاً حس می‌کنی؛ هیچ عددی غلط نیست.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} ثبت شد. ممنون که صادقانه جواب دادی.\ \textbar\ \textbf{نادرست:} فقط یک عدد از ۱ تا ۵ بنویس.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ گویه‌ی A1 کارت شغل؛ هر گویه جدا پرسیده می‌شود تا دانش‌آموز در یک کادر چند عدد پشت‌سرهم ننویسد.}}\par
+\vspace{5pt}
+\end{stepbox}
+\begin{stepbox}{گام ۸ \textbar\ ۱ دقیقه \textbar\ فردی \textbar\ پاسخ تایپی}
+\lbl{stepcol}{\en{G6-S04-E8}}\textbf{پرسشی که هنوز داری}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آخرین قسمت کارت شغل شماره‌ی ۲: یک پرسش بنویس که هنوز درباره‌ی شغل «مهندس نرم‌افزار» داری. این بخش امتیاز ندارد؛ فقط کنجکاوی‌ات ثبت می‌شود.\par
+\tasvir{G6-S04-E10}
+\lbl{maincol}{پرسش:}یک پرسش که هنوز درباره‌ی این شغل داری چیست؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک پرسش واقعی (با علامت سؤال یا واژه‌ی پرسشی) بنویسد
+\item پرسش درباره‌ی همین شغل یا کار روزانه‌ی آن باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ کارشناس‌ها از کجا می‌فهمند داده‌ی حسگر درست است؟}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به کار روزانه‌ی این شغل فکر کن.
+\item چه چیزی از آن هنوز برایت عجیب یا ناشناخته است؟
+\item جمله‌ات را با «چطور…» یا «چرا…» شروع کن.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پرسشت ثبت شد. کارت شغل شماره‌ی ۲ ذخیره شد و «نشان روایت‌گر» را گرفتی.\ \textbar\ \textbf{نیمه:} این یک جمله است، نه پرسش؛ آن را به شکل پرسش بنویس.\ \textbar\ \textbf{نادرست:} یک پرسش درباره‌ی همین شغل بنویس — هر پرسشی که واقعاً داری.}\par
+\noindent{\small\textcolor{tchcol}{\textbf{یادداشت معلم:}\ پرسش باز کارت شغل (Q)؛ امتیاز نمی‌گیرد. با ثبت آن، کارت و نشان ذخیره می‌شود.}}\par
+\vspace{5pt}
+\end{stepbox}
+\dastehead{روی دستگاه شخصی}{کار فردی، چالش سه‌سطحی و تمرین خانه}{mescol}
+\lbl{mescol}{کار:}هر دانش‌آموز جمله‌ی آغازین، جمله‌ی پایانی و متن میانی دستیار گفت‌وگو را ذخیره می‌کند.\par
+\lbl{mescol}{چالش سه‌سطحی:}\par
+\begin{itemize}
+\item \textbf{سطح ۱:} یک جمله‌ی آغازین و یک جمله‌ی پایانی بنویس.
+\item \textbf{سطح ۲:} متن میانی دستیار گفت‌وگو را بخوان و بگو آیا با آغاز و پایانت جور است.
+\item \textbf{سطح ۳:} آغاز و پایانی بنویس که دستیار گفت‌وگو را مجبور کند یک غافلگیری در وسط بسازد.
+\end{itemize}
+\lbl{mescol}{ثبت در پروفایل:}روایت سه‌بخشی، شش گویه‌ی کارنما و کارت شغل شماره‌ی ۲.\par
+\lbl{mescol}{تمرین خانه:}برای یکی از اعضای خانواده آغاز و پایان یک قصه‌ی کوتاه را بگو و بپرس او چه چیزی برای وسطش حدس می‌زند.\par\vspace{4pt}
+\dastehead{مخزن — مرور جلسه‌ی پیش}{۱۰ کارت مرور با پاسخ \textbar\ ۵ دقیقه‌ی نخست آموزش}{morcol}
+\lbl{stepcol}{\en{G6-S04-R01}}\textbf{قاعده‌ی نقاشی دیروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نقاشی جلسه‌ی پیش را بر چه پایه‌ای کشیدی؟\par\noindent \par\noindent پاسخ: با یکی از سه قاعده‌ی سبک خودت؛ مثلاً «قاعده‌ی خط ضخیم». همان قاعده در پروفایلت ذخیره است.\par
+\tasvir{G6-S03-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R02}}\textbf{مأموریت و نشان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مأموریت و نشان جلسه‌ی پیش چه بود؟\par\noindent \par\noindent پاسخ: مأموریت «هنرمند مستقل» و «نشان اثر من».\par
+\tasvir{G6-S03-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R03}}\textbf{دوربین برای چه بود؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جلسه‌ی پیش دوربین تبلت برای چه کاری استفاده شد؟\par\noindent \par\noindent پاسخ: فقط برای عکس گرفتن از نقاشی دست‌ساز؛ هیچ تصویری با ابزار ساخته نشد.\par
+\tasvir{G6-S03-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R04}}\textbf{چه چیزی را نمی‌بیند؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ تصویرخوان در نقاشی چه چیزی را نمی‌بیند؟\par\noindent \par\noindent پاسخ: جزئیات دست‌ساز مثل فشار مداد، لرزش خط و رنگ ناهماهنگ را.\par
+\tasvir{G6-S03-A02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R05}}\textbf{بازی جلسه‌ی پیش}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در بازی «این را که کشیده؟» چه می‌کردیم؟\par\noindent \par\noindent پاسخ: توصیف سه نقاشی بی‌نام را می‌دیدیم و حدس می‌زدیم کدام با قاعده‌ی سبک چه کسی جور است؛ بعد نام‌ها فاش می‌شد.\par
+\tasvir{G6-S03-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R06}}\textbf{چرا اشتباهش جرم نیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا اشتباه حدس تصویرخوان درباره‌ی نقاشی، جرم نیست؟\par\noindent \par\noindent پاسخ: چون نشان می‌دهد نقاشی چیزی دارد که فقط با دیدن نسخه‌ی واقعی‌اش فهمیده می‌شود.\par
+\tasvir{G6-S03-A05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R07}}\textbf{جزئیات پنهان تو}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «جزئیات پنهان» یعنی چه؟ یک نمونه:\par\noindent \par\noindent «در گوشه‌ی آسمان مداد را محکم فشار دادم تا رنگ تیره و براق شود.» چیزی که با کلمه به‌سختی منتقل می‌شود و باید خود نقاشی را دید.\par
+\tasvir{G6-S03-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R08}}\textbf{چرا کاملاً دست‌ساز؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا نقاشی جلسه‌ی پیش باید کاملاً دست‌ساز می‌بود؟\par\noindent \par\noindent پاسخ: چون امروز روی همان نقاشی روایت می‌نویسیم و روایت باید از اثری شروع شود که مال خودمان است.\par
+\tasvir{G6-S03-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R09}}\textbf{اشتباه تصویرخوان}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک نمونه از اشتباه تصویرخوان در توصیف نقاشی:\par\noindent \par\noindent «سایه‌ی زیر گلدان را ندید و فقط گفت یک گلدان روی میز.» اشتباه او به ما نشان داد کدام بخش نقاشی فقط با دیدن اصل فهمیده می‌شود.\par
+\tasvir{G6-S03-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-R10}}\textbf{نقاشی خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در تمرین خانه، در یک نقاشی قدیمی دنبال ردّ دست گشتی. نمونه:\par\noindent \par\noindent «پنجره‌ها را نامساوی کشیده بودم و رنگ سقف از خط بیرون زده بود.» همین نشانه‌ها می‌گویند کار دست خودت بوده، نه کپی.\par
+\tasvir{G6-S03-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} یادت آمد؟ برو سراغ کارت بعدی.}\par
+\vspace{5pt}
+\dastehead{مخزن — مثال آموزشی}{۱۰ مثال حل‌شده‌ی نمایشی \textbar\ بخش آموزش}{mescol}
+\lbl{stepcol}{\en{G6-S04-E01}}\textbf{مثال: دو جمله‌ی قفل‌شده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ نمونه برای نقاشی یک خانه‌ی بی‌پنجره:\par\noindent \par\noindent آغاز: «خانه‌ی توی نقاشی‌ام پنجره نداشت.»\par\noindent پایان: «حالا هر شب از پنجره‌ی تازه‌اش ماه را تماشا می‌کند.»\par\noindent \par\noindent هر دو درباره‌ی نقاشی خود نویسنده‌اند و بینشان جای یک ماجرای واقعی هست.\par
+\tasvir{G6-S04-E01}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E02}}\textbf{چرا پیش از توضیح عدد می‌دهی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پیش از هر توضیحی درباره‌ی مهندس نرم‌افزار، یک عدد از ۱ تا ۵ دادی. این کار در هر پنجره‌ی مشاغل امسال تکرار می‌شود. آخر سال این عدد با عدد تازه‌ات مقایسه می‌شود تا ببینی چقدر با این شغل آشنا شده‌ای.\par
+\tasvir{G6-S04-E02}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E03}}\textbf{مراحل ساخت یک نرم‌افزار}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ در فعالیت امروز مراحل ساخت نرم‌افزار را از «نیاز» تا «تحویل» می‌بینی و باید مبهم‌ترین مرحله را پیدا کنی. راه فکر کردن: برای هر مرحله بپرس «اگر این مرحله مبهم انجام شود، چه چیزی در آخر خراب می‌شود؟» مرحله‌ای که کوتاه است ولی ابهامش کل کار را عوض می‌کند، همان است.\par
+\tasvir{G6-S04-E03}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E04}}\textbf{اول توضیح دقیق، بعد ساختن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مهندس نرم‌افزار باید دقیقاً بگوید چه می‌خواهد، وگرنه نرم‌افزار اشتباه ساخته می‌شود.\par\noindent \par\noindent درخواست مبهم — چه به یک نرم‌افزار، چه به یک ابزار متنی — نتیجه‌ی اشتباه می‌سازد.\par
+\tasvir{G6-S04-E04}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E05}}\textbf{مثال حل‌شده: متن میانی جور است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ آغاز: «خانه‌ی توی نقاشی‌ام پنجره نداشت.»\par\noindent متن میانی ابزار: «خانه پر از نور بود و بچه‌ها از پنجره‌ها بیرون را نگاه می‌کردند…»\par\noindent \par\noindent داوری: جور نیست؛ جمله‌ی میانی از پنجره‌هایی حرف می‌زند که طبق آغاز اصلاً وجود ندارند. پس باید دوباره خواست.\par
+\tasvir{G6-S04-E05}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E06}}\textbf{مثال: دوباره بخواه، دست‌کاری نکن}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی متن میانی جور نیست، جمله‌های قفل‌شده را عوض نمی‌کنیم و متن ابزار را هم خودمان تکه‌تکه درست نمی‌کنیم. دوباره و دقیق‌تر می‌خواهیم. نمونه: «در وسط بگو خانه چطور صاحب پنجره شد؛ یادت باشد اولش هیچ پنجره‌ای ندارد.»\par
+\tasvir{G6-S04-E06}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E07}}\textbf{چرا مهارت فنی کافی نیست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مهندسی که عالی برنامه می‌نویسد ولی نمی‌داند دقیقاً چه باید بسازد، چیز اشتباهی را خیلی خوب می‌سازد! پس توضیح دقیق صورت مسئله، به‌اندازه‌ی مهارت فنی مهم است. پاسخ خوب به این پرسش: «چون اگر ندانی چه باید ساخته شود، چیز اشتباهی را خوب می‌سازی.»\par
+\tasvir{G6-S04-E07}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E08}}\textbf{مثال: پرسش برای خانه}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ پرسش خانه: «آخرین باری که چیزی آن‌طور که خواسته بودی ساخته نشد، مشکل از توضیح تو بود یا از اجرای او؟»\par\noindent \par\noindent نمونه‌ی پاسخ: «مادرم گفت وقتی کیک سفارش داد، نگفته بود چه اندازه‌ای می‌خواهد و کیک کوچک آمد؛ مشکل از توضیح خودش بود.»\par
+\tasvir{G6-S04-E08}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E09}}\textbf{کشف امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ وقتی آغاز و پایان قصه مال خودمان باشد، حتی اگر وسط را ابزار بنویسد، قصه هنوز روایت خودمان است.\par\noindent \par\noindent قفل‌بودن آغاز و پایان محدودیت نیست؛ همین قانون است که مالکیت روایت را برای ما نگه می‌دارد.\par
+\tasvir{G6-S04-E09}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\lbl{stepcol}{\en{G6-S04-E10}}\textbf{نشان روایت‌گر}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ با تمام‌کردن مأموریت «راوی قفل‌شده»، «نشان روایت‌گر» ثبت می‌شود و کارت شغل شماره‌ی ۲ ذخیره می‌شود.\par\noindent \par\noindent این نشان با ثبت روایت سه‌بخشی گرفته می‌شود؛ آغاز و پایان قفل‌شده باید دست‌نخورده مانده باشند.\par
+\tasvir{G6-S04-E10}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} مثال را دیدی. ادامه بده.}\par
+\vspace{5pt}
+\dastehead{مخزن — تمرین ارزیابی}{۱۰ پرسش در ۱۲ قلم جدا \textbar\ بخش ارزیابی}{tamcol}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S04-P01}}\textbf{درباره‌ی چه نوشتیم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ جمله‌ی آغازین و پایانی امروز درباره‌ی چه چیزی نوشته شد؟\par
+\lbl{maincol}{پرسش:}درباره‌ی چه چیزی؟\par
+\lbl{anscol}{پاسخ معین:}درباره‌ی نقاشی جلسه‌ی پیش\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نقاشی جلسه‌ی پیش؛ نقاشی خودم؛ نقاشی دیروز؛ درباره‌ی نقاشی جلسه‌ی پیش}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item به چیزی فکر کن که جلسه‌ی پیش ساختی.
+\item روی میزت چه بود وقتی می‌نوشتی؟
+\item درباره‌ی … جلسه‌ی پیش.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — روایت از اثر خودت شروع شد.\ \textbar\ \textbf{نادرست:} به نقاشی‌ای فکر کن که جلسه‌ی پیش کشیدی.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ بله یا خیر}}\par
+\lbl{stepcol}{\en{G6-S04-P02}}\textbf{درست یا نادرست؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ «دستیار گفت‌وگو اجازه دارد جمله‌های قفل‌شده‌ی آغاز و پایان را تغییر دهد.»\par
+\tasvir{G6-S04-P02}
+\lbl{maincol}{پرسش:}درست است یا نادرست؟\par
+\lbl{anscol}{پاسخ معین:}نادرست\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ نادرست؛ غلط؛ نه؛ خیر}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item واژه‌ی «قفل» یعنی چه؟
+\item امروز ابزار اجازه‌ی نوشتن کجا را داشت؟
+\item فقط وسط را می‌نویسد.
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — فقط متن میانی را می‌نویسد.\ \textbar\ \textbf{نادرست:} قفل یعنی دست‌نخوردنی؛ ابزار فقط وسط را می‌نویسد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۱ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S04-P03}}\textbf{چه چیزی قفل شد؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ امروز چه چیزی «قفل» اعلام شد؟\par
+\lbl{maincol}{پرسش:}چه چیزی قفل شد؟\par
+\lbl{anscol}{پاسخ معین:}جمله‌ی آغازین و جمله‌ی پایانی روایت\par
+\noindent{\small\textcolor{anscol}{پذیرفتنی:}\ جمله‌ی آغازین و پایانی؛ آغاز و پایان؛ جمله‌ی اول و آخر؛ جمله‌ی آغازین و جمله‌ی پایانی}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item دو چیز بود.
+\item یکی اول روایت، یکی آخرش.
+\item جمله‌ی … و جمله‌ی …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — هر دو دست‌نخورده ماندند.\ \textbar\ \textbf{نیمه:} یکی مانده.\ \textbar\ \textbf{نادرست:} دو جمله بودند: یکی در شروع، یکی در پایان.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ کوتاه‌پاسخ}}\par
+\lbl{stepcol}{\en{G6-S04-P04}}\textbf{پیش از کدنویسی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ مهندس نرم‌افزار پیش از کدنویسی چه کاری باید انجام دهد؟\par
+\tasvir{G6-S04-P04}
+\lbl{maincol}{پرسش:}چه کاری؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item به دقیق‌کردن صورت مسئله اشاره کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ باید دقیقاً روشن کند چه چیزی خواسته شده.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item قبل از ساختن، چه چیزی باید روشن باشد؟
+\item اگر این کار را نکند، چه چیزی ساخته می‌شود؟
+\item دقیق کردن …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — وگرنه نرم‌افزار اشتباه ساخته می‌شود.\ \textbar\ \textbf{نیمه:} نزدیکی. بگو دقیقاً چه چیزی را روشن می‌کند.\ \textbar\ \textbf{نادرست:} به جمله‌ای فکر کن که امروز درباره‌ی درخواست مبهم گفتیم.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S04-P05}}\textbf{چرا درخواست مبهم؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گفتیم درخواست مبهم — چه به نرم‌افزار، چه به ابزار متنی — نتیجه‌ی اشتباه می‌سازد؟\par
+\tasvir{G6-S04-P05}
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید هر دو فقط همان چیزی را می‌سازند که در توضیح آمده
+\item نتیجه بگیرد پس ابهامِ توضیح به نتیجه منتقل می‌شود
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون هیچ‌کدام حدس نمی‌زنند منظورت چه بوده؛ فقط همان چیزی را می‌سازند که نوشته‌ای.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item آیا ابزار می‌داند در ذهن تو چه بوده؟
+\item آن فقط با چه چیزی کار می‌کند؟
+\item اگر توضیح مبهم باشد، نتیجه هم …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — ابهام از توضیح به نتیجه منتقل می‌شود.\ \textbar\ \textbf{نیمه:} نیمه‌اش را گفتی؛ حالا نتیجه‌اش را بگو.\ \textbar\ \textbf{نادرست:} فکر کن: ابزار از کجا باید بفهمد منظور دقیق تو چه بوده؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S04-P06}}}\par
+\lbl{stepcol}{\en{G6-S04-P06-1}}\textbf{جمله‌ی آغازین}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ یک نقاشی فرضی را تصور کن (مثلاً درختی که یک شاخه‌اش آبی است). برای روایتی درباره‌ی آن، جمله‌ی آغازین را بنویس.\par
+\tasvir{G6-S04-P06}
+\lbl{maincol}{پرسش:}جمله‌ی آغازین را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جمله‌ی آغازین درباره‌ی نقاشی فرضی بنویسد
+\item دست‌کم یک جزئیات مشخص داشته باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ در نقاشی من، درختی بود که فقط یکی از شاخه‌هایش آبی بود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item چیز عجیب نقاشی چیست؟
+\item آغاز خوب یک چیز مشخص دارد.
+\item «در نقاشی من، …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} آغازت مشخص است و راه را برای وسط باز می‌کند.\ \textbar\ \textbf{نیمه:} آغازت کلی است؛ یک چیز مشخص از نقاشی را در آن بگذار.\ \textbar\ \textbf{نادرست:} یک جمله‌ی آغازین درباره‌ی همان نقاشی بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ عملی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S04-P06}}}\par
+\lbl{stepcol}{\en{G6-S04-P06-2}}\textbf{جمله‌ی پایانی}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا جمله‌ی پایانی همان روایت را بنویس؛ طوری که بشود بین آغاز و پایانت متن میانی نوشت.\par
+\tasvir{G6-S04-P06}
+\lbl{maincol}{پرسش:}جمله‌ی پایانی را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جمله‌ی پایانی برای همان روایت بنویسد
+\item بین آغاز و پایان تغییری باشد که جای متن میانی بگذارد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ از آن روز، پرنده‌ها فقط روی شاخه‌ی آبی می‌نشینند.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item داستان به کجا می‌رسد؟
+\item پایان باید با آغاز فرق داشته باشد.
+\item «و از آن روز …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پایانت با آغاز فرق دارد و جای یک ماجرا بینشان هست.\ \textbar\ \textbf{نیمه:} پایانت تکرار آغاز است؛ بگذار چیزی تغییر کرده باشد.\ \textbar\ \textbf{نادرست:} یک جمله‌ی پایانی برای همان روایت بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۲ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G6-S04-P07}}\textbf{جور درنیامد — چه می‌کنی؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ متن میانی دستیار گفت‌وگو با آغاز و پایانت جور درنیامد. چه کار می‌کنی؟\par
+\tasvir{G6-S04-P07}
+\lbl{maincol}{پرسش:}چه کار می‌کنی؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item بگوید دوباره و دقیق‌تر درخواست می‌دهد
+\item بگوید متن میانی یا جمله‌های قفل‌شده را دست‌کاری نمی‌کند
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ دوباره درخواست می‌دهم و این‌بار می‌گویم دقیقاً چه چیزی در وسط لازم دارم؛ جمله‌های قفل‌شده را دست نمی‌زنم.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item قاعده‌ی امروز درباره‌ی دست‌کاری چه بود؟
+\item به‌جای اصلاح متن، چه کار دیگری می‌شود کرد؟
+\item دوباره بخواه — ولی این‌بار …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} درست — دوباره خواستن، نه دست‌کاری کردن.\ \textbar\ \textbf{نیمه:} نیمه‌اش درست است. بگو با جمله‌های قفل‌شده چه می‌کنی.\ \textbar\ \textbf{نادرست:} امروز نه متن میانی را اصلاح می‌کنیم نه جمله‌های قفل‌شده را.}\par
+\noindent{\small\textcolor{tamcol}{خطای رایج:}\ می‌گوید متن را خودش درست می‌کند \textcolor{tamcol}{\textbar}\ \textcolor{anscol}{پاسخ:}\ این‌طور دیگر معلوم نیست وسط را که نوشته. دوباره بخواه.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ استدلالی}}\par
+\lbl{stepcol}{\en{G6-S04-P08}}\textbf{چرا هنوز مال من است؟}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ چرا گفتیم قصه‌ای که آغاز و پایانش مال ماست، حتی با وسطِ نوشته‌شده به دست ابزار، هنوز روایت خودمان است؟\par
+\lbl{maincol}{پرسش:}به نظرت چرا؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item اشاره کند مالکیت از انتخاب آغاز و پایان می‌آید
+\item اشاره کند نه از نوشتن تک‌تک کلمه‌ها
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ چون من تصمیم گرفتم قصه از کجا شروع شود و به کجا برسد؛ وسط فقط راه بین این دو است.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item چه چیزی را تو تعیین کردی؟
+\item آیا مالکیت یک قصه به تعداد کلمه‌هاست یا به تصمیم‌هایش؟
+\item من تعیین کردم از کجا شروع شود و به کجا …
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — مالکیت از تصمیم می‌آید، نه از شمار کلمه‌ها.\ \textbar\ \textbf{نیمه:} نزدیکی. حالا بگو چرا تعداد کلمه‌ها ملاک نیست.\ \textbar\ \textbf{نادرست:} فکر کن: مهم‌ترین تصمیم‌های این قصه را چه کسی گرفت؟}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۱ از ۲ پرسش \en{G6-S04-P09}}}\par
+\lbl{stepcol}{\en{G6-S04-P09-1}}\textbf{آغاز غافلگیرکننده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ می‌خواهی دستیار گفت‌وگو را مجبور کنی وسط داستان یک غافلگیری بسازد. اول جمله‌ی آغازین را بنویس.\par
+\tasvir{G6-S04-P09}
+\lbl{maincol}{پرسش:}جمله‌ی آغازین را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جمله‌ی آغازین مشخص بنویسد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ موش کوچک از همه‌ی گربه‌های دنیا می‌ترسید.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item یک وضعیت عادی و مشخص بنویس.
+\item پایانت قرار است خیلی با آن فرق کند.
+\item مثلاً: «موش کوچک از گربه‌ها می‌ترسید.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} آغازت روشن است.\ \textbar\ \textbf{نیمه:} آغازت مبهم است؛ یک وضعیت مشخص بنویس.\ \textbar\ \textbf{نادرست:} یک جمله‌ی آغازین روشن بنویس.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ طراحی \textbar\ پاره‌ی ۲ از ۲ پرسش \en{G6-S04-P09}}}\par
+\lbl{stepcol}{\en{G6-S04-P09-2}}\textbf{پایان غافلگیرکننده}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ حالا جمله‌ی پایانی را طوری بنویس که با آغاز تو فاصله یا تناقض داشته باشد؛ تا وسط داستان مجبور شود غافلگیری بسازد.\par
+\tasvir{G6-S04-P09}
+\lbl{maincol}{پرسش:}جمله‌ی پایانی را بنویس.\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item یک جمله‌ی پایانی مشخص بنویسد
+\item بین این پایان و آغاز قبلی فاصله یا تناقض معناداری باشد
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ آخر داستان، موش کوچک بهترین دوست گربه‌ی محله شده بود.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item پایانی بنویس که با آغاز جور به نظر نرسد.
+\item هر چه فاصله بیشتر، وسط جالب‌تر.
+\item مثلاً: «… و حالا بهترین دوست گربه‌ی محله بود.»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} پایانت با آغاز فاصله‌ی معناداری دارد؛ وسط مجبور است غافلگیر کند.\ \textbar\ \textbf{نیمه:} پایان خوب است ولی فاصله‌اش با آغاز کم است؛ تضاد را بیشتر کن.\ \textbar\ \textbf{نادرست:} پایانی بنویس که با آغازت خیلی فرق داشته باشد.}\par
+\vspace{5pt}
+\noindent{\small\textcolor{tamcol}{سطح ۳ \textbar\ داوری}}\par
+\lbl{stepcol}{\en{G6-S04-P10}}\textbf{ربطش به کار امروز}\par
+\noindent{\small\textcolor{tchcol}{صفحه:}}\ بزرگ‌سالی که با او گفت‌وگو کردی گفت مشکل از توضیح خودش بود، نه از اجرای سازنده.\par\noindent \par\noindent این چه ربطی به کار امروز ما دارد؟\par
+\lbl{maincol}{پرسش:}چه ربطی دارد؟\par
+\lbl{aicol}{پاسخ باز — معیارها:}\par
+\begin{itemize}
+\item ربط را به دقت در توضیح یا درخواست وصل کند
+\item به کار امروز خودش اشاره کند (روایت یا درخواست از ابزار)
+\end{itemize}
+\noindent{\small\textcolor{aicol}{نمونه‌ی پاسخ خوب:}\ همان‌طور که او باید دقیق می‌گفت چه می‌خواهد، من هم باید دقیق بگویم بین دو جمله‌ام چه بنویسد.}\par
+\lbl{hintcol}{راهنمایی:}\par
+\begin{enumerate}[leftmargin=1.6em,itemsep=0pt,topsep=1pt]
+\item امروز کجا مجبور شدی درخواستت را دقیق‌تر کنی؟
+\item مشکل آنجا از ابزار بود یا از توضیح تو؟
+\item بنویس: «مثل او، من هم باید دقیق می‌گفتم که …»
+\end{enumerate}
+\noindent{\small\textcolor{anscol}{بازخورد —}\ \textbf{درست:} دقیقاً — این فقط درباره‌ی ابزار نیست، درباره‌ی هر خواسته‌ای است.\ \textbar\ \textbf{نیمه:} درست است. حالا بگو امروز کجا خودت این را تجربه کردی.\ \textbar\ \textbf{نادرست:} به لحظه‌ای فکر کن که متن میانی جور درنیامد. مشکل از کجا بود؟}\par
+\vspace{5pt}
+\end{jalasebox}
+
+\end{document}

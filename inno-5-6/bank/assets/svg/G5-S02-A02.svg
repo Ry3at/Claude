@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="470" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">ابزار امروز: تصویرخوان</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">کارت ابزار — چهار پرسش</text>
+<rect x="650" y="120" width="220" height="320" rx="22" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<circle cx="760" cy="230" r="70" fill="#DDF6F4"/>
+<svg x="720" y="194.444" width="80" height="71.1111" viewBox="0 0 576 512" fill="#06BEB6"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>
+<text x="760" y="350" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">تصویرخوان</text>
+<text x="760" y="385" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">ماژول داخل هوشینو</text>
+<rect x="30" y="120" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="120" width="44" height="70" rx="14" fill="#06BEB6"/>
+<rect x="586" y="120" width="14" height="70" rx="0" fill="#06BEB6"/>
+<text x="608" y="163" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="570" y="148" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="start" direction="rtl">چه کاری می‌کند؟</text>
+<text x="570" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">تصویر را می‌بیند و توصیف می‌کند؛ شباهت‌ها را می‌گوید.</text>
+<rect x="30" y="202" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="202" width="44" height="70" rx="14" fill="#FFC93C"/>
+<rect x="586" y="202" width="14" height="70" rx="0" fill="#FFC93C"/>
+<text x="608" y="245" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="570" y="230" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#B07A3B" font-weight="700" text-anchor="start" direction="rtl">از کجا بلد است؟</text>
+<text x="570" y="256" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">از دیدن تعداد خیلی زیادی تصویر و توضیحشان.</text>
+<rect x="30" y="284" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="284" width="44" height="70" rx="14" fill="#FF6B6B"/>
+<rect x="586" y="284" width="14" height="70" rx="0" fill="#FF6B6B"/>
+<text x="608" y="327" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="570" y="312" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="start" direction="rtl">کجا اشتباه می‌کند؟</text>
+<text x="570" y="338" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">حدسش را جای دیدن می‌گوید؛ گاهی چیز ناشبیه را شبیه می‌بیند.</text>
+<rect x="30" y="366" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="366" width="44" height="70" rx="14" fill="#8E7CE8"/>
+<rect x="586" y="366" width="14" height="70" rx="0" fill="#8E7CE8"/>
+<text x="608" y="409" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<text x="570" y="394" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="start" direction="rtl">کجا نباید به‌جای من تصمیم بگیرد؟</text>
+<text x="570" y="420" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">اینکه دو چیز واقعاً یکی‌اند یا نه را خودم بررسی می‌کنم.</text>
+</svg>

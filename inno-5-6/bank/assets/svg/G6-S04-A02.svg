@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="470" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">ابزار امروز: دستیار گفت‌وگو</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">کارت ابزار — چهار پرسش</text>
+<rect x="650" y="120" width="220" height="320" rx="22" fill="#FFFFFF" stroke="#8E7CE8" stroke-width="3"/>
+<circle cx="760" cy="230" r="70" fill="#EEEBFC"/>
+<svg x="720" y="194.444" width="80" height="71.1111" viewBox="0 0 576 512" fill="#8E7CE8"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path></svg>
+<text x="760" y="350" font-family="Vazirmatn, Tahoma, sans-serif" font-size="22" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">دستیار گفت‌وگو</text>
+<text x="760" y="385" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">ماژول داخل هوشینو</text>
+<rect x="30" y="120" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="120" width="44" height="70" rx="14" fill="#06BEB6"/>
+<rect x="586" y="120" width="14" height="70" rx="0" fill="#06BEB6"/>
+<text x="608" y="163" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="570" y="148" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="start" direction="rtl">چه کاری می‌کند؟</text>
+<text x="570" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">بین دو جمله‌ی تو، دو یا سه جمله‌ی میانی می‌نویسد.</text>
+<rect x="30" y="202" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="202" width="44" height="70" rx="14" fill="#FFC93C"/>
+<rect x="586" y="202" width="14" height="70" rx="0" fill="#FFC93C"/>
+<text x="608" y="245" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="570" y="230" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#B07A3B" font-weight="700" text-anchor="start" direction="rtl">از کجا بلد است؟</text>
+<text x="570" y="256" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">از دیدن مقدار خیلی زیادی داستان و نوشته.</text>
+<rect x="30" y="284" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="284" width="44" height="70" rx="14" fill="#FF6B6B"/>
+<rect x="586" y="284" width="14" height="70" rx="0" fill="#FF6B6B"/>
+<text x="608" y="327" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="570" y="312" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="start" direction="rtl">کجا اشتباه می‌کند؟</text>
+<text x="570" y="338" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">گاهی وسطی می‌نویسد که با آغاز یا پایانت جور نیست.</text>
+<rect x="30" y="366" width="600" height="70" rx="14" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="586" y="366" width="44" height="70" rx="14" fill="#8E7CE8"/>
+<rect x="586" y="366" width="14" height="70" rx="0" fill="#8E7CE8"/>
+<text x="608" y="409" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<text x="570" y="394" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="start" direction="rtl">کجا نباید به‌جای من تصمیم بگیرد؟</text>
+<text x="570" y="420" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15.5" fill="#3C4A5E" font-weight="500" text-anchor="start" direction="rtl">آغاز و پایان قصه و داوری نهایی، با خودم است.</text>
+</svg>

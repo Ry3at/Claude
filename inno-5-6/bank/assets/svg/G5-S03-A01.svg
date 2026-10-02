@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="400" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">مرور: الگو در تصویر</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">جلسه‌ی پیش در یک نگاه</text>
+<rect x="672" y="120" width="198" height="230" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="672" y="120" width="198" height="34" rx="18" fill="#06BEB6"/>
+<rect x="672" y="137" width="198" height="17" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="137" r="12" fill="#FFFFFF"/>
+<text x="850" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<svg x="742" y="198.782" width="58" height="51.5556" viewBox="0 0 576 512" fill="#06BEB6"><path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>
+<text x="771" y="299.04" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">تصویرخوان</text>
+<text x="771" y="322.29" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">رنگ، لبه، شکل</text>
+<rect x="458" y="120" width="198" height="230" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="458" y="120" width="198" height="34" rx="18" fill="#2E9E5B"/>
+<rect x="458" y="137" width="198" height="17" rx="0" fill="#2E9E5B"/>
+<circle cx="636" cy="137" r="12" fill="#FFFFFF"/>
+<text x="636" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#2E9E5B" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<svg x="528" y="195.56" width="58" height="58" viewBox="0 0 512 512" fill="#2E9E5B"><path d="M152.864 59l-4.21 20h33.816l-4.211-20zm3.698 38v14h18V97zm-30.715 32l-7.78 94h17.145l6-80h130.545l-2-14zm302.715 23v74.602a593.471 593.471 0 0 1 18 1.666V152zm-270.65 9l-4.651 62h6.3c10.003 0 19.544 4.28 29 10.645V161zm48.65 0v84.26l78 8.681v-21.296L274.327 161zm-121 80c-8 0-23.292 6.759-37.377 18.027-10.908 8.726-21.254 19.89-28.747 31.166l16.813 4.203C56.271 269.225 87.129 253 121.561 253c50.594 0 93.48 35.024 105.586 82h20.409c-9.132-18.739-23.077-40.212-38.323-57.889-9.33-10.819-19.063-20.19-27.945-26.601-8.881-6.412-16.88-9.51-21.726-9.51zm217 .059V351h32.15c9.085-30.155 26.196-50.771 49.125-61.193 12.31-5.596 25.987-8.305 40.736-8.578 11.399-.212 23.445 1.049 35.989 3.54v-36.49c-11.495-1.781-25.084-3.178-39.633-4.203-40.207-2.831-86.16-3-118.367-3.017zm176 10.814V271h14v-13.41c-3.978-2.698-9.906-4.606-14-5.717zM222.7 265.168c.054.063.11.123.164.186 19.996 23.183 37.843 51.59 47.086 75.386l4.762 12.26h-44.53c.247 2.97.38 5.97.38 9 0 7.178-.713 14.198-2.057 21h56.057V272.055zM121.562 271c-50.081 0-91 40.92-91 91s40.919 91 91 91c50.08 0 91-40.92 91-91s-40.92-91-91-91zm357 18v14h14v-14zm-357 4c38.16 0 69 30.84 69 69s-30.84 69-69 69c-38.161 0-69-30.84-69-69s30.839-69 69-69zm307.603 6.27c-12.894.164-27.37 2.264-37.879 6.923-16.839 7.654-29.674 21.545-37.691 44.807h10.57c13.936-22.718 39.012-38 67.397-38a77.97 77.97 0 0 1 29 5.6v-15.448c-11.185-2.416-21.683-3.723-31.397-3.882zM121.562 311c-28.588 0-51 22.413-51 51s22.412 51 51 51c28.587 0 51-22.413 51-51s-22.413-51-51-51zm357 10v7.67a80.334 80.334 0 0 1 14 13.357V321zm-47 10c-33.493 0-61 27.508-61 61 0 33.492 27.507 61 61 61 33.492 0 61-27.508 61-61 0-33.492-27.508-61-61-61zm0 22c21.516 0 39 17.484 39 39s-17.484 39-39 39c-21.517 0-39-17.484-39-39s17.483-39 39-39zm-129 16v15.377l50.01 8.334c-.003-.237-.01-.473-.01-.711 0-7.988 1.219-15.71 3.464-23zm129 2c-12.095 0-21 8.905-21 21s8.905 21 21 21c12.094 0 21-8.905 21-21s-8.906-21-21-21z"></path></svg>
+<text x="557" y="299.04" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کشاورزی دقیق</text>
+<text x="557" y="322.29" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">تصمیم با داده</text>
+<rect x="244" y="120" width="198" height="230" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="244" y="120" width="198" height="34" rx="18" fill="#FFC93C"/>
+<rect x="244" y="137" width="198" height="17" rx="0" fill="#FFC93C"/>
+<circle cx="422" cy="137" r="12" fill="#FFFFFF"/>
+<text x="422" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<svg x="321.25" y="195.56" width="43.5" height="58" viewBox="0 0 384 512" fill="#FFC93C"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg>
+<text x="343" y="299.04" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">کارت شغل ۱</text>
+<text x="343" y="322.29" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">تا جلسه‌ی ۳۱</text>
+<rect x="30" y="120" width="198" height="230" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="120" width="198" height="34" rx="18" fill="#8E7CE8"/>
+<rect x="30" y="137" width="198" height="17" rx="0" fill="#8E7CE8"/>
+<circle cx="208" cy="137" r="12" fill="#FFFFFF"/>
+<text x="208" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#8E7CE8" font-weight="700" text-anchor="middle" direction="rtl">۴</text>
+<svg x="100" y="195.56" width="58" height="58" viewBox="0 0 512 512" fill="#8E7CE8"><path d="M223.75 130.75L154.62 15.54A31.997 31.997 0 0 0 127.18 0H16.03C3.08 0-4.5 14.57 2.92 25.18l111.27 158.96c29.72-27.77 67.52-46.83 109.56-53.39zM495.97 0H384.82c-11.24 0-21.66 5.9-27.44 15.54l-69.13 115.21c42.04 6.56 79.84 25.62 109.56 53.38L509.08 25.18C516.5 14.57 508.92 0 495.97 0zM256 160c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm92.52 157.26l-37.93 36.96 8.97 52.22c1.6 9.36-8.26 16.51-16.65 12.09L256 393.88l-46.9 24.65c-8.4 4.45-18.25-2.74-16.65-12.09l8.97-52.22-37.93-36.96c-6.82-6.64-3.05-18.23 6.35-19.59l52.43-7.64 23.43-47.52c2.11-4.28 6.19-6.39 10.28-6.39 4.11 0 8.22 2.14 10.33 6.39l23.43 47.52 52.43 7.64c9.4 1.36 13.17 12.95 6.35 19.59z"></path></svg>
+<text x="129" y="299.04" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">نشان</text>
+<text x="129" y="322.29" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">چشم الگویاب</text>
+</svg>

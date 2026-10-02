@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="508" viewBox="0 0 900 508" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="508" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">شمار نشانه در دو تلاش</text>
+<line x1="30" y1="444" x2="870" y2="444" stroke="#D7DEF2" stroke-width="3" stroke-linecap="round"/>
+<rect x="618.5" y="339.333" width="92" height="104.667" rx="12" fill="#06BEB6"/>
+<text x="664.5" y="327.333" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">۱ نشانه</text>
+<text x="664.5" y="470" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">تلاش اول (نادرست)</text>
+<rect x="189.5" y="130" width="92" height="314" rx="12" fill="#FFC93C"/>
+<text x="235.5" y="118" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#1E2761" font-weight="700" text-anchor="middle" direction="rtl">۳ نشانه</text>
+<text x="235.5" y="470" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">تلاش دوم (درست)</text>
+</svg>

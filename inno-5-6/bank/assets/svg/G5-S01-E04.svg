@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="416" viewBox="0 0 900 416" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="416" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">دست‌نوشته‌ای که قفل می‌ماند</text>
+<rect x="602" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="602" y="130" width="268" height="34" rx="18" fill="#06BEB6"/>
+<rect x="602" y="146" width="268" height="18" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="147" r="12" fill="#FFFFFF"/>
+<text x="850" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="728" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="700.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#06BEB6"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"></path></svg>
+<text x="736" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">نوشتن با دست</text>
+<rect x="316" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="316" y="130" width="268" height="34" rx="18" fill="#FFC93C"/>
+<rect x="316" y="146" width="268" height="18" rx="0" fill="#FFC93C"/>
+<circle cx="564" cy="147" r="12" fill="#FFFFFF"/>
+<text x="564" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="442" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="414.3" y="216.1" width="71.4" height="71.4" viewBox="0 0 512 512" fill="#FFC93C"><path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>
+<text x="450" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">گرفتن عکس</text>
+<rect x="30" y="130" width="268" height="210" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="130" width="268" height="34" rx="18" fill="#FF6B6B"/>
+<rect x="30" y="146" width="268" height="18" rx="0" fill="#FF6B6B"/>
+<circle cx="278" cy="147" r="12" fill="#FFFFFF"/>
+<text x="278" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="156" y="153" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl"></text>
+<svg x="132.762" y="216.1" width="62.475" height="71.4" viewBox="0 0 448 512" fill="#FF6B6B"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+<text x="164" y="314" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">قفل تا جلسه‌ی ۳۲</text>
+<text x="450" y="382" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">دست‌نوشته‌ات همین امروز ثبت می‌شود، بدون تغییر بعدی.</text>
+</svg>

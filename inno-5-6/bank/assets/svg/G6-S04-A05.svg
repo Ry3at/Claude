@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450" viewBox="0 0 900 450" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="450" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">شغل امروز: مهندس نرم‌افزار</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">پیش از کدنویسی، صورت مسئله را دقیق می‌کند</text>
+<rect x="500" y="125" width="330" height="110" rx="18" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<svg x="773.5" y="158" width="33" height="44" viewBox="0 0 384 512" fill="#FF6B6B"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg>
+<text x="750" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">درخواست مبهم</text>
+<line x1="490" y1="180" x2="411" y2="180" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="400,180 411,186.6 411,173.4" fill="#8C97AB"/>
+<rect x="70" y="125" width="320" height="110" rx="18" fill="#FFE9E9" stroke="#FF6B6B" stroke-width="2"/>
+<svg x="318.125" y="155" width="43.75" height="50" viewBox="0 0 448 512" fill="#FF6B6B"><path d="M400 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM224 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm176-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h328c6.6 0 12 5.4 12 12v312z"></path></svg>
+<text x="300" y="188" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">نرم‌افزار اشتباه</text>
+<circle cx="80" cy="125" r="18" fill="#FF6B6B"/>
+<svg x="73.5031" y="115.55" width="12.9938" height="18.9" viewBox="0 0 352 512" fill="#FFFFFF"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+<rect x="500" y="265" width="330" height="110" rx="18" fill="#FFFFFF" stroke="#2E9E5B" stroke-width="3"/>
+<svg x="773.5" y="298" width="33" height="44" viewBox="0 0 384 512" fill="#2E9E5B"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg>
+<text x="750" y="328" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">مشخصات دقیق</text>
+<line x1="490" y1="320" x2="411" y2="320" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="400,320 411,326.6 411,313.4" fill="#8C97AB"/>
+<rect x="70" y="265" width="320" height="110" rx="18" fill="#E3F4EA" stroke="#2E9E5B" stroke-width="2"/>
+<svg x="318.125" y="295" width="43.75" height="50" viewBox="0 0 448 512" fill="#2E9E5B"><path d="M400 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM224 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm176-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h328c6.6 0 12 5.4 12 12v312z"></path></svg>
+<text x="300" y="328" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="#3C4A5E" font-weight="700" text-anchor="start" direction="rtl">نرم‌افزار درست</text>
+<circle cx="80" cy="265" r="18" fill="#2E9E5B"/>
+<svg x="70.55" y="255.55" width="18.9" height="18.9" viewBox="0 0 512 512" fill="#FFFFFF"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+<text x="450" y="420" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">ابزار فقط همان چیزی را می‌سازد که در توضیح آمده.</text>
+</svg>

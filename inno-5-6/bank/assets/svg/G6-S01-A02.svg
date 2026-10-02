@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="420" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">یک جلسه، سه بخش</text>
+<text x="870" y="84" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#8C97AB" font-weight="400" text-anchor="start" direction="rtl">هر جلسه همین سه بخش را دارد</text>
+<rect x="602" y="120" width="268" height="220" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="602" y="120" width="268" height="34" rx="18" fill="#06BEB6"/>
+<rect x="602" y="137" width="268" height="17" rx="0" fill="#06BEB6"/>
+<circle cx="850" cy="137" r="12" fill="#FFFFFF"/>
+<text x="850" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#06BEB6" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<svg x="704" y="192.516" width="64" height="56.8889" viewBox="0 0 576 512" fill="#06BEB6"><path d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"></path></svg>
+<text x="736" y="291.64" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">آموزش</text>
+<text x="736" y="321.4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13.5" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">۱۵ دقیقه — یاد می‌گیری</text>
+<line x1="598" y1="230" x2="599" y2="230" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="588,230 599,236.6 599,223.4" fill="#8C97AB"/>
+<rect x="316" y="120" width="268" height="220" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="316" y="120" width="268" height="34" rx="18" fill="#FFC93C"/>
+<rect x="316" y="137" width="268" height="17" rx="0" fill="#FFC93C"/>
+<circle cx="564" cy="137" r="12" fill="#FFFFFF"/>
+<text x="564" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FFC93C" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<svg x="418" y="192.516" width="64" height="56.8889" viewBox="0 0 576 512" fill="#FFC93C"><path d="M519.442 288.651c-41.519 0-59.5 31.593-82.058 31.593C377.409 320.244 432 144 432 144s-196.288 80-196.288-3.297c0-35.827 36.288-46.25 36.288-85.985C272 19.216 243.885 0 210.539 0c-34.654 0-66.366 18.891-66.366 56.346 0 41.364 31.711 59.277 31.711 81.75C175.885 207.719 0 166.758 0 166.758v333.237s178.635 41.047 178.635-28.662c0-22.473-40-40.107-40-81.471 0-37.456 29.25-56.346 63.577-56.346 33.673 0 61.788 19.216 61.788 54.717 0 39.735-36.288 50.158-36.288 85.985 0 60.803 129.675 25.73 181.23 25.73 0 0-34.725-120.101 25.827-120.101 35.962 0 46.423 36.152 86.308 36.152C556.712 416 576 387.99 576 354.443c0-34.199-18.962-65.792-56.558-65.792z"></path></svg>
+<text x="450" y="291.64" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">فعالیت تعاملی</text>
+<text x="450" y="321.4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13.5" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">۳۵ دقیقه — بازی و ساختن</text>
+<line x1="312" y1="230" x2="313" y2="230" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/>
+<polygon points="302,230 313,236.6 313,223.4" fill="#8C97AB"/>
+<rect x="30" y="120" width="268" height="220" rx="18" fill="#FFFFFF" stroke="#D7DEF2" stroke-width="2"/>
+<rect x="30" y="120" width="268" height="34" rx="18" fill="#FF6B6B"/>
+<rect x="30" y="137" width="268" height="17" rx="0" fill="#FF6B6B"/>
+<circle cx="278" cy="137" r="12" fill="#FFFFFF"/>
+<text x="278" y="143" font-family="Vazirmatn, Tahoma, sans-serif" font-size="15" fill="#FF6B6B" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<svg x="132" y="188.96" width="64" height="64" viewBox="0 0 512 512" fill="#FF6B6B"><path d="M223.75 130.75L154.62 15.54A31.997 31.997 0 0 0 127.18 0H16.03C3.08 0-4.5 14.57 2.92 25.18l111.27 158.96c29.72-27.77 67.52-46.83 109.56-53.39zM495.97 0H384.82c-11.24 0-21.66 5.9-27.44 15.54l-69.13 115.21c42.04 6.56 79.84 25.62 109.56 53.38L509.08 25.18C516.5 14.57 508.92 0 495.97 0zM256 160c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm92.52 157.26l-37.93 36.96 8.97 52.22c1.6 9.36-8.26 16.51-16.65 12.09L256 393.88l-46.9 24.65c-8.4 4.45-18.25-2.74-16.65-12.09l8.97-52.22-37.93-36.96c-6.82-6.64-3.05-18.23 6.35-19.59l52.43-7.64 23.43-47.52c2.11-4.28 6.19-6.39 10.28-6.39 4.11 0 8.22 2.14 10.33 6.39l23.43 47.52 52.43 7.64c9.4 1.36 13.17 12.95 6.35 19.59z"></path></svg>
+<text x="164" y="291.64" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="#3C4A5E" font-weight="600" text-anchor="middle" direction="rtl">ارزیابی</text>
+<text x="164" y="321.4" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13.5" fill="#8C97AB" font-weight="400" text-anchor="middle" direction="rtl">۱۰ دقیقه — چالش و نشان</text>
+<text x="450" y="385" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" fill="#3C4A5E" font-weight="400" text-anchor="middle" direction="rtl">نشان را با تمام‌کردن مأموریت می‌گیری، نه با بهترین بودن.</text>
+</svg>

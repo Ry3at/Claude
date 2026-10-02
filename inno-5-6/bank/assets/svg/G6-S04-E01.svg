@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="350" viewBox="0 0 900 350" font-family="Vazirmatn, Tahoma, sans-serif">
+<rect x="0" y="0" width="900" height="350" rx="0" fill="#F2F5FF"/>
+<rect x="0" y="0" width="900" height="10" rx="0" fill="#2D3A8C"/>
+<text x="870" y="56" font-family="Vazirmatn, Tahoma, sans-serif" font-size="27" fill="#1E2761" font-weight="700" text-anchor="start" direction="rtl">سه گام تا روایت امروز</text>
+<rect x="600.667" y="126" width="269.333" height="190" rx="18" fill="#FFFFFF" stroke="#06BEB6" stroke-width="3"/>
+<circle cx="735.333" cy="166" r="25" fill="#06BEB6"/>
+<text x="735.333" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۱</text>
+<text x="735.333" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">جمله‌ی آغازین را بنویس</text>
+<line x1="596.667" y1="221" x2="597.167" y2="221" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="588.667,221 597.671,216.65 597.671,225.35" fill="#8C97AB"/>
+<rect x="315.333" y="126" width="269.333" height="190" rx="18" fill="#FFFFFF" stroke="#FFC93C" stroke-width="3"/>
+<circle cx="450" cy="166" r="25" fill="#FFC93C"/>
+<text x="450" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۲</text>
+<text x="450" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">جمله‌ی پایانی را بنویس</text>
+<line x1="311.333" y1="221" x2="311.833" y2="221" stroke="#8C97AB" stroke-width="3" stroke-linecap="round"/><polygon points="303.333,221 312.338,216.65 312.338,225.35" fill="#8C97AB"/>
+<rect x="30" y="126" width="269.333" height="190" rx="18" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="3"/>
+<circle cx="164.667" cy="166" r="25" fill="#FF6B6B"/>
+<text x="164.667" y="174" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" fill="#FFFFFF" font-weight="700" text-anchor="middle" direction="rtl">۳</text>
+<text x="164.667" y="251" font-family="Vazirmatn, Tahoma, sans-serif" font-size="17" fill="#3C4A5E" font-weight="500" text-anchor="middle" direction="rtl">هر دو را قفل اعلام کن</text>
+</svg>
